@@ -3,7 +3,7 @@ Personal Linux configuration.
 
 ## Table of contents
 * [dotfiles]
-    * vim
+    * [vim]
 * [License]
 
 ## dotfiles
@@ -17,6 +17,7 @@ Personal Linux configuration.
 The content of this project is licensed under the GPL license.
 
 [dotfiles]: /README.md#dotfiles "dotfiles"
+[vim]: /README.md#vim "vim"
 [License]: /README.md#license "License"
 
 [Bad Wolf]: http://stevelosh.com/projects/badwolf/ "Bad Wolf"
