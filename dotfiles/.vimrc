@@ -50,7 +50,10 @@ set nolist         " Desactivate the list option
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
-map <c-d> dd  " 'Ctrl' + 'd': delete a whole line
+"" 'Ctrl' + 'd': delete the current line
+imap <C-D> <esc>ddi
+nmap <C-D> dd
+
 map j gj      " 'j' = 'gj': treat long lines as break lines (down)
 map k gk      " 'k' = 'gk': treat long lines as break lines (up)
 
@@ -64,6 +67,15 @@ vmap <S-Down> <Down>
 vmap <S-Left> <Left>
 vmap <S-Right> <Right>
 
+
+"" 'Tab': indent
+nnoremap <Tab> >>
+vnoremap <Tab> >gv
+
+"" 'Shift' + 'Tab': unindent
+inoremap <S-Tab> <C-D>
+nnoremap <S-Tab> <<
+vnoremap <S-Tab> <gv
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -80,12 +92,13 @@ set hlsearch incsearch  " Highlight research results
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs/Indentation
-set expandtab     " Insert spaces instead of tabs
-set tabstop=4     " Number of spaces
-set shiftwidth=4  " Reindent
-set autoindent    " Turn on auto indentation
-set wrap          " Enable wrapping
-set linebreak     " Allow linebreaks
+set expandtab                   " Insert spaces instead of tabs
+set tabstop=4                   " Number of spaces for a tabulation
+set shiftwidth=4                " Number of spaces for a reindent operations
+set autoindent                  " Turn on auto indentation
+set wrap                        " Enable wrapping
+set linebreak                   " Allow linebreaks
+set backspace=indent,eol,start  " Backspacing autoindent, line breaks, start of insert
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
