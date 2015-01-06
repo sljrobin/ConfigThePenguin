@@ -94,7 +94,7 @@ set hlsearch incsearch          " Highlight research results
 " Tabs/Indentation
 set expandtab                   " Insert spaces instead of tabs
 set tabstop=4                   " Number of spaces for a tabulation
-set shiftwidth=4                " Number of spaces for a reindent operations
+set shiftwidth=4                " Number of spaces for a reindent operation
 set autoindent                  " Turn on auto indentation
 set wrap                        " Enable wrapping
 set linebreak                   " Allow linebreaks
@@ -110,7 +110,7 @@ set statusline+=%y              " Filetype
 set statusline+=\[%.20F\]       " Path
 
 "" Right panel
-set statusline+=%=              " Left/Right separator
+set statusline+=%=              " Switch to the right side
 set statusline+=\[%c\]          " Column
 set statusline+=\[%l:%L\]       " Current line:Total lines
 set statusline+=\[%P\]          " Percentage
