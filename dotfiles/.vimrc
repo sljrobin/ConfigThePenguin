@@ -54,6 +54,7 @@ set nolist         " Desactivate the list option
 imap <C-D> <esc>ddi
 nmap <C-D> dd
 
+
 map j gj      " 'j' = 'gj': treat long lines as break lines (down)
 map k gk      " 'k' = 'gk': treat long lines as break lines (up)
 
