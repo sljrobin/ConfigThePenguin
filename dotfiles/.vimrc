@@ -80,14 +80,14 @@ vnoremap <S-Tab> <gv
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors
-syntax on               " Enable colors
-set t_Co=256            " Enable 256 colors
-colorscheme badwolf     " Main theme
-set cursorline          " Highlight the current line
-set number              " Enable line numbers
-set numberwidth=4       " Line numbers column width
-set showmatch           " Highlight matching brackets
-set hlsearch incsearch  " Highlight research results
+syntax on                       " Enable colors
+set t_Co=256                    " Enable 256 colors
+colorscheme badwolf             " Main theme
+set cursorline                  " Highlight the current line
+set number                      " Enable line numbers
+set numberwidth=4               " Line numbers column width
+set showmatch                   " Highlight matching brackets
+set hlsearch incsearch          " Highlight research results
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,23 +103,23 @@ set backspace=indent,eol,start  " Backspacing autoindent, line breaks, start of 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
-set laststatus=2             " Print the last status
+set laststatus=2                " Print the last status
 
 "" Left panel
-set statusline+=%y           " Filetype
-set statusline+=\[%.20F\]    " Path
+set statusline+=%y              " Filetype
+set statusline+=\[%.20F\]       " Path
 
 "" Right panel
-set statusline+=%=           " Left/Right separator
-set statusline+=\[%c\]       " Column
-set statusline+=\[%l:%L\]    " Current line:Total lines
-set statusline+=\[%P\]       " Percentage
+set statusline+=%=              " Left/Right separator
+set statusline+=\[%c\]          " Column
+set statusline+=\[%l:%L\]       " Current line:Total lines
+set statusline+=\[%P\]          " Percentage
 
 "" Command bar
-set showcmd                  " Show command in bottom bar
-set cmdheight=2              " Command bar height
-set wildmenu                 " Enhance command line completion
-set wildignore=*.o,*~,*.pyc  " Ignore compiled files
+set showcmd                     " Show command in bottom bar
+set cmdheight=2                 " Command bar height
+set wildmenu                    " Enhance command line completion
+set wildignore=*.o,*~,*.pyc     " Ignore compiled files
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
