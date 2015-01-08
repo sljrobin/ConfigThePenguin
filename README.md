@@ -10,6 +10,7 @@ Personal Linux configuration.
 #### vim
 * Plugins
     * [NERDTree]
+    * [vim-airline]
 * Plugin manager: [pathogen]
 * Theme: [Bad Wolf]
 
@@ -23,3 +24,4 @@ The content of this project is licensed under the GPL license.
 [Bad Wolf]: http://stevelosh.com/projects/badwolf/ "Bad Wolf"
 [NERDTree]: https://github.com/scrooloose/nerdtree "NERDTree"
 [pathogen]: https://github.com/tpope/vim-pathogen "pathogen"
+[vim-airline]: https://github.com/bling/vim-airline "vim-airline"
