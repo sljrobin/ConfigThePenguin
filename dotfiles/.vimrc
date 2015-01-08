@@ -59,16 +59,6 @@ map j gj      " 'j' = 'gj': treat long lines as break lines (down)
 map k gk      " 'k' = 'gk': treat long lines as break lines (up)
 
 
-nmap <S-Up> v<Up>
-nmap <S-Down> v<Down>
-nmap <S-Left> v<Left>
-nmap <S-Right> v<Right>
-vmap <S-Up> <Up>
-vmap <S-Down> <Down>
-vmap <S-Left> <Left>
-vmap <S-Right> <Right>
-
-
 "" 'Tab': indent
 nnoremap <Tab> >>
 vnoremap <Tab> >gv
@@ -106,21 +96,17 @@ set backspace=indent,eol,start  " Backspacing autoindent, line breaks, start of 
 " Statusline
 set laststatus=2                " Print the last status
 
-"" Left panel
-set statusline+=%y              " Filetype
-set statusline+=\[%.20F\]       " Path
-
-"" Right panel
-set statusline+=%=              " Switch to the right side
-set statusline+=\[%c\]          " Column
-set statusline+=\[%l:%L\]       " Current line:Total lines
-set statusline+=\[%P\]          " Percentage
+"" vim-airline
+let g:airline_powerline_fonts=1    " Enable powerline-fonts
+let g:airline_theme='powerlineish' " Theme 'powerlineish'
 
 "" Command bar
 set showcmd                     " Show command in bottom bar
 set cmdheight=2                 " Command bar height
 set wildmenu                    " Enhance command line completion
 set wildignore=*.o,*~,*.pyc     " Ignore compiled files
+
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
