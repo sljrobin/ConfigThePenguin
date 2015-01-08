@@ -71,42 +71,40 @@ vnoremap <S-Tab> <gv
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors
-syntax on                       " Enable colors
-set t_Co=256                    " Enable 256 colors
-colorscheme badwolf             " Main theme
-set cursorline                  " Highlight the current line
-set number                      " Enable line numbers
-set numberwidth=4               " Line numbers column width
-set showmatch                   " Highlight matching brackets
-set hlsearch incsearch          " Highlight research results
+syntax on                           " Enable colors
+set t_Co=256                        " Enable 256 colors
+colorscheme badwolf                 " Main theme
+set cursorline                      " Highlight the current line
+set number                          " Enable line numbers
+set numberwidth=4                   " Line numbers column width
+set showmatch                       " Highlight matching brackets
+set hlsearch incsearch              " Highlight research results
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs/Indentation
-set expandtab                   " Insert spaces instead of tabs
-set tabstop=4                   " Number of spaces for a tabulation
-set shiftwidth=4                " Number of spaces for a reindent operation
-set autoindent                  " Turn on auto indentation
-set wrap                        " Enable wrapping
-set linebreak                   " Allow linebreaks
-set backspace=indent,eol,start  " Enable correct backspacing
+set expandtab                       " Insert spaces instead of tabs
+set tabstop=4                       " Number of spaces for a tabulation
+set shiftwidth=4                    " Number of spaces for a reindent operation
+set autoindent                      " Turn on auto indentation
+set wrap                            " Enable wrapping
+set linebreak                       " Allow linebreaks
+set backspace=indent,eol,start      " Enable correct backspacing
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
-set laststatus=2                " Print the last status
+set laststatus=2                    " Print the last status
 
 "" vim-airline
 let g:airline_powerline_fonts=1     " Enable powerline-fonts
 let g:airline_theme='powerlineish'  " Theme 'powerlineish'
 
 "" Command bar
-set showcmd                     " Show command in bottom bar
-set cmdheight=2                 " Command bar height
-set wildmenu                    " Enhance command line completion
-set wildignore=*.o,*~,*.pyc     " Ignore compiled files
-
-
+set showcmd                         " Show command in bottom bar
+set cmdheight=2                     " Command bar height
+set wildmenu                        " Enhance command line completion
+set wildignore=*.o,*~,*.pyc         " Ignore compiled files
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
