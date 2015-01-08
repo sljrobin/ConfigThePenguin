@@ -89,7 +89,7 @@ set shiftwidth=4                " Number of spaces for a reindent operation
 set autoindent                  " Turn on auto indentation
 set wrap                        " Enable wrapping
 set linebreak                   " Allow linebreaks
-set backspace=indent,eol,start  " Backspacing autoindent, line breaks, start of insert
+set backspace=indent,eol,start  " Enable correct backspacing
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,8 +97,8 @@ set backspace=indent,eol,start  " Backspacing autoindent, line breaks, start of 
 set laststatus=2                " Print the last status
 
 "" vim-airline
-let g:airline_powerline_fonts=1    " Enable powerline-fonts
-let g:airline_theme='powerlineish' " Theme 'powerlineish'
+let g:airline_powerline_fonts=1     " Enable powerline-fonts
+let g:airline_theme='powerlineish'  " Theme 'powerlineish'
 
 "" Command bar
 set showcmd                     " Show command in bottom bar
