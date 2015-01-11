@@ -43,6 +43,7 @@ filetype indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf8  " Encoding UTF-8
 set history=700    " History memory
 set mouse=a        " Allow use of mouse
