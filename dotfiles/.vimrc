@@ -52,6 +52,7 @@ set nolist         " Desactivate the list option
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 'Ctrl' + 'd': delete the current line
 imap <C-D> <esc>ddi
 nmap <C-D> dd
