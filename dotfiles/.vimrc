@@ -74,6 +74,7 @@ vnoremap <S-Tab> <gv
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on                           " Enable colors
 set t_Co=256                        " Enable 256 colors
 colorscheme badwolf                 " Main theme
