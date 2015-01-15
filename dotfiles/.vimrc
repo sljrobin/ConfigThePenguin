@@ -117,9 +117,9 @@ set wildignore=*.o,*~,*.pyc         " Ignore compiled files
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Headers
 "" Python (.py)
-autocmd bufnewfile *.py so $HOME/.vim/headers/py
-autocmd bufnewfile *.py exe "1," . 9 . "g/Title          :.*/s//Title          :" .expand("%")
-autocmd bufnewfile *.py exe "1," . 9 . "g/Created        :.*/s//Created        :" .strftime("%Y-%m-%d %H:%M:%S")
+autocmd BufNewFile *.py so $HOME/.vim/headers/py
+autocmd BufNewFile *.py exe "1," . 9 . "g/Title          :.*/s//Title          :" .expand("%")
+autocmd BufNewFile *.py exe "1," . 9 . "g/Created        :.*/s//Created        :" .strftime("%Y-%m-%d %H:%M:%S")
 autocmd Bufwritepre,filewritepre *.py execute "normal ma" 
 autocmd Bufwritepre,filewritepre *.py exe "1," . 9 . "g/Modified       :.*/s/Modified       :.*/Modified       :" .strftime("%Y-%m-%d %H:%M:%S") 
 autocmd bufwritepost,filewritepost *.py execute "normal `a" 
