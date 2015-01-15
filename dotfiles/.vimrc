@@ -123,3 +123,13 @@ autocmd BufNewFile *.py exe "1," . 9 . "g/Created        :.*/s//Created        :
 autocmd Bufwritepre,filewritepre *.py execute "normal ma" 
 autocmd Bufwritepre,filewritepre *.py exe "1," . 9 . "g/Modified       :.*/s/Modified       :.*/Modified       :" .strftime("%Y-%m-%d %H:%M:%S") 
 autocmd bufwritepost,filewritepost *.py execute "normal `a" 
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Extensions
+
+" Set '*.md', '*.mkd', '*.mkdn', '*.mdown' as a Markdown file
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
+autocmd BufNewFile,BufReadPost *.mkdn set filetype=markdown
+autocmd BufNewFile,BufReadPost *.mdown set filetype=markdown
