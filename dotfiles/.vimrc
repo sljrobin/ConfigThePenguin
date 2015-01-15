@@ -71,6 +71,9 @@ inoremap <S-Tab> <C-D>
 nnoremap <S-Tab> <<
 vnoremap <S-Tab> <gv
 
+"" '\' + 'md': convert Markdown to HTML
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors
