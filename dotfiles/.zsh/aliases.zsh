@@ -32,5 +32,6 @@ alias kimsufi='ssh sljrobin@94.23.43.27 -p 55688'
 # Nanoc
 alias ncv='nanoc compile --verbose && nanoc view'    # Compile and print website
 
-## TODO: print battery power
+## TODO: battery
+#        print battery power
 ##       print + or -
