@@ -46,8 +46,9 @@ filetype indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf8  " Encoding UTF-8
 set history=700    " History memory
-set mouse=a        " Allow use of mouse
+set mouse=r        " Allow use of mouse
 set nolist         " Desactivate the list option
+set term=xterm     " Set main terminal
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
