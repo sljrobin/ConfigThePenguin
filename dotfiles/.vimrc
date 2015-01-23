@@ -91,6 +91,7 @@ set hlsearch incsearch              " Highlight research results
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs/Indentation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set expandtab                       " Insert spaces instead of tabs
 set tabstop=4                       " Number of spaces for a tabulation
 set shiftwidth=4                    " Number of spaces for a reindent operation
