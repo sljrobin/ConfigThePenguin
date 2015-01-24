@@ -103,6 +103,7 @@ set backspace=indent,eol,start      " Enable correct backspacing
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2                    " Print the last status
 
 "" vim-airline
