@@ -119,6 +119,7 @@ set wildignore=*.o,*~,*.pyc         " Ignore compiled files
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Headers
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Python (.py)
 autocmd BufNewFile *.py so $HOME/.vim/headers/py
 autocmd BufNewFile *.py exe "1," . 9 . "g/Title          :.*/s//Title          :" .expand("%")
