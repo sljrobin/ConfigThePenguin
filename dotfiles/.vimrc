@@ -131,7 +131,7 @@ autocmd bufwritepost,filewritepost *.py execute "normal `a"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extensions
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set '*.md', '*.mkd', '*.mkdn', '*.mdown' as a Markdown file
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
