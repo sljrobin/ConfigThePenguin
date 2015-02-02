@@ -136,3 +136,5 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkdn set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mdown set filetype=markdown
+
+
