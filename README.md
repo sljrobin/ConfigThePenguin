@@ -1,5 +1,5 @@
 # ConfigThePenguin
-Personal Linux configuration.
+A Personal Linux configuration.
 
 ## Table of contents
 * [dotfiles]
