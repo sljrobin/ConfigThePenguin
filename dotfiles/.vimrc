@@ -74,6 +74,7 @@ vnoremap <S-Tab> <gv
 "" '\' + 'md': convert Markdown to HTML
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 
+"" Add Pastetoogle
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors
