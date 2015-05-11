@@ -34,6 +34,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
@@ -93,8 +94,8 @@ set hlsearch incsearch              " Highlight research results
 " Tabs/Indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set expandtab                       " Insert spaces instead of tabs
-set tabstop=4                       " Number of spaces for a tabulation
-set shiftwidth=4                    " Number of spaces for a reindent operation
+set tabstop=2                       " Number of spaces for a tabulation
+set shiftwidth=2                    " Number of spaces for a reindent operation
 set autoindent                      " Turn on auto indentation
 set wrap                            " Enable wrapping
 set linebreak                       " Allow linebreaks
@@ -138,4 +139,9 @@ autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkdn set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mdown set filetype=markdown
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
+let g:indentLine_color_term = 236
