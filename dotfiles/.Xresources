@@ -17,7 +17,7 @@ URxvt.scrollTtyKeypress: true
 !- fontconfig
 Xft.autohint: true
 Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
+Xft.hintstyle: hintslight
 Xft.hinting: true
 Xft.antialias: false 
 Xft.dpi: 96
