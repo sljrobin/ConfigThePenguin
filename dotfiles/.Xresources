@@ -16,12 +16,12 @@ URxvt.scrollTtyKeypress: true
 !-- Fonts
 !- fontconfig
 Xft.autohint: true
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
+Xft.antialias: true 
 Xft.hinting: true
-Xft.antialias: false 
+Xft.hintstyle: hintslight
 Xft.dpi: 96
 Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 
 !- Droid Sans Mono
 URxvt.font: xft:Droid Sans Mono:pixelsize=10:Regular
