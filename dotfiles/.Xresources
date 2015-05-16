@@ -1,5 +1,5 @@
 !-- General
-URxvt.geometry: 80*20
+URxvt.geometry: 80!--*20
 URxvt.termName: xterm-256color
 URxvt.loginShell: true
 URxvt.visualBell: true
@@ -45,22 +45,40 @@ URxvt.colorBD: #AEEE00
 URxvt.borderLess: false
 
 !- Palette
-*color0: #141413
-*color8: #000000
-*color1: #FF2C4B
-*color9: #FF2C4B
-*color2: #AEEE00
-*color10: #AEEE00
-*color3: #FADE3E
-*color11: #FFA724
-*color4: #0A9DFF
-*color12: #0A9DFF
-*color5: #FF9EB8
-*color13: #FF9EB8
-*color6: #8CFFBA
-*color14: #8CFFBA
-*color7: #D9CEC3
-*color15: #FFFFFF
+!--*color0: #141413
+!--*color8: #000000
+!--*color1: #FF2C4B
+!--*color9: #FF2C4B
+!--*color2: #AEEE00
+!--*color10: #AEEE00
+!--*color3: #FADE3E
+!--*color11: #FFA724
+!--*color4: #0A9DFF
+!--*color12: #0A9DFF
+!--*color5: #FF9EB8
+!--*color13: #FF9EB8
+!--*color6: #8CFFBA
+!--*color14: #8CFFBA
+!--*color7: #D9CEC3
+!--*color15: #FFFFFF
+
+
+*color0: #5F5F5F
+*color8: #848484
+*color1: #BF5768
+*color9: #E8909B
+*color2: #82BF9F
+*color10: #9EDCBB
+*color3: #E2C07D
+*color11: #F3D79F
+*color4: #5C95B3
+*color12: #8AB5E4
+*color5: #956D9D
+*color13: #C08CCA
+*color6: #88C9C4
+*color14: #B4B4D5
+*color7: #D0D0D0
+*color15: #F7F7F7
 
 
 !-- Perl Extensions
