@@ -33,9 +33,9 @@ URxvt.letterSpace: -1
 
 !-- Theme
 !- Elements
-URxvt.background: #1C1B1A
-URxvt.foreground: #FFFFFF
-URxvt.cursorColor: #AEEE00
+URxvt.background: #121419
+URxvt.foreground: #808080
+URxvt.cursorColor: #808080
 URxvt.fadeColor: #000000
 
 !- Appearance
