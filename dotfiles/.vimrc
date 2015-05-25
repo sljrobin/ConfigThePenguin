@@ -135,6 +135,7 @@ autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkdn set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mdown set filetype=markdown
 
+" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
