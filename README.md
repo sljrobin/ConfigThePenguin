@@ -14,6 +14,10 @@ An other personal Linux configuration.
 * Plugin manager: [pathogen]
 * Theme: [Bad Wolf]
 
+#### xmonad
+* Install dmenu
+* Install gmrun
+
 ## License
 The content of this project is licensed under the GPL license.
 
