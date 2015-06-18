@@ -1,75 +1,104 @@
 Config { 
-
+   ---------------------------------------------------------------------------------------------------------------------
    -- Appearance
-     font        = "xft:Droid Sans Mono:pixelsize=10:Regular" -- font
-   , bgColor     = "black"                                    -- color; background
-   , fgColor     = "#FFFFFF"                                  -- color; foreground
-   , position    = Top                                        -- position at top
-   , border      = BottomB                                    -- add a bottom border
-   , borderColor = "#646464"                                  -- color; border
+   ---------------------------------------------------------------------------------------------------------------------
+     font             = "xft:Droid Sans Mono:pixelsize=10:Regular" -- font
+   , bgColor          = "#121419"                                  -- color; background
+   , fgColor          = "#D0D0D0"                                  -- color; foreground
+   , position         = Top                                        -- position at top
+   , border           = BottomB                                    -- add a bottom border
+   , borderColor      = "#646464"                                  -- color; border
 
+
+   ---------------------------------------------------------------------------------------------------------------------
    -- Layout
-   , sepChar  = "%"   -- delineator between plugin names and straight text
-   , alignSep = "}{"  -- separator between left-right alignment
-   , template = "%StdinReader% }{ %battery% | %cpu% | %memory% * %swap% | %dynnetwork% | %date%"
+   ---------------------------------------------------------------------------------------------------------------------
+   , sepChar          = "%"                                        -- delineator between plugin names and straight text
+   , alignSep         = "}{"                                       -- separator between left-right alignment
+   , template         = "%StdinReader% }{ %dynnetwork% | %cpu% | %memory% * %swap% | %battery% | %date%"
 
+
+   ---------------------------------------------------------------------------------------------------------------------
    -- Behavior
-   , lowerOnStart     = True    -- send to bottom of window stack on start
-   , hideOnStart      = False   -- start with window unmapped (hidden)
-   , allDesktops      = True    -- show on all desktops
-   , overrideRedirect = True    -- set the Override Redirect flag (Xlib)
-   , pickBroadest     = False   -- choose widest display (multi-monitor)
-   , persistent       = True    -- enable/disable hiding (True = disabled)
+   ---------------------------------------------------------------------------------------------------------------------
+   , lowerOnStart     = True                                       -- send to bottom of window stack on start
+   , hideOnStart      = False                                      -- start with window unmapped (hidden)
+   , allDesktops      = True                                       -- show on all desktops
+   , overrideRedirect = True                                       -- set the Override Redirect flag (Xlib)
+   , pickBroadest     = False                                      -- choose widest display (multi-monitor)
+   , persistent       = True                                       -- enable/disable hiding (True = disabled)
 
+
+   ---------------------------------------------------------------------------------------------------------------------
    -- Plugins
-   , commands = 
-        [
+   ---------------------------------------------------------------------------------------------------------------------
+   , commands         = [
+        ------------------------------------------------------------------------
         -- Battery monitor
-          Run Battery        [ "--template" , "Batt: <acstatus>"
+        ------------------------------------------------------------------------
+          Run Battery        [ "--template" , "<acstatus>"
                              , "--Low"      , "10"
-                             , "--High"     , "80"
-                             , "--low"      , "red"
-                             , "--normal"   , "orange"
-                             , "--high"     , "green"
+                             , "--High"     , "70"
+                             , "--low"      , "#E8909B"
+                             , "--normal"   , "#CA865C"
+                             , "--high"     , "#9EDCBB"
                              , "--"         , "-o" , "<left>% (<timeleft>)"      -- status; discharging
                                             , "-O" , "<fc=#dAA520>Charging</fc>" -- status; AC "on"
                                             , "-i" , "<fc=#006000>Charged</fc>"  -- status; charged
                              ] 50
 
+        ------------------------------------------------------------------------
         -- CPU activity monitor
-        , Run Cpu            [ "--template" , "CPU: <total>%"
+        ------------------------------------------------------------------------
+        , Run Cpu            [ "--template" , "<total>%"
                              , "--Low"      , "50"
                              , "--High"     , "85"
-                             , "--low"      , "green"
-                             , "--normal"   , "orange"
-                             , "--high"     , "red"
+                             , "--low"      , "#9EDCBB"
+                             , "--normal"   , "#CA865C"
+                             , "--high"     , "#E8909B"
                              ] 10
 
+        ------------------------------------------------------------------------
         -- Date
+        ------------------------------------------------------------------------
         , Run Date           "<fc=#ABABAB>%T %_d/%m/%Y</fc>" "date" 10
 
+        ------------------------------------------------------------------------
         -- Network activity monitor
-        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+        ------------------------------------------------------------------------
+        , Run DynNetwork     [ "--template" , "<tx>kB/s/<rx>kB/s"
                              , "--Low"      , "1000"
                              , "--High"     , "5000"
-                             , "--low"      , "green"
-                             , "--normal"   , "orange"
-                             , "--high"     , "red"
+                             , "--low"      , "#9EDCBB"
+                             , "--normal"   , "#CA865C"
+                             , "--high"     , "#BF5768"
                              ] 10
 
+        ------------------------------------------------------------------------
         -- Memory usage monitor
-        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+        ------------------------------------------------------------------------
+        , Run Memory         [ "--template" , "<usedratio>%"
                              , "--Low"      , "20"
                              , "--High"     , "90"
-                             , "--low"      , "green"
-                             , "--normal"   , "orange"
-                             , "--high"     , "red"
+                             , "--low"      , "#9EDCBB"
+                             , "--normal"   , "#CA865C"
+                             , "--high"     , "#E8909B"
                              ] 10
 
+        ------------------------------------------------------------------------
         -- StdinReader
+        ------------------------------------------------------------------------
         , Run StdinReader
 
+        ------------------------------------------------------------------------
         -- Swap
-        , Run Swap           [] 10
+        ------------------------------------------------------------------------
+        , Run Swap           [ "--template" , "<usedratio>%"
+                             , "--Low"      , "20"
+                             , "--High"     , "90"
+                             , "--low"      , "#9EDCBB"
+                             , "--normal"   , "#CA865C"
+                             , "--high"     , "#E8909B"
+                             ] 10
         ]
    }
