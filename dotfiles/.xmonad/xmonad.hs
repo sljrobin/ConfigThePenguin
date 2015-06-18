@@ -203,12 +203,3 @@ defaults = defaultConfig {
     layoutHook         = myLayout,
     manageHook         = myManageHook
 }
-
-
-
-
-
-
-
-
-
