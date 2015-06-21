@@ -24,10 +24,10 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
 !- Droid Sans Mono
-URxvt.font: xft:Droid Sans Mono:pixelsize=10:Regular
-URxvt.boldFont: xft:Droid Sans Mono:pixelsize=10:Bold
-URxvt.italicFont: xft:Droid Sans Mono:pixelsize=10:Italic
-URxvt.boldItalicFont: xft:Droid Sans Mono:pixelsize=10:Bold:Italic
+URxvt.font: xft:Droid Sans Mono:pixelsize=9:Regular
+URxvt.boldFont: xft:Droid Sans Mono:pixelsize=9:Bold
+URxvt.italicFont: xft:Droid Sans Mono:pixelsize=9:Italic
+URxvt.boldItalicFont: xft:Droid Sans Mono:pixelsize=9:Bold:Italic
 URxvt.letterSpace: -1
 
 
