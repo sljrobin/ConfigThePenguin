@@ -1,0 +1,120 @@
+########################################################################################################################
+## Core
+background yes                                # Background
+cpu_avg_samples 1                             # Number of samples for CPU average
+net_avg_samples 2                             # Number of samples for Network average
+total_run_times 0                             # Run forever
+update interval 1                             # Refresh time (seconds)
+
+## Buffers
+double_buffer yes                             # Use X double-buffer extension
+no_buffers yes                                # Show only actual of RAM being used
+text_buffer_size 1024                         # Size of the standard text buffer (bytes)
+
+## Display
+out_to_console no                             # Printing on terminal
+out_to_stderr no                              # Printing on stderr
+
+## Window
+alignment top_right                           # Window at top right
+border_inner_margin 1                         # Inner border margin (px)
+border_width 1                                # Border width (px)
+draw_borders yes                              # Borders for text blocks
+draw_graph_borders yes                         # Borders for graphs
+draw_outline no                               # Outlines
+draw_shades no                                # Shades
+gap_x 5                                       # Gap (left/right)
+gap_y 50                                      # Gap (top/bottom)
+#maximum_width 200                             # Maximum width (px)
+minimum size 1200 20                           # Minimum size (px): <width><height>
+stippled_borders 0                            # Border stippling (px)
+
+#own_window_class Conky
+#own_window yes
+#own_window_type normal
+#own_window_transparent yes
+#own_window_hints below,skip_taskbar,skip_pager
+
+
+
+## Fonts
+extra_newline yes                             # Print extra new lines
+override_utf8_locale yes                      # Force UTF-8
+uppercase no                                  # No uppercases everywhere
+#use_spacer no                                 # No additional spaces
+use_xft yes                                   # Use Xft fonts
+xftalpha 0.8                                  # Font transparency
+xftfont Droid Sans Mono:style=Regular:size=8  # Font style
+
+
+## Appearance
+pad_percents 2                                # Number of decimals
+short_units yes                               # Use short units
+
+
+########################################################################################################################
+TEXT
+## System
+#${color #777777}System${color}
+SYSTEM ${hr}
+System ${alignr}${sysname}
+Kernel ${alignr}${kernel}
+Arch ${alignr}${machine}
+Host ${alignr}${nodename}
+---
+Uptime ${alignr}${uptime_short}
+Date ${alignr}${time %d/%m/%Y}
+Time ${alignr}${time %H:%M:%S}
+
+## CPU
+CPU ${hr}
+Freq ${alignr}${freq_g}GHz
+Temp ${alignr}${acpitemp}°C
+Usage ${cpubar 5,128} ${alignr}${cpu cpu0}%
+${cpugraph}
+
+## Memory
+MEMORY ${hr}
+RAM  ${membar 5,96}  ${alignc}${memperc}% ${alignr}${mem}/${memmax}
+SWAP ${swapbar 5,96}   ${alignc}${swapperc}% ${alignr}${swap}/${swapmax}
+
+## Drive
+DRIVE ${hr}
+Temp ${alignr}
+/    ${fs_bar 5,96 /}${alignr}${fs_used /}/${fs_size /}
+
+
+## Processes
+PROCESSES ${hr}
+Total ${alignr}${processes}
+
+${top name 1}${alignr}${top pid 1}${top cpu 1}%
+${top name 2}${alignr}${top pid 2}${top cpu 2}%
+${top name 3}${alignr}${top pid 3}${top cpu 3}%
+---
+${top_mem name 1}${alignr}${top_mem mem 1}%
+${top_mem name 2}${alignr}${top_mem mem 2}%
+${top_mem name 3}${alignr}${top_mem mem 3}%
+
+## Network
+NETWORK ${hr}
+IP ${alignr}${addr}
+Up ${alignr}${upspeed}/s
+Down ${alignr}${downspeed}/s
+${upspeedgraph 15,128} ${downspeedgraph 15,128}
+Total up ${alignr}${totalup}
+Total down ${alignr}${totaldown}
+${wireless_essid wlp1s0} ${alignr}${wireless_link_qual_perc wlp1s0}%
+
+## Battery
+BATTERY ${hr}
+Status ${alignr}${battery_percent} ${acpiacadapter}
+Time ${alignr}${battery_time}
+Usage ${battery_bar 5,128}
+
+## Updates
+UPDATES ${hr}
+aptitude: ${alignr}${exec aptitude search "~U" | wc -l} update(s)
+#pacman: ${alignr}${exec pacman -Qu | wc -l} update(s)
+#yaourt: ${alignr}${exec yaourt -Qu | wc -l} update(s)
+
