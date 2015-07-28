@@ -17,6 +17,7 @@ An other personal Linux configuration.
 #### xmonad
 * Install dmenu
 * Install gmrun
+* Install dzen2
 
 ## License
 The content of this project is licensed under the GPL license.
