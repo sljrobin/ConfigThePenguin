@@ -1,6 +1,7 @@
 autoload -Uz compinit
 compinit
 
+
 source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
 source ~/.zsh/colors.zsh
