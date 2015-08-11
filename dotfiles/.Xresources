@@ -1,4 +1,4 @@
-!-- General
+!-- Core
 URxvt.geometry: 80!--*20
 URxvt.termName: xterm-256color
 URxvt.loginShell: true
