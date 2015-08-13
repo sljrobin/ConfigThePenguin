@@ -48,7 +48,7 @@ notify-format "%d N (%n A, %f F)"        # Notifications (x new (x articles, x f
 ## Colors
 color article white default              # Article
 color background white default           # Background
-color info white blue                    # Info
+color info red blue                    # Info
 color listfocus default white            # List focus
 color listfocus_unread default white     # List focus unread
 color listnormal white default           # List normal
