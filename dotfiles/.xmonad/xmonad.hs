@@ -4,7 +4,6 @@
 -- System
 import System.Exit (exitSuccess)
 import System.IO
-
 -- Core
 import XMonad                          -- Main lib
 import qualified Data.Map        as M  -- Mouse bindings
