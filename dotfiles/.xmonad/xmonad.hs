@@ -96,7 +96,7 @@ myKeys    =
     ----------------------------------------------------------------------------
     -- GUI; grid
     ----------------------------------------------------------------------------
-    [ ("M-,"        , goToSelected $ myGSConfig myGridConfig)           -- <Mod> + <Left>: move to the previous workspace
+    [ ("M-,"        , goToSelected $ myGSConfig myGridConfig)           -- <Mod> + <,>
     , ("M-S-,"      , bringSelected $ myGSConfig myGridConfig)          -- <Mod> + <Shift> + <,>: move to the next workspace
     ]
     ++
