@@ -9,13 +9,13 @@ An other personal Linux configuration.
 
 ## dotfiles
 Configuration files for various applications.
-* __[Conky]__: [`.conkyrc`]
-* __[Git]__: [`.gitconfig`] 
+* __[Conky]__ [`.conkyrc`]
+* __[Git]__ [`.gitconfig`] 
 * __[Newsbeuter]__
     * [`config`] _Newsbeuter - Configuration_
     * [`urls`] _Newsbeuter - URLs_
-* __[tmux]__: [`.tmux.conf`]
-* __[vim]__: [`.vimrc`]
+* __[tmux]__ [`.tmux.conf`]
+* __[vim]__ [`.vimrc`]
 * __[X.Org]__
     * [`.Xresources`] _X.Org - Parameters for X client applications_
     * [`.xinitrc`] _X.Org - Starting script_
