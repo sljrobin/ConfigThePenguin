@@ -65,7 +65,7 @@ The content of this project is licensed under the GPL license.
 [`data/`]: /dotfiles/.xmonad/data "data/"
 [`lib/`]: /dotfiles/.xmonad/lib "lib/"
 [`urls`]: /dotfiles/.newsbeuter/urls "urls"
-[`xmonad.hs`]: /dotfiles/.xmonad/xmonad/hs "xmonad.hs"
+[`xmonad.hs`]: /dotfiles/.xmonad/xmonad.hs "xmonad.hs"
 
 [Conky]: https://github.com/brndnmtthws/conky "Conky"
 [Git]: https://git-scm.com/ "Git"
