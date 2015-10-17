@@ -1,17 +1,29 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                                                                                      "
+"                                            A Personal Linux Configuration                                            " 
+"                                                                                                                      "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " .vimrc
 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Author
 " -> Simon L. J. Robin
 " -> http://sljrobin.com
 " -> sljrobin@gmail.com
 "
+" About ConfigThePenguin
+" -> http://work.sljrobin.com/configthepenguin
+" -> https://github.com/sljrobin/ConfigThePenguin
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections
-" -> Pathogen
+" -> Initialization
 " -> General
+" -> Features
 " -> Mapping
-" -> Theme/Colors
-" -> Tabs/Indentation
+" -> Appearance
+" -> Indentation
 " -> Statusline
 " -> Headers
 "
@@ -31,118 +43,203 @@
 "    6. Restore the cursor position back to its previous position
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pathogen
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin on
-filetype indent on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Initialization
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Encoding
+scriptencoding utf8                 " Character Encoding used in the script
+set encoding=utf-8                  " Main Character Encoding
+setglobal fileencoding=utf-8        " Sets UTF-8 as the default value for a particular file (local to buffer)
+
+"" Resetting
+set nocompatible                    " Do not let Vim starts its initializations
+
+"" Pathogen
+filetype off                        " Unable file type detection
+call pathogen#infect()              " Enable Pathogen (1/2)
+call pathogen#helptags()            " Enable Pathogen (2/2)
+filetype plugin on                  " Enable the plugin files for specific file types
+filetype indent on                  " Enable the indent file for specific file types
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set encoding=utf8  " Encoding UTF-8
-set history=700    " History memory
-set mouse=r        " Allow use of mouse
-set nolist         " Desactivate the list option
-set term=xterm     " Set main terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" `,`: `mapleader`
+let mapleader=','
+
+"" Edit/Load `.vimrc`
+" `mapleader` + `ev`: edit the `.vimrc` file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+" `mapleader` + `sv`: reload the `.vimrc` file
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mapping
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" 'Ctrl' + 'd': delete the current line
-imap <C-D> <esc>ddi
-nmap <C-D> dd
-
-"" 'Tab': indent
+""" Indentation
+" `Tab`: indent
 nnoremap <Tab> >>
 vnoremap <Tab> >gv
-
-"" 'Shift' + 'Tab': unindent
-inoremap <S-Tab> <C-D>
+" `Shift` + `Tab`: unindent
+"inoremap <S-Tab> <C-D>
+imap <S-Tab> <C-d>
+imap <C-S-Tab> <C-d>
 nnoremap <S-Tab> <<
 vnoremap <S-Tab> <gv
 
-"" '\' + 'md': convert Markdown to HTML
-nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
+""" Edition
+" `mapleader` + `md`: convert Markdown to HTML
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
 
-"" Add Pastetoogle
+"" `F2`: enable/unable paste mode
+"set pastetoggle=<F2>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Theme/Colors
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on                           " Enable colors
+"" `Ctrl` + `d`: delete the current line
+"imap <C-d> <esc>ddi
+"nmap <C-d> dd
+
+"" `Ctrl` + `l`: clears the highlight from the last search
+nnoremap <C-l> :nohlsearch<CR><C-l>
+noremap! <C-l> <ESC>:nohlsearch<CR><C-l>i
+
+
+"" `F8: open/close Tagbar`
+nmap <F8> :Tlist<CR>
+
+"" `F10`: open/close NERD Tree
+map <silent> <F10> :NERDTreeToggle<CR>
+map! <silent> <F10> <ESC>:NERDTreeToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Features
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mapping
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Appearance
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Start
+set shortmess+=I                    " Hide the launch screen
+
+"" Colors
 set t_Co=256                        " Enable 256 colors
-colorscheme badwolf                 " Main theme
+syntax on                           " Enable syntax highlighting
+
+"" Theme
+let base16colorspace=256            " Access colors present in 256 colorspace
+colorscheme base16-default          " Main colorscheme
+set background=dark                 " Color the background 
 set cursorline                      " Highlight the current line
 set number                          " Enable line numbers
 set numberwidth=4                   " Line numbers column width
 set showmatch                       " Highlight matching brackets
-set hlsearch incsearch              " Highlight research results
+set foldcolumn=1                    " Fold Column width
+set foldmethod=indent               " Indentation used for the kind of folding
+
+"" Search
+set hlsearch                        " Highlight research results
+set ignorecase                      " Ignore case when searching
+set incsearch                       " Start searching during typing
+set smartcase                       " If pattern contains an uppercase letter, enable case sensitive
+
+"" Terminal
+set lazyredraw                      " Better performance when executing macros
+set noerrorbells                    " No error sounds
+set nolist                          " Do not show invisible characters by default
+set scrolloff=20                    " Number of lines above and below the cursor
+set title                           " Change the terminal's title
+set ttyfast                         " Fast terminal
+set visualbell                      " No error sounds
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabs/Indentation
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set expandtab                       " Insert spaces instead of tabs
-set tabstop=2                       " Number of spaces for a tabulation
-set shiftwidth=2                    " Number of spaces for a reindent operation
+set tabstop=4                       " Number of spaces for a tabulation
+set shiftwidth=4                    " Number of spaces for a reindent operation
 set autoindent                      " Turn on auto indentation
 set wrap                            " Enable wrapping
 set linebreak                       " Allow linebreaks
 set backspace=indent,eol,start      " Enable correct backspacing
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2                    " Print the last status
 
-"" vim-airline
-let g:airline_powerline_fonts=1     " Enable powerline-fonts
-let g:airline_theme='powerlineish'  " Theme 'powerlineish'
 
 "" Command bar
 set showcmd                         " Show command in bottom bar
-set cmdheight=2                     " Command bar height
-set wildmenu                        " Enhance command line completion
-set wildignore=*.o,*~,*.pyc         " Ignore compiled files
+set cmdheight=1                     " Command bar height
+
+"" Wild menu
+if has("wildmenu")                  " Check compatibility
+    set wildignore+=*.a,*.hi,*.o         " Ignore `*.a`, `*.hi`, `*.o` files
+    set wildignore+=*~,*.bak,*.swp,*.tmp " Ignore `*~`, `*.bak`, `*.swp`, `*.tmp` files
+    set wildignore+=*.class,*.pyc        " Ignore `*.class`, `*.pyc` files
+    set wildignore+=.DS_Store            " Ignore `.DS_Store` files
+    set wildignore+=.git,.hg,.svn        " Ignore `.git`, `.hg`, `.svn` files
+    set wildignore+=*.bmp,*.gif,*.ico    " Ignore `*.bmp`, `*.gif`, `*.ico` files
+    set wildignore+=*.jpg,*.jpeg,*.png   " Ignore `*.jpg`, `*.jpeg`, `*.png` files
+    set wildmenu                         " Enhance command line completion
+    set wildmode=longest:full,full       " Complete the longest possible part, then switch
+endif
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Headers
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Python (.py)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Bash (`*.sh`)
+autocmd BufNewFile *.sh so $HOME/.vim/headers/sh
+autocmd BufNewFile *.sh exe "1," . 9 . "g/Filename:.*/s//Filename: " .expand("%")
+autocmd BufNewFile *.sh exe "1," . 9 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+autocmd Bufwritepre,filewritepre *.sh execute "normal ma" 
+autocmd Bufwritepre,filewritepre *.sh exe "1," . 9 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+autocmd Bufwritepost,filewritepost *.sh execute "normal `a" 
+
+"" C
+" (`*.c`)
+autocmd BufNewFile *.c so $HOME/.vim/headers/c
+autocmd BufNewFile *.c exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
+autocmd BufNewFile *.c exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+autocmd Bufwritepre,filewritepre *.c execute "normal ma" 
+autocmd Bufwritepre,filewritepre *.c exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+autocmd Bufwritepost,filewritepost *.c execute "normal `a" 
+" (`*.h`)
+autocmd BufNewFile *.h so $HOME/.vim/headers/c
+autocmd BufNewFile *.h exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
+autocmd BufNewFile *.h exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+autocmd Bufwritepre,filewritepre *.h execute "normal ma" 
+autocmd Bufwritepre,filewritepre *.h exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+autocmd Bufwritepost,filewritepost *.h execute "normal `a" 
+
+"" Python (`*.py`)
 autocmd BufNewFile *.py so $HOME/.vim/headers/py
-autocmd BufNewFile *.py exe "1," . 9 . "g/Title          :.*/s//Title          :" .expand("%")
-autocmd BufNewFile *.py exe "1," . 9 . "g/Created        :.*/s//Created        :" .strftime("%Y-%m-%d %H:%M:%S")
+autocmd BufNewFile *.py exe "1," . 10 . "g/Filename:.*/s//Filename: " .expand("%")
+autocmd BufNewFile *.py exe "1," . 10 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
 autocmd Bufwritepre,filewritepre *.py execute "normal ma" 
-autocmd Bufwritepre,filewritepre *.py exe "1," . 9 . "g/Modified       :.*/s/Modified       :.*/Modified       :" .strftime("%Y-%m-%d %H:%M:%S") 
-autocmd bufwritepost,filewritepost *.py execute "normal `a" 
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+autocmd Bufwritepost,filewritepost *.py execute "normal `a" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extensions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set '*.md', '*.mkd', '*.mkdn', '*.mdown' as a Markdown file
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set `*.md`, `*.mkd`, `*.mkdn`, `*.mdown` as a Markdown file
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkdn set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mdown set filetype=markdown
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-" IndentLine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_color_term = 236
+let g:indentLine_char = '|'
 
 
-
+let g:Tlist_Use_Right_Window = 1
