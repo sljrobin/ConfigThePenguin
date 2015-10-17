@@ -1,6 +1,6 @@
 .git/
 *.swp
-ditfiles/.newsbeuter/cache.*
+dotfiles/.newsbeuter/cache.*
 dotfiles/.xmonad/xmonad.errors
 dotfiles/.xmonad/xmonad.hi
 dotfiles/.xmonad/xmonad.o
