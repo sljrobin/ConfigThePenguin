@@ -9,7 +9,7 @@ An other personal Linux configuration.
 
 ## dotfiles
 Configuration files for various applications.
-* [__tmux__]: [`.tmux.conf`]
+* __[tmux]__: [`.tmux.conf`]
 * [`.vimrc`]
 
 
