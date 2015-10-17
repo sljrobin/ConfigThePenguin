@@ -1,3 +1,8 @@
+## Configuration for newsbeuter
+## Author: Simon L. J. Robin
+#
+########################################################################################################################
+
 ## Core
 browser firefox                               # Web browser to open URLs
 cache-file "~/.newsbeuter/cache.db"           # Path for the cache file
@@ -50,7 +55,7 @@ color article color07 color00                 # Article
 color background color00 color00              # Background
 color info color07 color19                    # Info
 color listfocus color04 color18               # List focus
-color listfocus_unread color05 color18 bold    # List focus unread
+color listfocus_unread color05 color18 bold   # List focus unread
 color listnormal color07 color00              # List normal
 color listnormal_unread color07 color00 bold  # List normal unread
 search-highlight-colors color00 color16       # Hihglighting colors when searching for text

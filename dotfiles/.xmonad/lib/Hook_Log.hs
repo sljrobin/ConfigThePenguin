@@ -11,7 +11,7 @@ import Appearance                       -- Load colors, dimensions, and fonts
 -- Variables
 ----------------------------------------------------------------------------
 -- Conky
-myDzenPathConky  = "~/.xmonad/data/conky/"
+myDzenPathConky  = "~/.xmonad/data/conky/"              -- Dzen: Main path
 myDzenTopRConky  = myDzenPathConky ++ "conky_DzenTopR"  -- Dzen Top Right: Conky configuration file path
 myDzenBotLConky  = myDzenPathConky ++ "conky_DzenBotL"  -- Dzen Bottom Left: Conky configuration file path
 myDzenBotRConky  = myDzenPathConky ++ "conky_DzenBotR"  -- Dzen Bottom Right: Conky configuration file path
