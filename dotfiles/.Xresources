@@ -1,9 +1,14 @@
+!--- Xresources
+
 !-- Core
-URxvt.geometry: 80!--*20
+!XTerm*termName: xterm-256color
+URxvt.geometry: 80*20
 URxvt.termName: xterm-256color
-URxvt.loginShell: true
-URxvt.visualBell: true
+!URxvt.termName: rxvt-unicode
+URxvt.loginShell: false
+URxvt.visualBell: false
 URxvt.urgentOnBell: true
+
 
 !-- Scrolling
 URxvt.saveLines: 5000
@@ -12,13 +17,84 @@ URxvt.scrollTtyOuput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 
+
 !-- Keyboard
-URxvt.keysym.C-Left: \033[1;5D
+URxvt.keysym.S-Up: \033[1;2A
+URxvt.keysym.S-Down: \033[1;2B
+URxvt.keysym.S-Right: \033[1;2C
+URxvt.keysym.S-Left: \033[1;2D
+URxvt.keysym.S-Home: \033[1;2H
+URxvt.keysym.S-End: \033[1;2F
+URxvt.keysym.C-Up: \033[1;5A
+URxvt.keysym.C-Down: \033[1;5B
 URxvt.keysym.C-Right: \033[1;5C
+URxvt.keysym.C-Left: \033[1;5D
+URxvt.keysym.C-S-Up: \033[1;6A
+URxvt.keysym.C-S-Down: \033[1;6B
+URxvt.keysym.C-S-Right: \033[1;6C
+URxvt.keysym.C-S-Left: \033[1;6D
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!-- Theme
+!- Palette (Base16 Dark Default)
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #B8B8B8
+#define base05 #D8D8D8
+#define base06 #E8E8E8
+#define base07 #F8F8F8
+#define base08 #AB4642
+#define base09 #DC9656
+#define base0A #F7CA88
+#define base0B #A1B56C
+#define base0C #86C1B9
+#define base0D #7CAFC2
+#define base0E #BA8BAF
+#define base0F #A16946
+
+!- Main colors
+*.color0: base00
+*.color1: base08
+*.color2: base0B
+*.color3: base0A
+*.color4: base0D
+*.color5: base0E
+*.color6: base0C
+*.color7: base05
+*.color8: base03
+*.color9: base09
+*.color10: base01
+*.color11: base02
+*.color12: base04
+*.color13: base06
+*.color14: base0F
+*.color15: base07
+
+!- Windows 
+URxvt.background: base00
+URxvt.foreground: base05
+URxvt.fadeColor: #000000
+URxvt.fading: 20
+
+!- Borders
+URxvt.borderLess: false
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+
+!- Cursor
+URxvt.cursorColor: base05
+URxvt.cursorBlink: true
+URxvt.colorBD: #AEEE00
+Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.size: 22
 
 
 !-- Fonts
-!- fontconfig
+!- Font config
 Xft.autohint: true
 Xft.antialias: true 
 Xft.hinting: true
@@ -28,51 +104,14 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
 !- Droid Sans Mono
-URxvt.font: xft:Droid Sans Mono:pixelsize=10:Regular
-URxvt.boldFont: xft:Droid Sans Mono:pixelsize=10:Bold
-URxvt.italicFont: xft:Droid Sans Mono:pixelsize=10:Italic
-URxvt.boldItalicFont: xft:Droid Sans Mono:pixelsize=10:Bold:Italic
+URxvt.font: xft:Droid Sans Mono:pixelsize=12:Regular
+URxvt.boldFont: xft:Droid Sans Mono:pixelsize=12:Bold
+URxvt.italicFont: xft:Droid Sans Mono:pixelsize=12:Italic
+URxvt.boldItalicFont: xft:Droid Sans Mono:pixelsize=12:Bold:Italic
 URxvt.letterSpace: -1
 
-
-!-- Theme
-!- Elements
-URxvt.background: #000000
-URxvt.foreground: #D0D0D0
-URxvt.cursorColor: #808080
-URxvt.fadeColor: #000000
-
-!- Appearance
-URxvt.cursorBlink: true
-URxvt.fading: 30
-URxvt.colorBD: #AEEE00
-URxvt.borderLess: false
-URxvt.internalBorder: 0
-URxvt.externalBorder: 0
-
-!- Colors
-*color0: #2E3436
-*color1: #A40000
-*color2: #4E9A06
-*color3: #C4A000
-*color4: #3465A4
-*color5: #75507B
-*color6: #CE5C00
-*color7: #BABDB9
-*color8: #555753
-*color9: #EF2929
-*color10: #8AE234
-*color11: #FCE94F
-*color12: #729FCF
-*color13: #AD7FA8
-*color14: #FCAF3E
-*color15: #EEEEEC
 
 !-- Perl Extensions
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
-
-!-- Xcursor
-Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.size: 22
