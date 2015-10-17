@@ -9,12 +9,22 @@ An other personal Linux configuration.
 
 ## dotfiles
 Configuration files for various applications.
+* [__tmux__]: [`.tmux.conf`]
+* [`.vimrc`]
+
 
 #### vim
-* Plugins
-    * [NERDTree]
-    * [vim-airline]
+* Colorscheme: [base16]
 * Plugin manager: [pathogen]
+* Plugins
+    * [Command-T]
+    * [delimitMate]
+    * [indentLine]
+    * [NERDTree]
+    * [surround]
+    * [Taglist]
+    * [vim-multiple-cursors]
+    * [YouCompleteMe]
 
 ## scripts
 Installation scripts.
@@ -28,6 +38,18 @@ The content of this project is licensed under the GPL license.
 [vim]: /README.md#vim "vim"
 [License]: /README.md#license "License"
 
+
+[.tmux.conf]: /dotfiles/.tmux.info ".tmux.conf"
+[tmux]: https://tmux.github.io/ "tmux"
+
+
+[base16]: https://github.com/chriskempson/base16-vim "base16"
+[Command-T]: https://github.com/wincent/Command-T "Command-T"
+[delimitMate]: https://github.com/Raimondi/delimitMate "delimitMate"
+[indentLine]: https://github.com/Yggdroot/indentLine "indentLine"
 [NERDTree]: https://github.com/scrooloose/nerdtree "NERDTree"
 [pathogen]: https://github.com/tpope/vim-pathogen "pathogen"
-[vim-airline]: https://github.com/bling/vim-airline "vim-airline"
+[surround]: https://github.com/tpope/vim-surround "surround"
+[Taglist]: http://vim-taglist.sourceforge.net/ "Taglist"
+[vim-multiple-cursors]: https://github.com/terryma/vim-multiple-cursors "vim-multiple-cursors"
+[YouCompleteMe]: https://github.com/Valloric/YouCompleteMe "YouCompleteMe"

@@ -101,13 +101,13 @@ nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
 nnoremap <C-l> :nohlsearch<CR><C-l>
 noremap! <C-l> <ESC>:nohlsearch<CR><C-l>i
 
+"" `F9`: open/close NERD Tree
+map <silent> <F9> :NERDTreeToggle<CR>
+map! <silent> <F9> <ESC>:NERDTreeToggle<CR>
 
-"" `F8: open/close Tagbar`
-nmap <F8> :Tlist<CR>
+"" `F10: open/close Tagbar`
+nmap <F10> :Tlist<CR>
 
-"" `F10`: open/close NERD Tree
-map <silent> <F10> :NERDTreeToggle<CR>
-map! <silent> <F10> <ESC>:NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Features
