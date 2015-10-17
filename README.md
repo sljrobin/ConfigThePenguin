@@ -9,7 +9,7 @@ An other personal Linux configuration.
 
 ## dotfiles
 Configuration files for various applications.
-* __[tmux]__: `[.tmux.conf]`
+* __[tmux]__: [`.tmux.conf`]
 * [`.vimrc`]
 
 
@@ -39,7 +39,7 @@ The content of this project is licensed under the GPL license.
 [License]: /README.md#license "License"
 
 
-[.tmux.conf]: /dotfiles/.tmux.info ".tmux.conf"
+[`.tmux.conf`]: /dotfiles/.tmux.info ".tmux.conf"
 [tmux]: https://tmux.github.io/ "tmux"
 
 
