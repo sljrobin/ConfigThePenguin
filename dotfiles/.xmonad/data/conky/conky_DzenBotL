@@ -1,0 +1,11 @@
+background no
+out_to_x no
+out_to_console yes
+update_interval 1
+total_run_times 0
+use_spacer none
+
+
+TEXT
+${exec $HOME/.xmonad/data/scripts/music/volume.sh} | \
+${exec $HOME/.xmonad/data/scripts/music/song.sh}
