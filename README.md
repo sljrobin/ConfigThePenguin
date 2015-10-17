@@ -61,10 +61,10 @@ The content of this project is licensed under the GPL license.
 [`.Xresources`]: /dotfiles/.Xresources ".Xresources"
 [`.zshrc`]: /dotfiles/.zshrc ".zshrc"
 
-[`config`]: /dotfiles/newsbeuter/config "config"
+[`config`]: /dotfiles/.newsbeuter/config "config"
 [`data/`]: /dotfiles/.xmonad/data "data/"
 [`lib/`]: /dotfiles/.xmonad/lib "lib/"
-[`urls`]: /dotfiles/newsbeuter/urls "urls"
+[`urls`]: /dotfiles/.newsbeuter/urls "urls"
 [`xmonad.hs`]: /dotfiles/.xmonad/xmonad/hs "xmonad.hs"
 
 [Conky]: https://github.com/brndnmtthws/conky "Conky"
