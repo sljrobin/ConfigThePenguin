@@ -2,12 +2,11 @@
 ## Author: Simon L. J. Robin
 #
 # Tagging feeds
-#    * Electronics    * Malware Analysis       * Reverse Engineering
-#    * Exploit        * Misc                   * Tools
-#    * Forensics      * News                   * Tutorials
-#    * Fuzzing        * Penetration Testing    * Vulnerability
-#                     * Podcast                * Write-up
-#                     * Programming
+#    * Electronics         * Misc                    * Reverse Engineering
+#    * Exploit             * News                    * Tools
+#    * Forensics           * Penetration Testing     * Tutorials
+#    * Fuzzing             * Podcast                 * Vulnerability
+#    * Malware Analysis    * Programming             * Write-up
 #
 ########################################################################################################################
 
