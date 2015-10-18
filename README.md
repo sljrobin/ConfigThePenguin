@@ -29,7 +29,12 @@ The repository is divided into several directories:
     * [`.zshrc`] _Zsh - Main configuration file_
 
 #### [`scripts/`]
-
+* [`core/`] _Variables and functions_
+* [`lib/`](/scripts/lib/) _Library_
+    * [`apps/`] _Scripts for specific applications_
+    * [`os/`] _Scripts for installing packets depending on the OS_
+    * [`pc/`] _Scripts for installing drivers_
+* [`main.sh`] _Main script_
 
 ## Information
 #### vim
@@ -49,10 +54,11 @@ The repository is divided into several directories:
 ## License
 The content of this project is licensed under the GPL license.
 
+
+[Content]: /README.md#content "Content"
 [Information]: /README.md#information "Information"
 [License]: /README.md#license "License"
 [vim]: /README.md#vim "vim"
-
 
 [`.conkyrc`]: /dotfiles/.conkyrc ".conkyrc"
 [`.gitconfig`]: /dotfiles/.gitconfig ".gitconfig"
@@ -62,10 +68,14 @@ The content of this project is licensed under the GPL license.
 [`.Xresources`]: /dotfiles/.Xresources ".Xresources"
 [`.zshrc`]: /dotfiles/.zshrc ".zshrc"
 
+[`apps/`]: /dotfiles/scripts/lib/apps/ "apps/"
 [`config`]: /dotfiles/.newsbeuter/config "config"
 [`dotfiles/`]: /dotfiles/ "dotfiles/"
 [`data/`]: /dotfiles/.xmonad/data "data/"
 [`lib/`]: /dotfiles/.xmonad/lib "lib/"
+[`main.sh`]: /scripts/main.sh "main.sh"
+[`os/`]: /dotfiles/scripts/lib/os/ "os/"
+[`pc/`]: /dotfiles/scripts/lib/pc/ "pc/"
 [`scripts/`]: /scripts/ "scripts/"
 [`urls`]: /dotfiles/.newsbeuter/urls "urls"
 [`xmonad.hs`]: /dotfiles/.xmonad/xmonad.hs "xmonad.hs"
@@ -78,7 +88,6 @@ The content of this project is licensed under the GPL license.
 [X.Org]: http://www.x.org/ "X.Org"
 [xmonad]: http://xmonad.org/ "xmonad"
 [Zsh]: http://www.zsh.org/ "Zsh"
-
 
 [base16]: https://github.com/chriskempson/base16-vim "base16"
 [Command-T]: https://github.com/wincent/Command-T "Command-T"
