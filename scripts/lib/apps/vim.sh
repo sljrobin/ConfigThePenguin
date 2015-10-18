@@ -1,11 +1,8 @@
 #!/bin/bash
 
-source _core.sh
-
-
 ########################################################################################################################
 # base16
-function install_vim_base16()
+function vim_install_base16()
 {
   colorize "Installing base16..." $CLR_LPURPLE "y"
   colorize "base16 [1/${STP_VIM_BASE16}] Going to 'bundle/'" $CLR_LBLUE "y"
@@ -18,7 +15,7 @@ function install_vim_base16()
 
 ########################################################################################################################
 # Command-T
-function install_vim_commandt()
+function vim_install_commandt()
 {
   colorize "Installing Command-T..." $CLR_LPURPLE "y"
   colorize "Command-T [1/${STP_VIM_COMMANDT}] Going to 'bundle/'" $CLR_LBLUE "y"
@@ -37,7 +34,7 @@ function install_vim_commandt()
 
 ########################################################################################################################
 # delimitMate
-function install_vim_delimitmate()
+function vim_install_delimitmate()
 {
   colorize "Installing delimitMate..." $CLR_LPURPLE "y"
   colorize "delimitMate [1/${STP_VIM_DELIMITMATE}] Going to 'bundle/'" $CLR_LBLUE "y"
@@ -50,7 +47,7 @@ function install_vim_delimitmate()
 
 ########################################################################################################################
 # indentLine
-function install_vim_indentline()
+function vim_install_indentline()
 {
   colorize "Installing indentLine..." $CLR_LPURPLE "y"
   colorize "indentLine [1/${STP_VIM_INDENTLINE}] Going to 'bundle/'" $CLR_LBLUE "y"
@@ -63,7 +60,7 @@ function install_vim_indentline()
 
 ########################################################################################################################
 # Multiple Cursors
-function install_vim_multiplecursors()
+function vim_install_multiplecursors()
 {
   colorize "Installing vim-multiple-cursors..." $CLR_LPURPLE "y"
   colorize "vim-multiple-cursors [1/${STP_VIM_MULTIPLECURSORS}] Going to 'bundle/'" $CLR_LBLUE "y"
@@ -76,7 +73,7 @@ function install_vim_multiplecursors()
 
 ########################################################################################################################
 # NERD Tree
-function install_vim_nerdtree()
+function vim_install_nerdtree()
 {
   colorize "Installing NERD Tree..." $CLR_LPURPLE "y"
   colorize "NERD Tree [1/${STP_VIM_NERDTREE}] Going to 'bundle/'" $CLR_LBLUE "y"
@@ -89,7 +86,7 @@ function install_vim_nerdtree()
 
 ########################################################################################################################
 # Pathogen
-function install_vim_pathogen()
+function vim_install_pathogen()
 {
   colorize "Installing Pathogen..." $CLR_LPURPLE "y"
   colorize "Pathogen [1/${STP_VIM_PATHOGEN}] Creating directories ('autoload/')" $CLR_LBLUE "y"
@@ -106,7 +103,7 @@ function install_vim_pathogen()
 
 ########################################################################################################################
 # Surround
-function install_vim_surround()
+function vim_install_surround()
 {
   colorize "Installing Surround..." $CLR_LPURPLE "y"
   colorize "Surround [1/${STP_VIM_SURROUND}] Going to 'bundle/'" $CLR_LBLUE "y"
@@ -119,7 +116,7 @@ function install_vim_surround()
 
 ########################################################################################################################
 # Taglist
-function install_vim_taglist()
+function vim_install_taglist()
 {
   TAGLIST_FOLDER="taglist.zip"    # Name of the downloaded file
 
@@ -138,7 +135,7 @@ function install_vim_taglist()
 
 ########################################################################################################################
 # YouCompleteMe
-function install_vim_youcompleteme()
+function vim_install_youcompleteme()
 {
   colorize "Installing YouCompleteMe..." $CLR_LPURPLE "y"
   colorize "YouCompleteMe [1/${STP_VIM_YOUCOMPLETEME}] Going to 'bundle/'" $CLR_LBLUE "y"

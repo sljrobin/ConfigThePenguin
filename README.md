@@ -2,13 +2,15 @@
 An other personal Linux configuration.
 
 ## Table of contents
-* [dotfiles]
-    * [vim]
-* [scripts]
+* [Content]
 * [License]
 
-## dotfiles
-Configuration files for various applications.
+## Content
+The repository is divided into several directories:
+* [`dotfiles/`] _Configuration files for various applications_
+* [`scripts/`] _Installation scripts_
+
+#### [`dotfiles/`]
 * __[Conky]__ [`.conkyrc`]
 * __[Git]__ [`.gitconfig`] 
 * __[Newsbeuter]__
@@ -17,8 +19,8 @@ Configuration files for various applications.
 * __[tmux]__ [`.tmux.conf`]
 * __[vim]__ [`.vimrc`]
 * __[X.Org]__
-    * [`.Xresources`] _X.Org - Parameters for X client applications_
     * [`.xinitrc`] _X.Org - Starting script_
+    * [`.Xresources`] _X.Org - Parameters for X client applications_
 * __[xmonad]__
     * [`data/`] _xmonad - Conky/Icons/Scripts_
     * [`lib/`] _xmonad - External configuration files_
@@ -26,7 +28,10 @@ Configuration files for various applications.
 * __[Zsh]__
     * [`.zshrc`] _Zsh - Main configuration file_
 
+#### [`scripts/`]
 
+
+## Information
 #### vim
 * Colorscheme: [base16]
 * Plugin manager: [pathogen]
@@ -40,17 +45,13 @@ Configuration files for various applications.
     * [vim-multiple-cursors]
     * [YouCompleteMe]
 
-## scripts
-Installation scripts.
-
 
 ## License
 The content of this project is licensed under the GPL license.
 
-[dotfiles]: /README.md#dotfiles "dotfiles"
-[scripts]: /README.md#scripts "scripts"
-[vim]: /README.md#vim "vim"
+[Information]: /README.md#information "Information"
 [License]: /README.md#license "License"
+[vim]: /README.md#vim "vim"
 
 
 [`.conkyrc`]: /dotfiles/.conkyrc ".conkyrc"
@@ -62,8 +63,10 @@ The content of this project is licensed under the GPL license.
 [`.zshrc`]: /dotfiles/.zshrc ".zshrc"
 
 [`config`]: /dotfiles/.newsbeuter/config "config"
+[`dotfiles/`]: /dotfiles/ "dotfiles/"
 [`data/`]: /dotfiles/.xmonad/data "data/"
 [`lib/`]: /dotfiles/.xmonad/lib "lib/"
+[`scripts/`]: /scripts/ "scripts/"
 [`urls`]: /dotfiles/.newsbeuter/urls "urls"
 [`xmonad.hs`]: /dotfiles/.xmonad/xmonad.hs "xmonad.hs"
 

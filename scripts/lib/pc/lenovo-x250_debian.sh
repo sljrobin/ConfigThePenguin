@@ -1,11 +1,8 @@
 #!/bin/bash
 
-source _core.sh
-
-
 ########################################################################################################################
 # Install WiFi Adapter (AWUS036NHA)
-function debian_install_drivers_lenovox250_wifiadapter()
+function lenovox250_debian_wifiadapter()
 {
   colorize "Installing Lenovo ThinkPad X250 WiFi Adapter drivers..." $CLR_LPURPLE "y"
   colorize "Lenovo ThinkPad X250 WiFi Adapter drivers [1/${STP_DRV_X250_WIFIADAPTER}] Installing drivers" $CLR_LBLUE "y"
@@ -16,9 +13,7 @@ function debian_install_drivers_lenovox250_wifiadapter()
 
 ########################################################################################################################
 # Install WiFi drivers
-# http://linux.die.net/man/8/modprobe
-# https://wiki.debian.org/iwlwifi
-function debian_install_drivers_lenovox250_wifi()
+function lenovox250_debian_wifi()
 {
   colorize "Installing Lenovo ThinkPad X250 WiFi drivers..." $CLR_LPURPLE "y"
   colorize "Lenovo ThinkPad X250 WiFi drivers [1/${STP_DRV_X250_WIFI}] Installing drivers" $CLR_LBLUE "y"
@@ -33,7 +28,7 @@ function debian_install_drivers_lenovox250_wifi()
 
 ########################################################################################################################
 # Install Audio drivers
-function debian_install_drivers_lenovox250_audio()
+function lenovox250_debian_audio()
 {
   colorize "Installing Lenovo ThinkPad X250 Audio drivers..." $CLR_LPURPLE "y"
   colorize "Lenovo ThinkPad X250 Audio drivers [1/${STP_DRV_X250_AUDIO}] Changing the audio card's order" $CLR_LBLUE "y"

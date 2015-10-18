@@ -1,11 +1,8 @@
 #!/bin/bash
 
-source _core.sh
-
-
 ########################################################################################################################
 # Install the main colorscheme
-function debian_install_packages_colorscheme()
+function debian_install_colorscheme()
 {
   colorize "Installing base16..." $CLR_LPURPLE "y"
   colorize "base16 [1/${STP_PKG_COLORSCHEME}] Downloading the repository from GitHub" $CLR_LBLUE "y"
@@ -31,7 +28,7 @@ function debian_install_packages_colorscheme()
 #    texmaker: LaTeX editor
 #    vim: editor
 #    vim-nox: vim with scripting languages support
-function debian_install_packages_dev()
+function debian_install_dev()
 {
   aptitude -y install \
     build-essential \
@@ -62,7 +59,7 @@ function debian_install_packages_dev()
 #    xorg: X window system
 #    xscreensaver: a screensaver
 #    xserver-xorg-core: xserver
-function debian_install_packages_gui()
+function debian_install_gui()
 {
   aptitude -y install \
     xorg \
@@ -88,7 +85,7 @@ function debian_install_packages_gui()
 #    mplayer2: video player
 #    ncmpcpp: ncurses based mpd client
 #    vlc: media player
-function debian_install_packages_media()
+function debian_install_media()
 {
   aptitude -y install \
     alsa-utils \
@@ -110,7 +107,7 @@ function debian_install_packages_media()
 #    nslookup: manage DNS queries
 #    openvpn: VPN
 #    wicd-curses: wired and wireless network manager
-function debian_install_packages_network()
+function debian_install_network()
 {
   aptitude -y install \
     curl \
@@ -136,7 +133,7 @@ function debian_install_packages_network()
 #    unzip: handle .zip archives
 #    weechat: IRC client
 #    zsh: Z shell
-function debian_install_packages_utils()
+function debian_install_utils()
 {
   aptitude -y install \
     bc \
