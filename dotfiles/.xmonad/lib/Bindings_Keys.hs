@@ -44,9 +44,9 @@ myKeys    =
     -- Programs; using
     ----------------------------------------------------------------------------
     [ ("M-S-z"      , spawn "xscreensaver-command --lock")              -- <Mod> + <Shift> + <z>: lock screen
-    , ("M-S-<F10>"  , spawn "amixer set Master toggle")                 -- <Mod> + <Shift> + <F10>; mute volume
-    , ("M-S-<F11>"  , spawn "amixer set Master 2-")                     -- <Mod> + <Shift> + <F11>: decrease volume
-    , ("M-S-<F12>"  , spawn "amixer set Master 2+")                     -- <Mod> + <Shift> + <F12>: increase volume
+    , ("M-<F1>"     , spawn "amixer set Master toggle")                 -- <Mod> + <F1>; mute volume
+    , ("M-<F2>"     , spawn "amixer set Master 2-")                     -- <Mod> + <F2>: decrease volume
+    , ("M-S-<F2>"   , spawn "amixer set Master 2+")                     -- <Mod> + <Shift> + <F2>: increase volume
     , ("M-b"        , spawn "xbacklight -dec 5")                        -- <Mod> + <b>: decrease to 5% from current value of brightness
     , ("M-S-b"      , spawn "xbacklight -inc 5")                        -- <Mod> + <Shift> + <b>: increase to 5% from current value of brightness
     , ("M-s"        , spawn "setxkbmap us")                             -- <Mod> + <s>: change the current keyboard layout to the US layout
