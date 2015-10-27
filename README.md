@@ -37,6 +37,39 @@ The repository is divided into several directories:
 * [`main.sh`] _Main script_
 
 ## Information
+#### Scripts options
+* `./main.sh`
+    * `-a` | `--apps`
+        * `firefox`
+            * `-a` | `--addons`
+        * `vim`
+            * `-i` | `--install`
+                * `base16`
+                * `commandt`
+                * `delimitmate`
+                * `indentline`
+                * `multiplecursors`
+                * `nerdtree`
+                * `pathogen`
+                * `surround`
+                * `taglist`
+                * `youcompleteme`
+        * `xmonad`
+            * `-i` | `--install`
+            * `-u` | `--update`
+    * `-o` | `--os`
+        * `debian`
+            `-i` | `--install`
+                * `colorscheme`
+                * `dev`
+                * `gui`
+                * `media`
+                * `network`
+                * `utils`
+            
+* Notes
+    * Install Pathogen first
+
 #### vim
 * Colorscheme: [base16]
 * Plugin manager: [pathogen]
