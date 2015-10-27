@@ -59,7 +59,7 @@ The repository is divided into several directories:
             * `-u` | `--update`
     * `-o` | `--os`
         * `debian`
-            `-i` | `--install`
+            * `-i` | `--install`
                 * `colorscheme`
                 * `dev`
                 * `gui`
