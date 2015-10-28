@@ -15,6 +15,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 PROMPT='%n@%m:%~%# '
 
 
+alias sx='startx'                        # `sx`: start the X Window Server
+
 ## ls
 #   `-a`: do not ignore entries starting with
 #   `-d`: list directories
