@@ -26,6 +26,8 @@
 " -> Indentation
 " -> Statusline
 " -> Headers
+" -> FileTypes
+" -> Plugins
 "
 " Notes
 " -> General
@@ -167,18 +169,18 @@ set wrap                            " Enable wrapping
 set linebreak                       " Allow linebreaks
 set backspace=indent,eol,start      " Enable correct backspacing
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2                    " Print the last status
-
 
 "" Command bar
 set showcmd                         " Show command in bottom bar
 set cmdheight=1                     " Command bar height
 
 "" Wild menu
-if has("wildmenu")                  " Check compatibility
+if has("wildmenu")                  " Check for compatibility
     set wildignore+=*.a,*.hi,*.o         " Ignore `*.a`, `*.hi`, `*.o` files
     set wildignore+=*~,*.bak,*.swp,*.tmp " Ignore `*~`, `*.bak`, `*.swp`, `*.tmp` files
     set wildignore+=*.class,*.pyc        " Ignore `*.class`, `*.pyc` files
@@ -225,21 +227,33 @@ autocmd BufNewFile *.py exe "1," . 10 . "g/Created:.*/s//Created: " .strftime("%
 autocmd Bufwritepre,filewritepre *.py execute "normal ma" 
 autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
 autocmd Bufwritepost,filewritepost *.py execute "normal `a" 
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Extensions
+" Filetypes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set `*.md`, `*.mkd`, `*.mkdn`, `*.mdown` as a Markdown file
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
-autocmd BufNewFile,BufReadPost *.mkdn set filetype=markdown
-autocmd BufNewFile,BufReadPost *.mdown set filetype=markdown
+"" Extensions
+" Markdown
+autocmd BufNewFile,BufReadPost *.md          set filetype=markdown  " Set `*.md` as a Markdown file
+autocmd BufNewFile,BufReadPost *.mkd         set filetype=markdown  " Set `*.mkd` as a Markdown file
+autocmd BufNewFile,BufReadPost *.mkdn        set filetype=markdown  " Set `*.mkdn` as a Markdown file
+autocmd BufNewFile,BufReadPost *.mdown       set filetype=markdown  " Set `*.mdown` as a Markdown file
+" Bash
+autocmd BufNewFile,BufReadPost .bash_history set filetype=sh        " Set `.bash_history` as a Shell file
+autocmd BufNewFile,BufReadPost .bash_logout  set filetype=sh        " Set `.bash_logout` as a Shell file
+autocmd BufNewFile,BufReadPost .bashrc       set filetype=sh        " Set `.bashrc` as a Shell file
+
+"" Indentation
+autocmd FileType sh setlocal shiftwidth=2 tabstop=2                 " Define indentation for `*.sh` files: 2,2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_color_term = 236
-let g:indentLine_char = '|'
+"" indentLine
+let g:indentLine_char = '|'             " indentLine: character to use for delimitation
+let g:indentLine_color_term = 236       " indentLine: color of the character
 
 
-let g:Tlist_Use_Right_Window = 1
+"" Tag List
+let g:Tlist_Use_Right_Window = 1        " Tag List: show the window at right
