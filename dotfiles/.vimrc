@@ -111,6 +111,11 @@ map! <silent> <F9> <ESC>:NERDTreeToggle<CR>
 nmap <F10> :Tlist<CR>
 
 
+:command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
+:command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Features
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -181,13 +186,22 @@ set cmdheight=1                     " Command bar height
 
 "" Wild menu
 if has("wildmenu")                  " Check for compatibility
-    set wildignore+=*.a,*.hi,*.o         " Ignore `*.a`, `*.hi`, `*.o` files
-    set wildignore+=*~,*.bak,*.swp,*.tmp " Ignore `*~`, `*.bak`, `*.swp`, `*.tmp` files
-    set wildignore+=*.class,*.pyc        " Ignore `*.class`, `*.pyc` files
     set wildignore+=.DS_Store            " Ignore `.DS_Store` files
-    set wildignore+=.git,.hg,.svn        " Ignore `.git`, `.hg`, `.svn` files
-    set wildignore+=*.bmp,*.gif,*.ico    " Ignore `*.bmp`, `*.gif`, `*.ico` files
-    set wildignore+=*.jpg,*.jpeg,*.png   " Ignore `*.jpg`, `*.jpeg`, `*.png` files
+    set wildignore+=.git                 " Ignore `.git` files
+    set wildignore+=.hg                  " Ignore `.hg` files
+    set wildignore+=.svn                 " Ignore `.svn` files
+    set wildignore+=*~                   " Ignore `*~` files
+    set wildignore+=*.a                  " Ignore `*.a` files
+    set wildignore+=*.bak,*.bmp          " Ignore `*.bak`, `*.bmp` files
+    set wildignore+=*.class              " Ignore `*.class` files
+    set wildignore+=*.gif                " Ignore `*.gif` files
+    set wildignore+=*.hi                 " Ignore `*.hi` files
+    set wildignore+=*.ico                " Ignore `*.ico` files
+    set wildignore+=*.jpg,*.jpeg         " Ignore `*.jpg`, `*.jpeg` files
+    set wildignore+=*.o                  " Ignore `*.o` files
+    set wildignore+=*.png,*.pyc          " Ignore `*.png`, `*.pyc` files
+    set wildignore+=*.swp                " Ignore `*.swp` files
+    set wildignore+=*.tmp                " Ignore `*.tmp` files
     set wildmenu                         " Enhance command line completion
     set wildmode=longest:full,full       " Complete the longest possible part, then switch
 endif
