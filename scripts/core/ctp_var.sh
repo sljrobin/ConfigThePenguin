@@ -26,6 +26,12 @@ CLR_RESET='\033[0m'                                                             
 
 
 ########################################################################################################################
+# Directories - xmonad
+DIRXMONAD_REPO="../dotfiles/.xmonad"                                                                         # Directory: xmonad on the repo
+DIRXMONAD_OS="$HOME/.xmonad"                                                                                 # Directory: xmonad on the OS
+
+
+########################################################################################################################
 # Add-ons Firefox - Appearence
 FFA_BLANKMONITORREADING_NME="Blank Your Monitor + Easy Reading"                                               # Firefox Add-on: 'Blank Your Monitor + Easy Reading' Name
 FFA_BLANKMONITORREADING_URL="https://addons.mozilla.org/en-us/firefox/addon/blank-your-monitor-easy-readin/"  # Firefox Add-on: 'Blank Your Monitor + Easy Reading' URL
@@ -78,3 +84,6 @@ STP_VIM_PATHOGEN='4'                                                            
 STP_VIM_SURROUND='2'                                                                                          # Steps: vim's Surround
 STP_VIM_TAGLIST='4'                                                                                           # Steps: vim's Taglist 
 STP_VIM_YOUCOMPLETEME='5'                                                                                     # Steps: vim's YouCompleteMe
+
+# Steps - xmonad
+STP_XMD_UPDATE='6'                                                                                            # Steps: xmonad updating
