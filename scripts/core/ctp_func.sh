@@ -1,22 +1,6 @@
 #!/bin/bash
 
 ########################################################################################################################
-# Print an error message when there is an insufficient number of arguments
-function args_insufficient()
-{
-  colorize "Error: Insufficient number of arguments" $CLR_LRED "y"
-}
-
-
-# Print an error message when an invalid argument is entered
-#   $1: next argument
-function args_invalid()
-{
-  colorize "Error: '$1' is an invalid argument" $CLR_LRED "y"
-}
-
-
-########################################################################################################################
 # Output a text with color
 #   $1: text to print
 #   $2: color to use
@@ -35,6 +19,22 @@ function colorize()
   else 
     echo "Error with the new line..."
   fi
+}
+
+
+########################################################################################################################
+# Print an error message when there is an insufficient number of arguments
+function args_insufficient()
+{
+  colorize "Error: Insufficient number of arguments" $CLR_LRED "y"
+}
+
+
+# Print an error message when an invalid argument is entered
+#   $1: next argument
+function args_invalid()
+{
+  colorize "Error: '$1' is an invalid argument" $CLR_LRED "y"
 }
 
 
@@ -93,5 +93,17 @@ function args_os_debian_install()
           media) debian_install_media ;;        # Debian install: media
         network) debian_install_network ;;      # Debian install: network
           utils) debian_install_utils ;;        # Debian install: utils
+              *) args_invalid $1 ;;             # Debian install: Invalid argument
+  esac
+}
+
+
+# Debian: updates for some options
+#   $1: next argument
+function args_os_debian_update()
+{
+  case $1 in
+    shell) debian_update_shell ;;               # Debian update: shell
+        *) args_invalid $1 ;;                   # Debian update: Invalid argument
   esac
 }
