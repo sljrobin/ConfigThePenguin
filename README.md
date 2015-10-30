@@ -57,6 +57,7 @@ The repository is divided into several directories:
         * `xmonad`
             * `-i` | `--install`
             * `-u` | `--update`
+    * `-h` | `--help`
     * `-o` | `--os`
         * `debian`
             * `-i` | `--install`
@@ -68,6 +69,13 @@ The repository is divided into several directories:
                 * `utils`
             * `-u` | `--update`
                 * `shell`
+    * `-p` | `--pc`
+        * `lenovox250`
+            * `-i` | `--install`
+                * `debian`
+                    * `audio`
+                    * `wifi`
+                    * `wifiadapter`
             
 * Notes
     * Install Pathogen first
