@@ -64,26 +64,30 @@ FFA_WORDREFERENCETRANSLATOR_URL="https://addons.mozilla.org/En-us/firefox/addon/
 
 
 ########################################################################################################################
-# Steps - Drivers
-STP_DRV_X250_AUDIO='1'                                                                                        # Steps: Lenovo ThinkPad X250 Audio drivers
-STP_DRV_X250_WIFI='3'                                                                                         # Steps: Lenovo ThinkPad X250 WiFi drivers
-STP_DRV_X250_WIFIADAPTER='1'                                                                                  # Steps: Lenovo ThinkPad X250 WiFi Adapter drivers
+# Steps - Apps
+# vim
+STP_VIM_BASE16='2'                                                                                            # Steps - Apps: vim's Base16
+STP_VIM_COMMANDT='5'                                                                                          # Steps - Apps: vim's Command-T
+STP_VIM_DELIMITMATE='2'                                                                                       # Steps - Apps: vim's delimitMate
+STP_VIM_INDENTLINE='2'                                                                                        # Steps - Apps: vim's indentLine
+STP_VIM_MULTIPLECURSORS='2'                                                                                   # Steps - Apps: vim's vim-multiple-cursors
+STP_VIM_NERDTREE='2'                                                                                          # Steps - Apps: vim's NERD Tree
+STP_VIM_PATHOGEN='4'                                                                                          # Steps - Apps: vim's Pathogen
+STP_VIM_SURROUND='2'                                                                                          # Steps - Apps: vim's Surround
+STP_VIM_TAGLIST='4'                                                                                           # Steps - Apps: vim's Taglist 
+STP_VIM_YOUCOMPLETEME='5'                                                                                     # Steps - Apps: vim's YouCompleteMe
+# xmonad
+STP_XMD_UPDATE='6'                                                                                            # Steps - Apps: xmonad updating
 
-# Steps - Packages
-STP_PKG_COLORSCHEME='2'                                                                                       # Steps: main colorscheme
-STP_PKG_INITIALIZATION='7'                                                                                    # Steps: initialization
+# Steps - OS
+# Debian - Customization
+STP_D_CTN_SHELL='2'                                                                                           # Steps - OS - Debian: shell
+# Debian - Packages
+STP_D_PKG_COLORSCHEME='2'                                                                                     # Steps - OS - Debian: main colorscheme
+STP_D_PKG_INITIALIZATION='7'                                                                                  # Steps - OS - Debian: initialization
 
-# Steps - vim
-STP_VIM_BASE16='2'                                                                                            # Steps: vim's Base16
-STP_VIM_COMMANDT='5'                                                                                          # Steps: vim's Command-T
-STP_VIM_DELIMITMATE='2'                                                                                       # Steps: vim's delimitMate
-STP_VIM_INDENTLINE='2'                                                                                        # Steps: vim's indentLine
-STP_VIM_MULTIPLECURSORS='2'                                                                                   # Steps: vim's vim-multiple-cursors
-STP_VIM_NERDTREE='2'                                                                                          # Steps: vim's NERD Tree
-STP_VIM_PATHOGEN='4'                                                                                          # Steps: vim's Pathogen
-STP_VIM_SURROUND='2'                                                                                          # Steps: vim's Surround
-STP_VIM_TAGLIST='4'                                                                                           # Steps: vim's Taglist 
-STP_VIM_YOUCOMPLETEME='5'                                                                                     # Steps: vim's YouCompleteMe
-
-# Steps - xmonad
-STP_XMD_UPDATE='6'                                                                                            # Steps: xmonad updating
+# Steps - PC
+# LenovoX250 - Drivers
+STP_D_DRV_X250_AUDIO='1'                                                                                      # Steps - PC - Debian: Lenovo ThinkPad X250 Audio drivers
+STP_D_DRV_X250_WIFI='3'                                                                                       # Steps - PC - Debian: Lenovo ThinkPad X250 WiFi drivers
+STP_D_DRV_X250_WIFIADAPTER='1'                                                                                # Steps - PC - Debian: Lenovo ThinkPad X250 WiFi Adapter drivers
