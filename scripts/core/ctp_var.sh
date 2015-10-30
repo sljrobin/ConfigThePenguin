@@ -26,9 +26,14 @@ CLR_RESET='\033[0m'                                                             
 
 
 ########################################################################################################################
+# Directories - Shell
+DIR_SH_BASH="/bin/bash"                                                                                       # Directory Shell: Bash
+DIR_SH_ZSH1="/bin/zsh"                                                                                        # Directory Shell: Zsh (option 1)
+DIR_SH_ZSH2="/usr/bin/zsh"                                                                                    # Directory Shell: Zsh (option 2)
+
 # Directories - xmonad
-DIRXMONAD_REPO="../dotfiles/.xmonad"                                                                         # Directory: xmonad on the repo
-DIRXMONAD_OS="$HOME/.xmonad"                                                                                 # Directory: xmonad on the OS
+DIR_XMONAD_REPO="../dotfiles/.xmonad"                                                                         # Directory xmonad: on the repo
+DIR_XMONAD_OS="$HOME/.xmonad"                                                                                 # Directory xmonad: on the OS
 
 
 ########################################################################################################################
