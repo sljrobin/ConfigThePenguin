@@ -66,6 +66,8 @@ The repository is divided into several directories:
                 * `media`
                 * `network`
                 * `utils`
+            * `-u` | `--update`
+                * `shell`
             
 * Notes
     * Install Pathogen first
