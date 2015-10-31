@@ -16,6 +16,7 @@ The repository is divided into several directories:
 * __[Newsbeuter]__
     * [`config`] _Newsbeuter - Configuration_
     * [`urls`] _Newsbeuter - URLs_
+* __[rTorrent]__ [`.rtorrent.rc`]
 * __[tmux]__ [`.tmux.conf`]
 * __[vim]__ [`.vimrc`]
 * __[X.Org]__
@@ -42,6 +43,8 @@ The repository is divided into several directories:
     * `-a` | `--apps`
         * `firefox`
             * `-a` | `--addons`
+        * `rtorrent`
+            * `-i` | `--install`
         * `vim`
             * `-i` | `--install`
                 * `base16`
@@ -105,6 +108,7 @@ The content of this project is licensed under the GPL license.
 
 [`.conkyrc`]: /dotfiles/.conkyrc ".conkyrc"
 [`.gitconfig`]: /dotfiles/.gitconfig ".gitconfig"
+[`.rtorrent.rc`]: /dotfiles/.rtorrent.rc ".rtorrent.rc"
 [`.tmux.conf`]: /dotfiles/.tmux.conf ".tmux.conf"
 [`.vimrc`]: /dotfiles/.vimrc ".vimrc"
 [`.xinitrc`]: /dotfiles/.xinitrc ".xinitrc"
@@ -128,6 +132,7 @@ The content of this project is licensed under the GPL license.
 [Git]: https://git-scm.com/ "Git"
 [Newsbeuter]: http://newsbeuter.org/ "Newsbeuter"
 [tmux]: https://tmux.github.io/ "tmux"
+[rTorrent]: https://rakshasa.github.io/rtorrent/ "rTorrent"
 [vim]: http://www.vim.org/ "vim"
 [X.Org]: http://www.x.org/ "X.Org"
 [xmonad]: http://xmonad.org/ "xmonad"
