@@ -48,7 +48,7 @@ schedule  = low_diskspace, 5, 60, close_low_diskspace=100M
 # Ports
 #    `port_range`: Port range to use for listening
 #    `port_random`: Start/Stop opening ports at a random position within the port range
-port_range = 60125-64125
+port_range  = 60125-64125
 port_random = yes
 
 
@@ -65,6 +65,6 @@ encryption = allow_incoming,try_outgoing,enable_retry
 #    `dht`: Enable/Disable DHT
 #    `dht_port`: UDP port to use for DHT
 #    `peer_exchange`: Enable/Disable peer exchange
-dht = auto
-dht_port = 63425
+dht           = auto
+dht_port      = 63425
 peer_exchange = yes
