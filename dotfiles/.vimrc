@@ -256,9 +256,12 @@ autocmd BufNewFile,BufReadPost *.mdown       set filetype=markdown  " Set `*.mdo
 autocmd BufNewFile,BufReadPost .bash_history set filetype=sh        " Set `.bash_history` as a Shell file
 autocmd BufNewFile,BufReadPost .bash_logout  set filetype=sh        " Set `.bash_logout` as a Shell file
 autocmd BufNewFile,BufReadPost .bashrc       set filetype=sh        " Set `.bashrc` as a Shell file
+autocmd BufNewFile,BufReadPost .rtorrent.rc  set filetype=sh        " Set `.rtorrent.rc` as a Shell file
 
 "" Indentation
-autocmd FileType sh setlocal shiftwidth=2 tabstop=2                 " Define indentation for `*.sh` files: 2,2
+autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.hs` files: 4,4
+autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md` files: 4,4
+autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh` files: 2,2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
