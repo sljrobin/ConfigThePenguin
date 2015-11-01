@@ -11,24 +11,28 @@ import qualified XMonad.StackSet as W   -- ManageHook rules
 -- Actions
 import XMonad.Actions.CycleWS           -- Cycle through the workspaces
 import XMonad.Actions.GridSelect        -- Enable 2D grid
+import XMonad.Actions.PhysicalScreens   -- Screens manipulation 
 -- Data
 import Data.Monoid                      -- Allow to create monoids
 -- Hooks
 import XMonad.Hooks.ManageHelpers       -- Enable FullFloat mode
+import XMonad.Hooks.ManageDocks         -- Enable ToggleStruts
+--import XMonad.Layout.MultiToggle
+import XMonad.Layout.ToggleLayouts
+import XMonad.Layout.Fullscreen
+import XMonad.Hooks.ToggleHook
 -- Personal Modules
 import Appearance                       -- Load colors, dimensions, and fonts
 import Elements                         -- Load miscellaneous elements as Grid, Workspaces, Terminal, etc.
 import Hook_Log                         -- Load the LogHook
 
 
--- Add ncmpcpp bindings
+-- TODO Add ncmpcpp bindings
 ------------------------------------------------------------------------------------------------------------------------
 -- Bindings: Keys
 ------------------------------------------------------------------------------------------------------------------------
 myModMask = mod4Mask -- Use <Windows> key instead of <Alt> key for <Mod>
 
-fullFloatFocused = withFocused $ \f -> windows =<< appEndo `fmap` runQuery doFullFloat f -- FullFloatFocused mode
---rectFloatFocused = withFocused $ \f -> windows =<< appEndo `fmap` runQuery (doRectFloat $ RationalRect 0.85 0.85 1 1) f
 myKeys :: [(String, X())]
 myKeys    =
     ----------------------------------------------------------------------------
@@ -82,11 +86,14 @@ myKeys    =
     , ("M-S-<Space>", asks (XMonad.layoutHook . config) >>= setLayout)  -- <Mod> + <Shift> + <Space>: reset the layouts on the current workspace
     , ("M-h"        , sendMessage Shrink)                               -- <Mod> + <h>: shrink the master area
     , ("M-l"        , sendMessage Expand)                               -- <Mod> + <l>: expand the master area
-    , ("M-f"        , fullFloatFocused)                                 -- <Mod> + <f>: put the focused window in the FullFloatFocused mode
---    , ("M-S-f", sendMessage (Toggle "Full"))
+--    , ("M-f"        , fullFloatFocused)                                 -- <Mod> + <f>: put the focused window in the FullFloatFocused mode
+    , ("M-f", sendMessage (Toggle "Full"))
+    , (("M-S-f"), do --
+                    sendMessage (Toggle "Full")
+                    sendMessage ToggleStruts)
    -- , ("M-S-m"      , sendMessage RestoreNextMinimizedWin)              -- <Mod> + <Shift> + <f>: restore the focused window in the current layout
 --    , ("M-S-m"      , rectFloatFocused)              -- <Mod> + <Shift> + <f>: restore the focused window in the current layout
-    , ("M-n"        , refresh) 
+   -- , ("M-n"        , refresh) 
     ]
     ++
 
@@ -106,23 +113,48 @@ myKeys    =
     , ("M-<Right>"  , moveTo Next NonEmptyWS)                           -- <Mod> + <Right>: move to the next non empty workspace
     , ("M-S-<Left>" , moveTo Prev EmptyWS)                              -- <Mod> + <Shift> + <Left>: move to the previous empty workspace
     , ("M-S-<Right>", moveTo Next EmptyWS)                              -- <Mod> + <Shift> + <Right>: move to the next empty workspace
-    , ("M-<F1>"     , windows $ W.greedyView "1")                       -- <Mod> + <F1>: move to workspace 1
-    , ("M-<F2>"     , windows $ W.greedyView "2")                       -- <Mod> + <F2>: move to workspace 2
-    , ("M-<F3>"     , windows $ W.greedyView "3")                       -- <Mod> + <F3>: move to workspace 3
-    , ("M-<F4>"     , windows $ W.greedyView "4")                       -- <Mod> + <F4>: move to workspace 4
-    , ("M-<F5>"     , windows $ W.greedyView "5")                       -- <Mod> + <F5>: move to workspace 5
-    , ("M-<F6>"     , windows $ W.greedyView "6")                       -- <Mod> + <F6>: move to workspace 6
-    , ("M-<F7>"     , windows $ W.greedyView "7")                       -- <Mod> + <F7>: move to workspace 7
-    , ("M-<F8>"     , windows $ W.greedyView "8")                       -- <Mod> + <F8>: move to workspace 8
-    , ("M-<F9>"     , windows $ W.greedyView "9")                       -- <Mod> + <F9>: move to workspace 9
-    , ("M-S-<F1>"   , windows $ W.shift "1")                            -- <Mod> + <Shift> + <F1>: send current window to workspace 1
-    , ("M-S-<F2>"   , windows $ W.shift "2")                            -- <Mod> + <Shift> + <F2>: send current window to workspace 2
-    , ("M-S-<F3>"   , windows $ W.shift "3")                            -- <Mod> + <Shift> + <F3>: send current window to workspace 3
-    , ("M-S-<F4>"   , windows $ W.shift "4")                            -- <Mod> + <Shift> + <F4>: send current window to workspace 4
-    , ("M-S-<F5>"   , windows $ W.shift "5")                            -- <Mod> + <Shift> + <F5>: send current window to workspace 5
-    , ("M-S-<F6>"   , windows $ W.shift "6")                            -- <Mod> + <Shift> + <F6>: send current window to workspace 6
-    , ("M-S-<F7>"   , windows $ W.shift "7")                            -- <Mod> + <Shift> + <F7>: send current window to workspace 7
-    , ("M-S-<F8>"   , windows $ W.shift "8")                            -- <Mod> + <Shift> + <F8>: send current window to workspace 8
-    , ("M-S-<F9>"   , windows $ W.shift "9")                            -- <Mod> + <Shift> + <F9>: send current window to workspace 9
+    , ("M-1"        , windows $ W.greedyView "1")                       -- <Mod> + <1>: move to workspace 1
+    , ("M-2"        , windows $ W.greedyView "2")                       -- <Mod> + <2>: move to workspace 2
+    , ("M-3"        , windows $ W.greedyView "3")                       -- <Mod> + <3>: move to workspace 3
+    , ("M-4>"       , windows $ W.greedyView "4")                       -- <Mod> + <4>: move to workspace 4
+    , ("M-5>"       , windows $ W.greedyView "5")                       -- <Mod> + <5>: move to workspace 5
+    , ("M-6>"       , windows $ W.greedyView "6")                       -- <Mod> + <6>: move to workspace 6
+    , ("M-7>"       , windows $ W.greedyView "7")                       -- <Mod> + <7>: move to workspace 7
+    , ("M-8>"       , windows $ W.greedyView "8")                       -- <Mod> + <8>: move to workspace 8
+    , ("M-9>"       , windows $ W.greedyView "9")                       -- <Mod> + <9>: move to workspace 9
+    , ("M-S-1"      , windows $ W.greedyView "1" . W.shift "1")         -- <Mod> + <Shift> + <1>: send current window to workspace 1 and move focus to sent window
+    , ("M-S-2"      , windows $ W.greedyView "2" . W.shift "2")         -- <Mod> + <Shift> + <2>: send current window to workspace 2 and move focus to sent window
+    , ("M-S-3"      , windows $ W.greedyView "3" . W.shift "3")         -- <Mod> + <Shift> + <3>: send current window to workspace 3 and move focus to sent window
+    , ("M-S-4"      , windows $ W.greedyView "4" . W.shift "4")         -- <Mod> + <Shift> + <4>: send current window to workspace 4 and move focus to sent window
+    , ("M-S-5"      , windows $ W.greedyView "5" . W.shift "5")         -- <Mod> + <Shift> + <5>: send current window to workspace 5 and move focus to sent window
+    , ("M-S-6"      , windows $ W.greedyView "6" . W.shift "6")         -- <Mod> + <Shift> + <6>: send current window to workspace 6 and move focus to sent window
+    , ("M-S-7"      , windows $ W.greedyView "7" . W.shift "7")         -- <Mod> + <Shift> + <7>: send current window to workspace 7 and move focus to sent window
+    , ("M-S-8"      , windows $ W.greedyView "8" . W.shift "8")         -- <Mod> + <Shift> + <8>: send current window to workspace 8 and move focus to sent window
+    , ("M-S-9"      , windows $ W.greedyView "9" . W.shift "9")         -- <Mod> + <Shift> + <9>: send current window to workspace 9 and move focus to sent window
     ]
+    ++
 
+    ----------------------------------------------------------------------------
+    -- GUI; screens
+    ----------------------------------------------------------------------------
+    [ ("M-C-<Left>" , prevScreen)                                       -- <Mod> + <Control> + <Left>: move to the previous screen
+    , ("M-C-<Right>", nextScreen)                                       -- <Mod> + <Control> + <Right>: move to the next screen
+    , ("C-1"        , viewScreen 0)                                     -- <Control> + <1>: move to physical screen 1
+    , ("C-2"        , viewScreen 1)                                     -- <Control> + <2>: move to physical screen 2
+    , ("C-3"        , viewScreen 2)                                     -- <Control> + <3>: move to physical screen 3
+    , ("C-4"        , viewScreen 3)                                     -- <Control> + <4>: move to physical screen 4
+    , ("C-5"        , viewScreen 4)                                     -- <Control> + <5>: move to physical screen 5
+    , ("C-6"        , viewScreen 5)                                     -- <Control> + <6>: move to physical screen 6
+    , ("C-7"        , viewScreen 6)                                     -- <Control> + <7>: move to physical screen 7
+    , ("C-8"        , viewScreen 7)                                     -- <Control> + <8>: move to physical screen 8
+    , ("C-9"        , viewScreen 8)                                     -- <Control> + <9>: move to physical screen 9
+    , ("C-S-1"      , sendToScreen 0 >> viewScreen 0)                   -- <Control> + <Shift> + <1>: send current window to screen 1 and move focus to sent window
+    , ("C-S-2"      , sendToScreen 1 >> viewScreen 1)                   -- <Control> + <Shift> + <2>: send current window to screen 2 and move focus to sent window
+    , ("C-S-3"      , sendToScreen 2 >> viewScreen 2)                   -- <Control> + <Shift> + <3>: send current window to screen 3 and move focus to sent window
+    , ("C-S-4"      , sendToScreen 3 >> viewScreen 3)                   -- <Control> + <Shift> + <4>: send current window to screen 4 and move focus to sent window
+    , ("C-S-5"      , sendToScreen 4 >> viewScreen 4)                   -- <Control> + <Shift> + <5>: send current window to screen 5 and move focus to sent window
+    , ("C-S-6"      , sendToScreen 5 >> viewScreen 5)                   -- <Control> + <Shift> + <6>: send current window to screen 6 and move focus to sent window
+    , ("C-S-7"      , sendToScreen 6 >> viewScreen 6)                   -- <Control> + <Shift> + <7>: send current window to screen 7 and move focus to sent window
+    , ("C-S-8"      , sendToScreen 7 >> viewScreen 7)                   -- <Control> + <Shift> + <8>: send current window to screen 8 and move focus to sent window
+    , ("C-S-9"      , sendToScreen 8 >> viewScreen 8)                   -- <Control> + <Shift> + <9>: send current window to screen 9 and move focus to sent window
+    ]
