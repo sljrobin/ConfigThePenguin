@@ -47,6 +47,8 @@ alias gpl='git pull'                     # `gpl`: update remote-tracking branch
 alias gplv='git pull -v'                 # `gplv`: update remote-tracking branch with more details
 
 
+alias screens='xrandr --output eDP1 --mode 1920x1080 --output DP2 --mode 1920x1080 --right-of eDP1'
+
 
 setopt autocd # Chamge directory without typing the `cd` command
 
