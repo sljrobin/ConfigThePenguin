@@ -19,7 +19,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections
 " -> Initialization
-" -> General
+" -> Bindings
 " -> Features
 " -> Mapping
 " -> Appearance
@@ -65,11 +65,17 @@ filetype indent on                  " Enable the indent file for specific file t
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
+" Bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" `,`: `mapleader`
+""" mapleader
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" <,>
+" mapleader
 let mapleader=','
 
+
+""" mapleader
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Edit/Load `.vimrc`
 " `mapleader` + `ev`: edit the `.vimrc` file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -77,20 +83,29 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Indentation
-" `Tab`: indent
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" <Tab>
+" Indent
 nnoremap <Tab> >>
 vnoremap <Tab> >gv
-" `Shift` + `Tab`: unindent
-"inoremap <S-Tab> <C-D>
-imap <S-Tab> <C-d>
-imap <C-S-Tab> <C-d>
-nnoremap <S-Tab> <<
-vnoremap <S-Tab> <gv
 
+" <Shift> + <Tab>
+" Unindent
+"inoremap <S-Tab> <C-D>
+"imap     <S-Tab> <C-d>
+"imap     <C-S-Tab> <C-d>
+"nnoremap <S-Tab> <<
+"vnoremap <S-Tab> <gv
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Edition
-" `mapleader` + `md`: convert Markdown to HTML
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" <mapleader> + `md`
+" Convert Markdown to HTML
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
+
 
 "" `F2`: enable/unable paste mode
 "set pastetoggle=<F2>
@@ -99,18 +114,33 @@ nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
 "imap <C-d> <esc>ddi
 "nmap <C-d> dd
 
-"" `Ctrl` + `l`: clears the highlight from the last search
+" <Ctrl> + <l>
+" Clear the highlight from the last search
 nnoremap <C-l> :nohlsearch<CR><C-l>
 noremap! <C-l> <ESC>:nohlsearch<CR><C-l>i
 
-"" `F9`: open/close NERD Tree
-map <silent> <F9> :NERDTreeToggle<CR>
+" <Ctrl> + <Shift> + <l>
+" Enable/Disable spell-checking
+nnoremap <C-S-l> :setlocal spelllang=en_us spell! spell?<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Applications
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" <F9>
+" Open/Close NERD Tree
+map  <silent> <F9> :NERDTreeToggle<CR>
 map! <silent> <F9> <ESC>:NERDTreeToggle<CR>
 
-"" `F10: open/close Tagbar`
+" <F10>
+" Open/Close Tagbar
 nmap <F10> :Tlist<CR>
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" <Rpdf>
 :command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
 :command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
 
@@ -130,13 +160,18 @@ nmap <F10> :Tlist<CR>
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Start
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set shortmess+=I                    " Hide the launch screen
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Colors
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256                        " Enable 256 colors
 syntax on                           " Enable syntax highlighting
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let base16colorspace=256            " Access colors present in 256 colorspace
 colorscheme base16-default          " Main colorscheme
 set background=dark                 " Color the background 
@@ -147,13 +182,17 @@ set showmatch                       " Highlight matching brackets
 set foldcolumn=1                    " Fold Column width
 set foldmethod=indent               " Indentation used for the kind of folding
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch                        " Highlight research results
 set ignorecase                      " Ignore case when searching
 set incsearch                       " Start searching during typing
 set smartcase                       " If pattern contains an uppercase letter, enable case sensitive
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set lazyredraw                      " Better performance when executing macros
 set noerrorbells                    " No error sounds
 set nolist                          " Do not show invisible characters by default
@@ -178,13 +217,19 @@ set backspace=indent,eol,start      " Enable correct backspacing
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Status bar
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2                    " Print the last status
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Command bar
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showcmd                         " Show command in bottom bar
 set cmdheight=1                     " Command bar height
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Wild menu
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("wildmenu")                  " Check for compatibility
     set wildignore+=.DS_Store            " Ignore `.DS_Store` files
     set wildignore+=.git                 " Ignore `.git` files
@@ -211,6 +256,7 @@ endif
 " Headers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Bash (`*.sh`)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile *.sh so $HOME/.vim/headers/sh
 autocmd BufNewFile *.sh exe "1," . 9 . "g/Filename:.*/s//Filename: " .expand("%")
 autocmd BufNewFile *.sh exe "1," . 9 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
@@ -218,7 +264,9 @@ autocmd Bufwritepre,filewritepre *.sh execute "normal ma"
 autocmd Bufwritepre,filewritepre *.sh exe "1," . 9 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
 autocmd Bufwritepost,filewritepost *.sh execute "normal `a" 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" C
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " (`*.c`)
 autocmd BufNewFile *.c so $HOME/.vim/headers/c
 autocmd BufNewFile *.c exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
@@ -234,7 +282,9 @@ autocmd Bufwritepre,filewritepre *.h execute "normal ma"
 autocmd Bufwritepre,filewritepre *.h exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
 autocmd Bufwritepost,filewritepost *.h execute "normal `a" 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Python (`*.py`)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile *.py so $HOME/.vim/headers/py
 autocmd BufNewFile *.py exe "1," . 10 . "g/Filename:.*/s//Filename: " .expand("%")
 autocmd BufNewFile *.py exe "1," . 10 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
@@ -246,7 +296,8 @@ autocmd Bufwritepost,filewritepost *.py execute "normal `a"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetypes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Extensions
+""" Extensions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
 autocmd BufNewFile,BufReadPost *.md          set filetype=markdown  " Set `*.md` as a Markdown file
 autocmd BufNewFile,BufReadPost *.mkd         set filetype=markdown  " Set `*.mkd` as a Markdown file
@@ -258,19 +309,54 @@ autocmd BufNewFile,BufReadPost .bash_logout  set filetype=sh        " Set `.bash
 autocmd BufNewFile,BufReadPost .bashrc       set filetype=sh        " Set `.bashrc` as a Shell file
 autocmd BufNewFile,BufReadPost .rtorrent.rc  set filetype=sh        " Set `.rtorrent.rc` as a Shell file
 
-"" Indentation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Indentation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.hs` files: 4,4
 autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md` files: 4,4
 autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh` files: 2,2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Spell-Checking
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Styles
+" Style `SpellBad` (word not recognized)
+highlight clear SpellBad
+highlight SpellBad term=reverse
+highlight SpellBad cterm=reverse
+highlight SpellBad ctermfg=1
+" Style `SpellCap` (word not capitalized)
+highlight clear SpellCap
+highlight SpellCap term=standout
+highlight SpellCap cterm=reverse
+highlight SpellCap ctermfg=16
+" Style `SpellRare` (rare word)
+highlight clear SpellRare
+highlight SpellRare term=underline
+highlight SpellRare cterm=reverse
+highlight SpellRare ctermfg=3
+" Style `SpellLocal` (wrong spelling for selected region)
+highlight clear SpellLocal
+highlight SpellLocal term=underline
+highlight SpellLocal cterm=reverse
+highlight SpellLocal ctermfg=5
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Extensions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType markdown setlocal spell                            " Set Spell-Checking for Markdown files
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" indentLine
+""" indentLine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_char = '|'             " indentLine: character to use for delimitation
 let g:indentLine_color_term = 236       " indentLine: color of the character
 
 
-"" Tag List
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Tag List
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:Tlist_Use_Right_Window = 1        " Tag List: show the window at right
