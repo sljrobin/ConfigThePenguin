@@ -352,11 +352,20 @@ autocmd FileType markdown setlocal spell                            " Set Spell-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ indentLine
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_char = '|'             " indentLine: character to use for delimitation
-let g:indentLine_color_term = 236       " indentLine: color of the character
+let g:indentLine_char = '|'                  " indentLine: character to use for delimitation
+let g:indentLine_color_term = 236            " indentLine: color of the character
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Tag List
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:Tlist_Use_Right_Window = 1        " Tag List: show the window at right
+let g:Tlist_Use_Right_Window = 1             " Tag List: show the window at right
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Vim Markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_folding_disabled=0        " Vim Markdown: do not disable folding
+let g:vim_markdown_no_default_key_mapping=0  " Vim Markdown: do not disable default key mapping
+let g:vim_markdown_math=1                    " Vim Markdown: enable LaTeX syntax extension
+let g:vim_markdown_frontmatter=1             " Vim Markdown: enable YAML frontmatter extension
