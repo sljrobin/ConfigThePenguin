@@ -23,6 +23,7 @@ import Hook_Log                         -- Load the LogHook
 import Hook_Manage                      -- Load the ManageHook
 import Hook_Startup                     -- Load the StartupHook
 
+
 import XMonad.Layout.Fullscreen
 
 import XMonad.Layout.IndependentScreens
@@ -54,7 +55,7 @@ main = do
           -- Hooks
 --        , handleEventHook    = fullscreenEventHook
         , layoutHook         = myLayoutHook
-        , logHook            = dynamicLogWithPP $ myDzenPP myStatusBarTopL
+        , logHook            = (dynamicLogWithPP $ myDzenPP myStatusBarTopL) >> myPointerUpdated
         , manageHook         = manageDocks <+> myManageHook <+> manageHook defaultConfig
         , startupHook        = myStartupHook
         }

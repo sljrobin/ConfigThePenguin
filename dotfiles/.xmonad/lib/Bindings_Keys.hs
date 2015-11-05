@@ -38,7 +38,7 @@ myKeys    =
     ----------------------------------------------------------------------------
     -- Programs; launching
     ----------------------------------------------------------------------------
-    [ ("M-<Return>" , spawn "urxvt")                                    -- <Mod> + <Return>: launch a terminal
+    [ ("M-<Return>" , spawn myTerminal)                                 -- <Mod> + <Return>: launch a terminal
     , ("M-x"        , spawn myDmenu)                                    -- <Mod> + <x>: launch dmenu
     , ("M-S-x"      , spawn "gmrun")                                    -- <Mod> + <Shift> + <x>: launch gmrun
     ]

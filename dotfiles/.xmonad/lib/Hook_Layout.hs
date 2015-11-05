@@ -10,7 +10,7 @@ import XMonad.Layout.Minimize            -- Layout: minimize
 import XMonad.Layout.ThreeColumns        -- Layout: ThreeColumns
 import XMonad.Layout.NoBorders           -- Smart borders
 import XMonad.Layout.ResizableTile       -- Allow to change a width/height of window
-import XMonad.Layout.SimplestFloat         -- Layout: simplest float
+import XMonad.Layout.SimplestFloat       -- Layout: simplest float
 import XMonad.Layout.Spiral              -- Layout: spiral layout
 import XMonad.Layout.Tabbed              -- Layout: Tabbed
 -- Personal Modules

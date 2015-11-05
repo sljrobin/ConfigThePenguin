@@ -6,6 +6,7 @@ import XMonad                            -- Main lib
 import XMonad.Layout.Decoration          -- Enable the creation of decorated layouts
 -- Util
 import XMonad.Util.Font                  -- Use Xft fonts
+import XMonad.Util.Types                 -- Use common types
 
 
 ----------------------------------------------------------------------------
@@ -39,22 +40,25 @@ myClrBarPPUrgentBg  = myClrRed     -- Urgent background
 myClrBarPPUrgentFg  = myClrWhite   -- Urgent foreground
 
 -- dmenu
-myClrDmenuNBg        = myClrBarBg   -- Normal background
-myClrDmenuNFg        = myClrBarFg   -- Normal foreground
-myClrDmenuSBg        = myClrDGrey   -- Selected background
-myClrDmenuSFg        = myClrWhite   -- Selected foreground
+myClrDmenuNBg       = myClrBarBg   -- Normal background
+myClrDmenuNFg       = myClrBarFg   -- Normal foreground
+myClrDmenuSBg       = myClrDGrey   -- Selected background
+myClrDmenuSFg       = myClrWhite   -- Selected foreground
 
 
 ----------------------------------------------------------------------------
 -- Dimensions
 ----------------------------------------------------------------------------
 -- Height/Gap
+--myLenovoX250XndGapD :: (Direction2D, Int)
+--myLenovoX250XndGapD =  (D, 20)
 myLenovoX250DimBarHgt      = "18"                    -- Lenovo X250: Height for status bar
 myLenovoX250XndGap         = 18                      -- Lenovo X250: Gap for XMonad
 myAsus1015DimBarHgt        = "16"                    -- Asus 1015: Height for status bar
 myAsus1015XndGap           = 16                      -- Asus 1015: Gap for XMonad
 myDimBarHgt                = myLenovoX250DimBarHgt   -- Height for status bar
 myDimXndGap                = myLenovoX250XndGap      -- Gap for XMonad
+
 
 -- Dzen width/position
 myLenovoX250DzenTopLDimWdh = "1000"                  -- Lenovo X250: Dzen Top Left: width

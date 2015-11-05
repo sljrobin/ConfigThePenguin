@@ -2,6 +2,8 @@ module Hook_Log where
 
 -- System
 import System.IO                        -- Standard IO library
+-- Actions
+import XMonad.Actions.UpdatePointer     -- Update Pointer position
 -- Hooks
 import XMonad.Hooks.DynamicLog          -- Statusbar
 -- Personal Modules
@@ -136,3 +138,7 @@ myDmenu="dmenu_run" ++
         " -p  '>'"  ++                          -- dmenu: prompt
         " -i "                                  -- dmenu: no case sensitive
 
+----------------------------------------------------------------------------
+-- Pointer
+----------------------------------------------------------------------------
+myPointerUpdated = updatePointer (Relative 0.075 0.075)
