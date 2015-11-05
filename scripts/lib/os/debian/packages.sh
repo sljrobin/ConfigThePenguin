@@ -5,9 +5,9 @@
 function debian_install_colorscheme()
 {
   colorize "Installing base16..." $CLR_LPURPLE "y"
-  colorize "base16 [1/${STP_PKG_COLORSCHEME}] Downloading the repository from GitHub" $CLR_LBLUE "y"
+  colorize "base16 [1/${STP_D_PKG_COLORSCHEME}] Downloading the repository from GitHub" $CLR_LBLUE "y"
   git clone https://github.com/chriskempson/base16-shell.git /home/sljrobin/.config/base16-shell
-  colorize "base16 [2/${STP_PKG_COLORSCHEME}] Choosing 'base16 default dark'" $CLR_LBLUE "y"
+  colorize "base16 [2/${STP_D_PKG_COLORSCHEME}] Choosing 'base16 default dark'" $CLR_LBLUE "y"
   sh /home/sljrobin/.config/base16-shell/base16-default.dark.sh
   colorize "Installing base16... [DONE]" $CLR_LGREEN "y"
 }
@@ -106,6 +106,7 @@ function debian_install_media()
 #    flashplugin-nonfree: Adobe Flash
 #    nslookup: manage DNS queries
 #    openvpn: VPN
+#    rtorrent: BitTorrent client
 #    wicd-curses: wired and wireless network manager
 function debian_install_network()
 {
@@ -116,6 +117,7 @@ function debian_install_network()
     flashplugin-nonfree \
     nslookup \
     openvpn \
+    rtorrent \
     wicd-curses
 }
 
@@ -123,8 +125,8 @@ function debian_install_network()
 ########################################################################################################################
 # Install Packages for miscellaneous tools
 #    bc: calculator
-#    calibre: ePUB reader
-#    evince: PDF reader
+#    calibre: ePUB viewer
+#    evince: PDF viewer
 #    newsbeuter: RSS feed reader
 #    p7zip: handle .7zip archives
 #    tmux: terminal multiplexer
@@ -132,6 +134,7 @@ function debian_install_network()
 #    unrar: handle .rar archives
 #    unzip: handle .zip archives
 #    weechat: IRC client
+#    xpdf: PDF viewer
 #    zsh: Z shell
 function debian_install_utils()
 {
@@ -146,5 +149,6 @@ function debian_install_utils()
     unrar \
     unzip \
     weechat \
+    xpdf \
     zsh
 }

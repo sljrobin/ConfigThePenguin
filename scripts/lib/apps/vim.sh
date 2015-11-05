@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ########################################################################################################################
-# base16
+# Install base16
 function vim_install_base16()
 {
   colorize "Installing base16..." $CLR_LPURPLE "y"
@@ -14,7 +14,7 @@ function vim_install_base16()
 
 
 ########################################################################################################################
-# Command-T
+# Install Command-T
 function vim_install_commandt()
 {
   colorize "Installing Command-T..." $CLR_LPURPLE "y"
@@ -33,7 +33,7 @@ function vim_install_commandt()
 
 
 ########################################################################################################################
-# delimitMate
+# Install delimitMate
 function vim_install_delimitmate()
 {
   colorize "Installing delimitMate..." $CLR_LPURPLE "y"
@@ -46,7 +46,7 @@ function vim_install_delimitmate()
 
 
 ########################################################################################################################
-# indentLine
+# Install indentLine
 function vim_install_indentline()
 {
   colorize "Installing indentLine..." $CLR_LPURPLE "y"
@@ -59,7 +59,7 @@ function vim_install_indentline()
 
 
 ########################################################################################################################
-# Multiple Cursors
+# Install Multiple Cursors
 function vim_install_multiplecursors()
 {
   colorize "Installing vim-multiple-cursors..." $CLR_LPURPLE "y"
@@ -72,7 +72,7 @@ function vim_install_multiplecursors()
 
 
 ########################################################################################################################
-# NERD Tree
+# Install NERD Tree
 function vim_install_nerdtree()
 {
   colorize "Installing NERD Tree..." $CLR_LPURPLE "y"
@@ -85,7 +85,7 @@ function vim_install_nerdtree()
 
 
 ########################################################################################################################
-# Pathogen
+# Install Pathogen
 function vim_install_pathogen()
 {
   colorize "Installing Pathogen..." $CLR_LPURPLE "y"
@@ -102,7 +102,7 @@ function vim_install_pathogen()
 
 
 ########################################################################################################################
-# Surround
+# Install Surround
 function vim_install_surround()
 {
   colorize "Installing Surround..." $CLR_LPURPLE "y"
@@ -115,26 +115,26 @@ function vim_install_surround()
 
 
 ########################################################################################################################
-# Taglist
+# Install Tag List
 function vim_install_taglist()
 {
   TAGLIST_FOLDER="taglist.zip"    # Name of the downloaded file
 
-  colorize "Installing Taglist..." $CLR_LPURPLE "y"
-  colorize "Taglist [1/${STP_VIM_TAGLIST}] Going to '.vim/'" $CLR_LBLUE "y"
+  colorize "Installing Tag List..." $CLR_LPURPLE "y"
+  colorize "Tag List [1/${STP_VIM_TAGLIST}] Going to '.vim/'" $CLR_LBLUE "y"
   cd ~/.vim/
-  colorize "Taglist [2/${STP_VIM_TAGLIST}] Downloading the repository from SourceForge" $CLR_LBLUE "y"
+  colorize "Tag List [2/${STP_VIM_TAGLIST}] Downloading the repository from SourceForge" $CLR_LBLUE "y"
   wget -O ${TAGLIST_FOLDER} http://sourceforge.net/projects/vim-taglist/files/latest/download?source=files
-  colorize "Taglist [3/${STP_VIM_TAGLIST}] Extracting main .zip file" $CLR_LBLUE "y"
+  colorize "Tag List [3/${STP_VIM_TAGLIST}] Extracting main .zip file" $CLR_LBLUE "y"
   unzip ${TAGLIST_FOLDER}
-  colorize "Taglist [4/${STP_VIM_TAGLIST}] Removing main .zip file" $CLR_LBLUE "y"
+  colorize "Tag List [4/${STP_VIM_TAGLIST}] Removing main .zip file" $CLR_LBLUE "y"
   rm ${TAGLIST_FOLDER}
-  colorize "Installing Taglist... [DONE]" $CLR_LGREEN "y"
+  colorize "Installing Tag List... [DONE]" $CLR_LGREEN "y"
 }
 
 
 ########################################################################################################################
-# YouCompleteMe
+# Install YouCompleteMe
 function vim_install_youcompleteme()
 {
   colorize "Installing YouCompleteMe..." $CLR_LPURPLE "y"

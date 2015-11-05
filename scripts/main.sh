@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin - Main script 
 #          Author: Simon L. J. Robin - http://sljrobin.com
 #         Created: 2015-10-18 15:20:37
-#        Modified: 2015-10-30 17:18:08
+#        Modified: 2015-10-30 23:03:59
 #
 ########################################################################################################################
 # Load Core
@@ -13,6 +13,7 @@ source ./core/ctp_func.sh
 
 # Load Library: Applications scripts
 source ./lib/apps/firefox.sh
+source ./lib/apps/rtorrent.sh
 source ./lib/apps/vim.sh
 source ./lib/apps/xmonad.sh
 
@@ -41,6 +42,22 @@ while true; do
               args_apps_firefox_addons
               ;;
             # > Apps > Firefox > Miscellaneous
+            -*) args_invalid $1 ;;       # Invalid argument
+             *) args_insufficient $1 ;;  # Insufficient number of arguments
+          esac
+          break
+          ;;
+        # > Apps > rTorrent
+        rtorrent)
+          shift
+          case $1 in
+            # > Apps > rTorrent > Installation
+            -i | --install)
+              shift
+              args_apps_rtorrent_install
+              break
+              ;;
+            # > Apps > rTorrent > Miscellaneous
             -*) args_invalid $1 ;;       # Invalid argument
              *) args_insufficient $1 ;;  # Insufficient number of arguments
           esac

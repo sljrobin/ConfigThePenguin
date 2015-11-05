@@ -31,6 +31,14 @@ DIR_SH_BASH="/bin/bash"                                                         
 DIR_SH_ZSH1="/bin/zsh"                                                                                        # Directory Shell: Zsh (option 1)
 DIR_SH_ZSH2="/usr/bin/zsh"                                                                                    # Directory Shell: Zsh (option 2)
 
+# Directories - rTorrent
+DIR_RTORRENTRC="$HOME/.rtorrent.rc"                                                                           # Directory rTorrent: .rtorrent.rc
+DIR_RTORRENT_HOMEDL="$HOME/Downloads"                                                                         # Directory rTorrent: HOME/Downloads directory
+DIR_RTORRENT_MAIN="$HOME/.rtorrent"                                                                           # Directory rTorrent: Main directory
+DIR_RTORRENT_DOWNLOADS="$HOME/.rtorrent/downloads"                                                            # Directory rTorrent: Downloads directory
+DIR_RTORRENT_SESSION="$HOME/.rtorrent/session"                                                                # Directory rTorrent: Session directory
+DIR_RTORRENT_TORRENTS="$HOME/.rtorrent/torrents"                                                              # Directory rTorrent: Torrents directory
+
 # Directories - xmonad
 DIR_XMONAD_REPO="../dotfiles/.xmonad"                                                                         # Directory xmonad: on the repo
 DIR_XMONAD_OS="$HOME/.xmonad"                                                                                 # Directory xmonad: on the OS
@@ -70,6 +78,8 @@ FFA_WORDREFERENCETRANSLATOR_URL="https://addons.mozilla.org/En-us/firefox/addon/
 
 ########################################################################################################################
 # Steps - Apps
+# rTorrent
+STP_RTORRENT_INSTALL='4'                                                                                      # Steps - Apps: rTorrent install
 # vim
 STP_VIM_BASE16='2'                                                                                            # Steps - Apps: vim's Base16
 STP_VIM_COMMANDT='5'                                                                                          # Steps - Apps: vim's Command-T
@@ -92,7 +102,7 @@ STP_D_PKG_COLORSCHEME='2'                                                       
 STP_D_PKG_INITIALIZATION='7'                                                                                  # Steps - OS - Debian: initialization
 
 # Steps - PC
-# LenovoX250 - Drivers
+# Lenovo ThinkPad X250 - Drivers
 STP_D_DRV_X250_AUDIO='1'                                                                                      # Steps - PC - Debian: Lenovo ThinkPad X250 Audio drivers
 STP_D_DRV_X250_WIFI='3'                                                                                       # Steps - PC - Debian: Lenovo ThinkPad X250 WiFi drivers
 STP_D_DRV_X250_WIFIADAPTER='1'                                                                                # Steps - PC - Debian: Lenovo ThinkPad X250 WiFi Adapter drivers

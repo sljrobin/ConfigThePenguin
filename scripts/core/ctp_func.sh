@@ -46,6 +46,13 @@ function args_apps_firefox_addons()
 }
 
 
+# rTorrent: installation
+function args_apps_rtorrent_install()
+{
+  rtorrent_install
+}
+
+
 # vim: installation of plugins
 #   $1: next argument
 function args_apps_vim_install()
