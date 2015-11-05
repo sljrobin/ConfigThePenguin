@@ -20,6 +20,7 @@ function firefox_addon_show_all()
   firefox_addon_show_details "$FFA_DISCONNECT_NME" "$FFA_DISCONNECT_URL"
   firefox_addon_show_details "$FFA_FLAGFOX_NME" "$FFA_FLAGFOX_URL"
   firefox_addon_show_details "$FFA_FTDEEPDARK_NME" "$FFA_FTDEEPDARK_URL"
+  firefox_addon_show_details "$FFA_GOOGLE_SSL_SEARCH_NME" "$FFA_GOOGLE_SSL_SEARCH_URL"
   firefox_addon_show_details "$FFA_HTTPSEVERYWHERE_NME" "$FFA_HTTPSEVERYWHERE_URL"
   firefox_addon_show_details "$FFA_NOSCRIPT_NME" "$FFA_NOSCRIPT_URL"
   firefox_addon_show_details "$FFA_SELFDESTRUCTINGCOOKIES_NME" "$FFA_SELFDESTRUCTINGCOOKIES_URL"
