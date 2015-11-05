@@ -23,12 +23,18 @@ import Hook_Log                         -- Load the LogHook
 import Hook_Manage                      -- Load the ManageHook
 import Hook_Startup                     -- Load the StartupHook
 
+import XMonad.Layout.Fullscreen
+
+import XMonad.Layout.IndependentScreens
 
 ------------------------------------------------------------------------------------------------------------------------
 -- MAIN
 ------------------------------------------------------------------------------------------------------------------------
 main :: IO ()
 main = do
+    nScreens <- countScreens
+    d <- spawnPipe myXmonadBarTopR
+
     myStatusBarTopL <- spawnPipe myXmonadBarTopL  -- Top Left status bar
     myStatusBarTopR <- spawnPipe myXmonadBarTopR  -- Top Right status bar
     myStatusBarBotL <- spawnPipe myXmonadBarBotL  -- Bottom Left status bar
@@ -46,6 +52,7 @@ main = do
         , modMask            = myModMask
         , mouseBindings      = myMouseBindings
           -- Hooks
+--        , handleEventHook    = fullscreenEventHook
         , layoutHook         = myLayoutHook
         , logHook            = dynamicLogWithPP $ myDzenPP myStatusBarTopL
         , manageHook         = manageDocks <+> myManageHook <+> manageHook defaultConfig

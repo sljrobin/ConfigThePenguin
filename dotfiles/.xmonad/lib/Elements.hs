@@ -42,4 +42,4 @@ myTerminal = "urxvtcd"
 ------------------------------------------------------------------------------------------------------------------------
 myWorkspaces :: [WorkspaceId]
 myWorkspaces = map show [1 .. 9]
---myWorkspaces = withScreens 1 ["alpha", "beta"]
+--myWorkspaces = withScreens 2 ["1", "2", "3", "4", "5", "6", "7", "8", "9"]

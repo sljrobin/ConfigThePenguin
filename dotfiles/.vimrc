@@ -308,13 +308,20 @@ autocmd BufNewFile,BufReadPost .bash_history set filetype=sh        " Set `.bash
 autocmd BufNewFile,BufReadPost .bash_logout  set filetype=sh        " Set `.bash_logout` as a Shell file
 autocmd BufNewFile,BufReadPost .bashrc       set filetype=sh        " Set `.bashrc` as a Shell file
 autocmd BufNewFile,BufReadPost .rtorrent.rc  set filetype=sh        " Set `.rtorrent.rc` as a Shell file
+" HTML
+autocmd BufNewFile,BufReadPost .htm          set filetype=html      " Set `*.htm` as a HTML file
+" YAML
+autocmd BufNewFile,BufReadPost .yml          set filetype=yaml      " Set `*.yaml` as a YAML file
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.hs` files: 4,4
-autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md` files: 4,4
-autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh` files: 2,2
+autocmd FileType css      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.css`  files: 2,2
+autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.hs`   files: 4,4
+autocmd FileType html     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.html` files: 2,2
+autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md`   files: 4,4
+autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh`   files: 2,2
+autocmd FileType yaml     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.yaml` files: 2,2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Spell-Checking
@@ -365,7 +372,7 @@ let g:Tlist_Use_Right_Window = 1             " Tag List: show the window at righ
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Vim Markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vim_markdown_folding_disabled=0        " Vim Markdown: do not disable folding
-let g:vim_markdown_no_default_key_mapping=0  " Vim Markdown: do not disable default key mapping
-let g:vim_markdown_math=1                    " Vim Markdown: enable LaTeX syntax extension
-let g:vim_markdown_frontmatter=1             " Vim Markdown: enable YAML frontmatter extension
+"let g:vim_markdown_folding_disabled=0        " Vim Markdown: do not disable folding
+"let g:vim_markdown_no_default_key_mapping=0  " Vim Markdown: do not disable default key mapping
+"let g:vim_markdown_math=1                    " Vim Markdown: enable LaTeX syntax extension
+"let g:vim_markdown_frontmatter=1             " Vim Markdown: enable YAML frontmatter extension
