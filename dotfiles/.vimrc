@@ -312,6 +312,8 @@ autocmd BufNewFile,BufReadPost .rtorrent.rc  set filetype=sh        " Set `.rtor
 autocmd BufNewFile,BufReadPost .htm          set filetype=html      " Set `*.htm` as a HTML file
 " YAML
 autocmd BufNewFile,BufReadPost .yml          set filetype=yaml      " Set `*.yaml` as a YAML file
+" Rakefile
+autocmd BufNewFile,BufReadPost Rakefile      set filetype=ruby      " Set `Rakefile` as a Ruby file
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Indentation
@@ -320,6 +322,7 @@ autocmd FileType css      setlocal shiftwidth=2 tabstop=2           " Define ind
 autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.hs`   files: 4,4
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.html` files: 2,2
 autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md`   files: 4,4
+autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.rb`   files: 2,2
 autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh`   files: 2,2
 autocmd FileType yaml     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.yaml` files: 2,2
 
