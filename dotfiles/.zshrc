@@ -50,10 +50,10 @@ alias gplv='git pull -v'                 # `gplv`: update remote-tracking branch
 alias screens='xrandr --output eDP1 --mode 1920x1080 --output DP2 --mode 1920x1080 --right-of eDP1'
 
 
-setopt autocd # Chamge directory without typing the `cd` command
+setopt AUTOCD # Change directory without typing the `cd` command
 
 
-setopt menu_complete # Insert the first match immediately 
+setopt MENU_COMPLETE # Do not insert the first match immediately 
 
 # Bindkeys
 # Use `read` to find the keys typed
@@ -78,6 +78,7 @@ compinit
 #  a: abort
 #  e: edit
 
+setopt CORRECT  # Correct command line
 # Type ! + command line to search in the history
 #
 #
