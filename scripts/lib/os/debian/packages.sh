@@ -84,7 +84,7 @@ function debian_install_gui()
 #    alsa-oss: OSS compatibility layer
 #    mpd: music player daemon
 #    mpc: music player client
-#    mplayer2: video player
+#    mpv: video player
 #    ncmpcpp: ncurses based mpd client
 #    vlc: media player
 function debian_install_media()
@@ -94,7 +94,7 @@ function debian_install_media()
     alsa-oss \
     mpd \
     mpc \
-    mplayer2 \
+    mpv \
     ncmpcpp \
     vlc
 }
