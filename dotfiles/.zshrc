@@ -53,7 +53,7 @@ alias screens='xrandr --output eDP1 --mode 1920x1080 --output DP2 --mode 1920x10
 setopt AUTOCD # Change directory without typing the `cd` command
 
 
-setopt MENU_COMPLETE # Do not insert the first match immediately 
+unsetopt MENU_COMPLETE # Do not insert the first match immediately 
 
 # Bindkeys
 # Use `read` to find the keys typed
