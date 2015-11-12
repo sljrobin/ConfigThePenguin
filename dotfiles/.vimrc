@@ -1,72 +1,63 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                                                                                      "
-"                                            A Personal Linux Configuration                                            " 
-"                                                                                                                      "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " .vimrc
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Author
-" -> Simon L. J. Robin
-" -> http://sljrobin.com
-" -> sljrobin@gmail.com
-"
-" About ConfigThePenguin
-" -> http://work.sljrobin.com/configthepenguin
-" -> https://github.com/sljrobin/ConfigThePenguin
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sections
-" -> Initialization
-" -> Bindings
-" -> Features
-" -> Mapping
-" -> Appearance
-" -> Indentation
-" -> Statusline
-" -> Headers
-" -> FileTypes
-" -> Plugins
-"
-" Notes
-" -> General
-"    -> Directories in .vim/
-"       1. autoload/
-"       2. bundle/
-"       3. colors/
-"
-" -> Headers
-"    1. Defines the template file
-"    2. Write the current filename
-"    3. Write the creation date
-"    4. Mark the current cursor position before updating
-"    5. Updated the last modified date
-"    6. Restore the cursor position back to its previous position
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Initialization
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+" Vundle | Begin
+set nocompatible                        " Do not let Vim starts its initializations
+filetype off                            " Unable file type detection
+set rtp+=~/.vim/bundle/Vundle.vim       " Set the RunTimePath
+call vundle#begin()                     " Begin Vundle
+
+" Plugins
+Plugin 'VundleVim/Vundle.vim'           " Plugin: Vundle
+Plugin 'chriskempson/base16-vim'        " Plugin: Base16
+Plugin 'scrooloose/nerdtree'            " Plugin: NERDTree
+Plugin 'Raimondi/delimitMate'           " Plugin: delimitMate
+Plugin 'terryma/vim-multiple-cursors'   " Plugin: vim-multiple-cursors
+Plugin 'Yggdroot/indentLine'            " Plugin: indentLine
+Plugin 'Valloric/YouCompleteMe'         " Plugin: YouCompleteMe
+Plugin 'majutsushi/tagbar'              " Plugin: Tagbar
+Plugin 'SirVer/ultisnips'               " Plugin: UltiSnips
+Plugin 'honza/vim-snippets'             " Plugin: vim-snippets
+
+" Vundle | End
+call vundle#end()                       " End Vundle
+filetype plugin on                      " Enable the plugin files for specific file types
+filetype indent on                      " Enable the indent file for specific file types
+
+" Plugins Options
+" indentLine
+let g:indentLine_char = '|'                               " Character to use for delimitation
+let g:indentLine_color_term = 236                         " Color of the character
+
+" YouCompleteMe
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']  " '<Ctrl> + <n>' | '<Down>': cycle forwards through the completion list
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']  " '<Ctrl> + <p>' | '<Up': cycle backwards through the completion list
+let g:ycm_min_num_of_chars_for_completion=2               " Number of characters needed to be typed before completion suggestions
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<Tab>"                      " <Tab>: expand a snippet
+let g:UltiSnipsJumpForwardTrigger="<C-n>"                 " <Ctrl> + <n>: cycle forwards through the snippets list
+let g:UltiSnipsJumpBackwardTrigger="<C-p>"                " <Ctrl> + <p>: cycle backwards through the snippets list
+let g:UltiSnipsEditSplit="vertical"                       " Set a vertical window for editing the snippets
+
+
+
 "" Encoding
 scriptencoding utf8                 " Character Encoding used in the script
 set encoding=utf-8                  " Main Character Encoding
 setglobal fileencoding=utf-8        " Sets UTF-8 as the default value for a particular file (local to buffer)
 
-"" Resetting
-set nocompatible                    " Do not let Vim starts its initializations
-
-"" Pathogen
-filetype off                        " Unable file type detection
-call pathogen#infect()              " Enable Pathogen (1/2)
-call pathogen#helptags()            " Enable Pathogen (2/2)
-filetype plugin on                  " Enable the plugin files for specific file types
-filetype indent on                  " Enable the indent file for specific file types
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+autocmd VimResized * :wincmd = " Automatically resize the windows inside vim
 """ mapleader
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " <,>
@@ -88,8 +79,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " <Tab>
 " Indent
-nnoremap <Tab> >>
-vnoremap <Tab> >gv
+"nnoremap <Tab> >>
+"vnoremap <Tab> >gv
 
 " <Shift> + <Tab>
 " Unindent
@@ -134,7 +125,7 @@ map! <silent> <F9> <ESC>:NERDTreeToggle<CR>
 
 " <F10>
 " Open/Close Tagbar
-nmap <F10> :Tlist<CR>
+nmap <F10> :TagbarToggle<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,9 +154,7 @@ nmap <F10> :Tlist<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set shortmess+=I                    " Hide the launch screen
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Colors
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Colors """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256                        " Enable 256 colors
 syntax on                           " Enable syntax highlighting
 
@@ -184,9 +173,7 @@ set foldmethod=indent               " Indentation used for the kind of folding
 set splitbelow                      " Open new window below the current window for horizontal split
 set splitright                      " Open new window right the current window for vertical split
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Search
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch                        " Highlight research results
 set ignorecase                      " Ignore case when searching
 set incsearch                       " Start searching during typing
@@ -361,26 +348,3 @@ highlight SpellLocal ctermfg=5
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType markdown setlocal spell                            " Set Spell-Checking for Markdown files
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" indentLine
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_char = '|'                  " indentLine: character to use for delimitation
-let g:indentLine_color_term = 236            " indentLine: color of the character
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Tag List
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:Tlist_Use_Right_Window = 1             " Tag List: show the window at right
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Vim Markdown
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:vim_markdown_folding_disabled=0        " Vim Markdown: do not disable folding
-"let g:vim_markdown_no_default_key_mapping=0  " Vim Markdown: do not disable default key mapping
-"let g:vim_markdown_math=1                    " Vim Markdown: enable LaTeX syntax extension
-"let g:vim_markdown_frontmatter=1             " Vim Markdown: enable YAML frontmatter extension
