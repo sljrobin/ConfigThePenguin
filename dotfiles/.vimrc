@@ -30,6 +30,10 @@ filetype plugin on                      " Enable the plugin files for specific f
 filetype indent on                      " Enable the indent file for specific file types
 
 " Plugins Options
+" vim-multiple-cursors
+let g:multi_cursor_exit_from_visual_mode=0                " Quit and delete all existing cursors in Visual mode
+let g:multi_cursor_exit_from_insert_mode=0                " Quit and delete all existing cursors in Normal mode
+
 " indentLine
 let g:indentLine_char = '|'                               " Character to use for delimitation
 let g:indentLine_color_term = 236                         " Color of the character
