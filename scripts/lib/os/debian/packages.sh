@@ -18,6 +18,7 @@ function debian_install_colorscheme()
 #    build-essential: all required packages for compiling a Debian package
 #    cmake: cross-platform Makefile generator
 #    exuberant-ctags: generator of tag files for source code
+#    gdebi: tool to install '.deb' files
 #    gedit: graphical editor
 #    git: version control system
 #    jekyll: static site generator
@@ -35,6 +36,7 @@ function debian_install_dev()
     build-essential \
     cmake \
     exuberant-ctags \
+    gdebi \
     gedit \
     git \
     linux-headers-$(uname -r) \
