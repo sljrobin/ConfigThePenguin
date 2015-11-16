@@ -103,9 +103,20 @@ STP_D_CTN_SHELL='2'                                                             
 STP_D_PKG_COLORSCHEME='2'                                                                                     # Steps | OS | Debian: main colorscheme
 STP_D_PKG_INITIALIZATION='7'                                                                                  # Steps | OS | Debian: initialization
 
+STP_D_PKG_DEV='1'                                                                                             # Steps: Debian | Packages | Dev
+STP_D_PKG_GUI='2'                                                                                             # Steps: Debian | Packages | GUI
+STP_D_PKG_MEDIA='1'                                                                                           # Steps: Debian | Packages | Media
+STP_D_PKG_NET='1'                                                                                             # Steps: Debian | Packages | Net
+STP_D_PKG_UTILS='1'                                                                                           # Steps: Debian | Packages | Utils
+
 # Steps - PC
 # Lenovo ThinkPad X250 - Drivers
 STP_D_DRV_X250='3'                                                                                            # Steps: Debian | Drivers | Lenovo X250
 STP_D_DRV_X250_AUDIO='1'                                                                                      # Steps: Debian | Drivers | Lenovo X250: Audio
-STP_D_DRV_X250_WIFI='3'                                                                                       # Steps: Debian | Drivers | Lenovo X250: WiFi
-STP_D_DRV_X250_WIFIADAPTER='1'                                                                                # Steps: Debian | Drivers | Lenovo X250: WiFi Adapter
+STP_D_DRV_X250_WIFI='8'                                                                                       # Steps: Debian | Drivers | Lenovo X250: WiFi
+STP_D_DRV_X250_WIFIADAPTER='6'                                                                                # Steps: Debian | Drivers | Lenovo X250: WiFi Adapter
+
+
+
+SRC_D_IWLWIFI="deb http://http.debian.net/debian/ jessie main contrib non-free"                               # Sources: Debian | iwlwifi
+SRC_D_FIRMATHEROS="deb http://httpredir.debian.org/debian/ jessie main contrib non-free"                      # Sources: Debian | firmware-atheros
