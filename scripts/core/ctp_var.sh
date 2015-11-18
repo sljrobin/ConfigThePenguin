@@ -117,6 +117,12 @@ STP_D_DRV_X250_WIFI='8'                                                         
 STP_D_DRV_X250_WIFIADAPTER='6'                                                                                # Steps: Debian | Drivers | Lenovo X250: WiFi Adapter
 
 
+STP_M_SET_FIREFOX='1'                                                                                         # Steps: Multi | Settings | Firefox
+
+STP_M_SET_RTORRENT='3'                                                                                        # Steps: Multi | Settings | rTorrent
+STP_M_SET_RTORRENT_CHECKDL='1'                                                                                # Steps: Multi | Settings | rTorrent: Check '~/Downloads'
+STP_M_SET_RTORRENT_CREATEDIRS='4'                                                                             # Steps: Multi | Settings | rTorrent: Create directories
 
 SRC_D_IWLWIFI="deb http://http.debian.net/debian/ jessie main contrib non-free"                               # Sources: Debian | iwlwifi
 SRC_D_FIRMATHEROS="deb http://httpredir.debian.org/debian/ jessie main contrib non-free"                      # Sources: Debian | firmware-atheros
+
