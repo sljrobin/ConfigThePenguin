@@ -97,8 +97,6 @@ STP_VIM_YOUCOMPLETEME='5'                                                       
 STP_XMD_UPDATE='6'                                                                                            # Steps | Apps: xmonad updating
 
 # Steps - OS
-# Debian - Customization
-STP_D_CTN_SHELL='2'                                                                                           # Steps | OS | Debian: shell
 # Debian - Packages
 STP_D_PKG_COLORSCHEME='2'                                                                                     # Steps | OS | Debian: main colorscheme
 STP_D_PKG_INITIALIZATION='7'                                                                                  # Steps | OS | Debian: initialization
@@ -118,10 +116,10 @@ STP_D_DRV_X250_WIFIADAPTER='6'                                                  
 
 
 STP_M_SET_FIREFOX='1'                                                                                         # Steps: Multi | Settings | Firefox
-
 STP_M_SET_RTORRENT='3'                                                                                        # Steps: Multi | Settings | rTorrent
 STP_M_SET_RTORRENT_CHECKDL='1'                                                                                # Steps: Multi | Settings | rTorrent: Check '~/Downloads'
 STP_M_SET_RTORRENT_CREATEDIRS='4'                                                                             # Steps: Multi | Settings | rTorrent: Create directories
+STP_M_SET_ZSH='1'                                                                                             # Steps: Multi | Settings | Zsh
 
 SRC_D_IWLWIFI="deb http://http.debian.net/debian/ jessie main contrib non-free"                               # Sources: Debian | iwlwifi
 SRC_D_FIRMATHEROS="deb http://httpredir.debian.org/debian/ jessie main contrib non-free"                      # Sources: Debian | firmware-atheros
