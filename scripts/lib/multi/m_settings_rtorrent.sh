@@ -1,64 +1,81 @@
 #!/bin/bash
 
 ########################################################################################################################
-# Check if the '~/Downloads/' directory exists
-function rtorrent_checkdl()
+# Multi | Settings | rTorrent: Check if the '~/Downloads/' directory exists
+function __m_settings_rtorrent_checkdl()
 {
-  colorize "Checking if the directory '$DIR_RTORRENT_HOMEDL/' exists..." $CLR_LPURPLE "y"
   if [ -d "$DIR_RTORRENT_HOMEDL" ]; then
-    colorize "Need to remove '$DIR_RTORRENT_HOMEDL/' to finish the installation." $CLR_LRED "y"
-    colorize "Checking if the directory '$DIR_RTORRENT_HOMEDL/' exists... [DONE]" $CLR_LGREEN "y"
+    colorize "> [1/${STP_M_SET_RTORRENT_CHECKDL}] Need to remove '$DIR_RTORRENT_HOMEDL/' to complete the installation" $CLR_DRED "y"
     exit 1
   else
-    colorize "Linking '$DIR_RTORRENT_HOMEDL/' to '$DIR_RTORRENT_DOWNLOADS/'" $CLR_LBLUE "y"
+    colorize "> [1/${STP_M_SET_RTORRENT_CHECKDL}] Linking '$DIR_RTORRENT_HOMEDL/' to '$DIR_RTORRENT_DOWNLOADS/'" $CLR_DPURPLE "y"
     ln -s $DIR_RTORRENT_DOWNLOADS $DIR_RTORRENT_HOMEDL
-    colorize "Checking if the directory '$DIR_RTORRENT_HOMEDL/' exists... [DONE]" $CLR_LGREEN "y"
   fi
 }
 
 
 ########################################################################################################################
-# Check if the '.rtorrent.rc' exists
-function rtorrent_checkrc()
+# Multi | Settings | rTorrent: Check if the '.rtorrent.rc' file exists
+function __m_settings_rtorrent_checkrc()
 {
-  colorize "Checking if '$DIR_RTORRENTRC' exists..." $CLR_LPURPLE "y"
   if [ ! -f "$DIR_RTORRENTRC" ]; then
-    colorize "The file '$DIR_RTORRENTRC' does not exist. Need to create a symlink for '$DIR_RTORRENTRC'." $CLR_LORANGE "y"
+    colorize "> The file '$DIR_RTORRENTRC' does not exist. Need to create a symlink for '$DIR_RTORRENTRC' or copy it." $CLR_LORANGE "y"
   fi
-  colorize "Checking if '$DIR_RTORRENTRC' exists... [DONE]" $CLR_LGREEN "y"
 }
 
 
 ########################################################################################################################
-# Create the rtorrent directories
-function rtorrent_install()
+# Multi | Settings | rTorrent: Create rTorrent directories
+function __m_settings_rtorrent_createdirs()
 {
-  rtorrent_checkrc
-  colorize "Installing rTorrent and making all the directories..." $CLR_LPURPLE "y"
-  colorize "Installing rTorrent [1/${STP_RTORRENT_INSTALL}] Making main directory '$DIR_RTORRENT_MAIN/'" $CLR_LBLUE "y"
+  # Main directory
   if [ -d "$DIR_RTORRENT_MAIN" ]; then
-    colorize "The directory '$DIR_RTORRENT_MAIN/' already exists." $CLR_LRED "y"
+    colorize "> [1/${STP_M_SET_RTORRENT_CREATEDIRS}] The directory '$DIR_RTORRENT_MAIN/' already exists." $CLR_DORANGE "y"
   else
+    colorize "> [1/${STP_M_SET_RTORRENT_CREATEDIRS}] Creating '$DIR_RTORRENT_HOMEDL/'" $CLR_DPURPLE "y"
     mkdir "$DIR_RTORRENT_MAIN" 
   fi
-  colorize "Installing rTorrent [2/${STP_RTORRENT_INSTALL}] Making downloads directory '$DIR_RTORRENT_DOWNLOADS/'" $CLR_LBLUE "y"
+  # Downloads directory
   if [ -d "$DIR_RTORRENT_DOWNLOADS" ]; then
-    colorize "The directory '$DIR_RTORRENT_DOWNLOADS/' already exists." $CLR_LRED "y"
+    colorize "> [2/${STP_M_SET_RTORRENT_CREATEDIRS}] The directory '$DIR_RTORRENT_DOWNLOADS/' already exists." $CLR_DORANGE "y"
   else
+    colorize "> [2/${STP_M_SET_RTORRENT_CREATEDIRS}] Creating '$DIR_RTORRENT_DOWNLOADS/'" $CLR_DPURPLE "y"
     mkdir "$DIR_RTORRENT_DOWNLOADS" 
   fi
-  colorize "Installing rTorrent [3/${STP_RTORRENT_INSTALL}] Making session directory '$DIR_RTORRENT_SESSION/'" $CLR_LBLUE "y"
+  # Session directory
   if [ -d "$DIR_RTORRENT_SESSION" ]; then
-    colorize "The directory '$DIR_RTORRENT_SESSION/' already exists." $CLR_LRED "y"
+    colorize "> [3/${STP_M_SET_RTORRENT_CREATEDIRS}] The directory '$DIR_RTORRENT_SESSION/' already exists." $CLR_DORANGE "y"
   else
+    colorize "> [3/${STP_M_SET_RTORRENT_CREATEDIRS}] Creating '$DIR_RTORRENT_SESSION/'" $CLR_DPURPLE "y"
     mkdir "$DIR_RTORRENT_SESSION" 
   fi
-  colorize "Installing rTorrent [4/${STP_RTORRENT_INSTALL}] Making torrents directory '$DIR_RTORRENT_TORRENTS/'" $CLR_LBLUE "y"
+  # Torrents directory
   if [ -d "$DIR_RTORRENT_TORRENTS" ]; then
-    colorize "The directory '$DIR_RTORRENT_TORRENTS/' already exists." $CLR_LRED "y"
+    colorize "> [4/${STP_M_SET_RTORRENT_CREATEDIRS}] The directory '$DIR_RTORRENT_TORRENTS/' already exists." $CLR_DORANGE "y"
   else
+    colorize "> [4/${STP_M_SET_RTORRENT_CREATEDIRS}] Creating '$DIR_RTORRENT_TORRENTS/'" $CLR_DPURPLE "y"
     mkdir "$DIR_RTORRENT_TORRENTS" 
   fi
-  rtorrent_checkdl
-  colorize "Installing rTorrent and making all the directories... [DONE]" $CLR_LGREEN "y"
+}
+
+
+########################################################################################################################
+# Multi | Settings | rTorrent: Install rTorrent
+function m_settings_rtorrent()
+{
+  # Check rtorrent.rc
+  colorize "[1/${STP_M_SET_RTORRENT}] Checking if the file '$DIR_RTORRENTRC' exists..." $CLR_LBLUE "y"
+  __m_settings_rtorrent_checkrc
+  colorize "[1/${STP_M_SET_RTORRENT}] Checking if the file '$DIR_RTORRENTRC' exists..." $CLR_LBLUE "n"
+  colorize " [DONE]" $CLR_LGREEN "y"
+  # Create directories
+  colorize "[2/${STP_M_SET_RTORRENT}] Creating directories..." $CLR_LBLUE "y"
+  __m_settings_rtorrent_createdirs
+  colorize "[2/${STP_M_SET_RTORRENT}] Creating directories..." $CLR_LBLUE "n"
+  colorize " [DONE]" $CLR_LGREEN "y"
+  # Check Downloads
+  colorize "[3/${STP_M_SET_RTORRENT}] Checking if the directory '$DIR_RTORRENT_HOMEDL/' exists..." $CLR_LBLUE "y"
+  __m_settings_rtorrent_checkdl
+  colorize "[3/${STP_M_SET_RTORRENT}] Checking if the directory '$DIR_RTORRENT_HOMEDL/' exists..." $CLR_LBLUE "n"
+  colorize " [DONE]" $CLR_LGREEN "y"
 }
