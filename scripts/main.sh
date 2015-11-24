@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin - Main script 
 #          Author: Simon L. J. Robin - http://sljrobin.com
 #         Created: 2015-10-18 15:20:37
-#        Modified: 2015-11-12 16:04:42
+#        Modified: 2015-11-18 12:46:44
 #
 ########################################################################################################################
 # Load Core
@@ -28,10 +28,10 @@ source ./lib/pc/lenovo-x250_debian.sh
 
 ########################################################################################################################
 
-git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-cd $HOME/.vim/bundle/YouCompleteMe
-python instal.py
+#git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+#vim +PluginInstall +qall
+#cd $HOME/.vim/bundle/YouCompleteMe
+#python install.py
 
 
 
@@ -47,7 +47,7 @@ while true; do
           case $1 in
             # > Apps > Firefox > Add-ons
             -a | --addons)
-              args_apps_firefox_addons
+              m_settings_firefox
               ;;
             # > Apps > Firefox > Miscellaneous
             -*) args_invalid $1 ;;       # Invalid argument
