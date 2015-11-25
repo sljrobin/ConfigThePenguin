@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin - Main script 
 #          Author: Simon L. J. Robin - http://sljrobin.com
 #         Created: 2015-10-18 15:20:37
-#        Modified: 2015-11-18 12:46:44
+#        Modified: 2015-11-25 11:09:24
 #
 ########################################################################################################################
 # Load Core
@@ -28,10 +28,6 @@ source ./lib/pc/lenovo-x250_debian.sh
 
 ########################################################################################################################
 
-#git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-#vim +PluginInstall +qall
-#cd $HOME/.vim/bundle/YouCompleteMe
-#python install.py
 
 
 
