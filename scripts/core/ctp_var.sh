@@ -62,6 +62,8 @@ FFA_UBLOCKORIGIN_NME="uBlock Origin"                                            
 FFA_UBLOCKORIGIN_URL="https://addons.mozilla.org/en-us/firefox/addon/ublock-origin/"                          # Firefox Add-on: 'uBlock Origin' URL
 
 # Add-ons Firefox - Security
+FFA_CALOMEL_SSL_VALIDATION_NME="Calomel SSL Validation"                                                       # Firefox Add-on: 'Calomel SSL Validation' Name
+FFA_CALOMEL_SSL_VALIDATION_URL="https://addons.mozilla.org/en-us/firefox/addon/calomel-ssl-validation/"       # Firefox Add-on: 'Calomel SSL Validation' URL
 FFA_GOOGLE_SSL_SEARCH_NME="Google SSL Search"                                                                 # Firefox Add-on: 'Google SSL Search' Name
 FFA_GOOGLE_SSL_SEARCH_URL="https://addons.mozilla.org/en-US/firefox/addon/google-ssl-search/"                 # Firefox Add-on: 'Google SSL Search' URL
 FFA_HTTPSEVERYWHERE_NME="HTTPS Everywhere"                                                                    # Firefox Add-on: 'HTTPS Everywhere' Name
