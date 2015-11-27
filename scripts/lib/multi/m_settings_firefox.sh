@@ -21,6 +21,7 @@ function m_settings_firefox()
   __m_settings_firefox_addonsdetails "$FFA_DISCONNECT_NME" "$FFA_DISCONNECT_URL"
   __m_settings_firefox_addonsdetails "$FFA_FLAGFOX_NME" "$FFA_FLAGFOX_URL"
   __m_settings_firefox_addonsdetails "$FFA_FTDEEPDARK_NME" "$FFA_FTDEEPDARK_URL"
+  __m_settings_firefox_addonsdetails "$FFA_CALOMEL_SSL_VALIDATION_NME" "$FFA_CALOMEL_SSL_VALIDATION_URL"
   __m_settings_firefox_addonsdetails "$FFA_GOOGLE_SSL_SEARCH_NME" "$FFA_GOOGLE_SSL_SEARCH_URL"
   __m_settings_firefox_addonsdetails "$FFA_HTTPSEVERYWHERE_NME" "$FFA_HTTPSEVERYWHERE_URL"
   __m_settings_firefox_addonsdetails "$FFA_NOSCRIPT_NME" "$FFA_NOSCRIPT_URL"
