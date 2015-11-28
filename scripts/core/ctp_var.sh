@@ -39,6 +39,12 @@ DIR_RTORRENT_DOWNLOADS="$HOME/.rtorrent/downloads"                              
 DIR_RTORRENT_SESSION="$HOME/.rtorrent/session"                                                                # Directory rTorrent: Session directory
 DIR_RTORRENT_TORRENTS="$HOME/.rtorrent/torrents"                                                              # Directory rTorrent: Torrents directory
 
+# Directories - vim
+DIR_VIMRC="$HOME/.vimrc"                                                                                      # Directory vim: .vimrc
+DIR_VIM_BUNDLE="$HOME/.vim/bundle"                                                                            # Directory vim: Bundle directory
+DIR_VIM_MAIN="$HOME/.vim"                                                                                     # Directory vim: Main directory
+DIR_VIM_SPELL="$HOME/.vim/spell"                                                                              # Directory vim: Spell directory
+
 # Directories - xmonad
 DIR_XMONAD_REPO="../dotfiles/.xmonad"                                                                         # Directory xmonad: on the repo
 DIR_XMONAD_OS="$HOME/.xmonad"                                                                                 # Directory xmonad: on the OS
@@ -122,6 +128,10 @@ STP_M_SET_RTORRENT='3'                                                          
 STP_M_SET_RTORRENT_CHECKDL='1'                                                                                # Steps: Multi | Settings | rTorrent: Check '~/Downloads'
 STP_M_SET_RTORRENT_CREATEDIRS='4'                                                                             # Steps: Multi | Settings | rTorrent: Create directories
 STP_M_SET_ZSH='1'                                                                                             # Steps: Multi | Settings | Zsh
+
+STP_M_SET_VIM='3'                                                                                             # Steps: Multi | Settings | vim
+STP_M_SET_VIM_CREATEDIRS='3'                                                                                  # Steps: Multi | Settings | vim: Create directories
+STP_M_SET_VIM_PLUGINS='3'                                                                                     # Steps: Multi | Settings | vim: Install plugins
 
 SRC_D_IWLWIFI="deb http://http.debian.net/debian/ jessie main contrib non-free"                               # Sources: Debian | iwlwifi
 SRC_D_FIRMATHEROS="deb http://httpredir.debian.org/debian/ jessie main contrib non-free"                      # Sources: Debian | firmware-atheros
