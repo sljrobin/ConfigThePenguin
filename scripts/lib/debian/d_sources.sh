@@ -1,28 +1,39 @@
 #!/bin/bash
 
 ########################################################################################################################
-# Initialization
-#    * Adding APT sources
-#    * Updating and upgrading with apt-get
-#    * Installing aptitude
-#    * Updating and upgrading with aptitude
+# Step 1 d_init_root
+# * Check if the user is root
+# * apt-get update, upgrade
+# * apt-get install aptitude
+# * aptitude update upgrade
+# * aptitude install visudo
+# * aptitude install git
+# * remove the script by asking the user (https://stackoverflow.com/questions/8981164/self-deleting-shell-script)
+# Step 2
+# * ask for the username
+# * add username into /etc/sudoers (sudo adduser <username> sudo)
+# * mkdir projects, cd project. git clone ctp, go to the script 
+# * remove the script by asking the user
+
+
+
+
+
+DIR_PROJECTS="$HOME/Thatisthetest"
 function debian_init()
 {
-  SRC_APT_NONFREE_1="deb http://httpredir.debian.org/debian/ jessie main contrib non-free"
-  SRC_APT_NONFREE_2="deb http://http.debian.net/debian/ jessie main contrib non-free"
-
-  colorize "Initialization [1/${STP_D_PKG_INITIALIZATION}] Adding APT source ('$SRC_APT_NONFREE_1')" $CLR_LBLUE "y"
-  echo ${SRC_APT_NONFREE_1} >> /etc/apt/sources.list
-  colorize "Initialization [2/${STP_D_PKG_INITIALIZATION}] Adding APT source ('$SRC_APT_NONFREE_2')" $CLR_LBLUE "y"
-  echo ${SRC_APT_NONFREE_2} >> /etc/apt/sources.list
-  colorize "Initialization [3/${STP_D_PKG_INITIALIZATION}] Updating (apt-get)" $CLR_LBLUE "y"
-  apt-get update
-  colorize "Initialization [4/${STP_D_PKG_INITIALIZATION}] Upgrading (apt-get)" $CLR_LBLUE "y"
-  apt-get upgrade
-  colorize "Initialization [5/${STP_D_PKG_INITIALIZATION}] Installing aptitude" $CLR_LBLUE "y"
-  apt-get install aptitude
-  colorize "Initialization [6/${STP_D_PKG_INITIALIZATION}] Updating (aptitude)" $CLR_LBLUE "y"
-  aptitude update
-  colorize "Initialization [7/${STP_D_PKG_INITIALIZATION}] Upgrading (aptitude)" $CLR_LBLUE "y"
-  aptitude upgrade
+#  apt-get update
+#  apt-get upgrade
+#  apt-get install aptitude
+#  aptitude update
+#  aptitude upgrade
+#  aptitude install git
+#  aptitude install visudo
+  su "sljrobin"
+  cd
+  pwd
+  mkdir "$DIR_PROJECTS"
+  cd $DIR_PROJECTS
+  git clone git://github.com/sljrobin/ConfigThePenguin
+  cd "$DIR_PROJECTS/ConfigThePenguin/scripts"
 }
