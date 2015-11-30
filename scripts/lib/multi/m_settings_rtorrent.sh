@@ -19,7 +19,7 @@ function __m_settings_rtorrent_checkdl()
 function __m_settings_rtorrent_checkrc()
 {
   if [ ! -f "$DIR_RTORRENTRC" ]; then
-    colorize "> The file '$DIR_RTORRENTRC' does not exist. Need to create a symlink for '$DIR_RTORRENTRC' or copy it." $CLR_LORANGE "y"
+    colorize "> The file '$DIR_RTORRENTRC' does not exist. Need to create a symlink for '$DIR_RTORRENTRC' or copy it." $CLR_DORANGE "y"
   fi
 }
 
@@ -32,7 +32,7 @@ function __m_settings_rtorrent_createdirs()
   if [ -d "$DIR_RTORRENT_MAIN" ]; then
     colorize "> [1/${STP_M_SET_RTORRENT_CREATEDIRS}] The directory '$DIR_RTORRENT_MAIN/' already exists." $CLR_DORANGE "y"
   else
-    colorize "> [1/${STP_M_SET_RTORRENT_CREATEDIRS}] Creating '$DIR_RTORRENT_HOMEDL/'" $CLR_DPURPLE "y"
+    colorize "> [1/${STP_M_SET_RTORRENT_CREATEDIRS}] Creating '$DIR_RTORRENT_MAIN/'" $CLR_DPURPLE "y"
     mkdir "$DIR_RTORRENT_MAIN" 
   fi
   # Downloads directory
