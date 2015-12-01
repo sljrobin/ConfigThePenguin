@@ -1,152 +1,82 @@
 #!/bin/bash
 
 ########################################################################################################################
-# Install base16
-function vim_install_base16()
+# Multi | Settings | vim: Check if the '.vimrc' file exists
+function __m_settings_vim_checkrc()
 {
-  colorize "Installing base16..." $CLR_LPURPLE "y"
-  colorize "base16 [1/${STP_VIM_BASE16}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "base16 [2/${STP_VIM_BASE16}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone https://github.com/chriskempson/base16-vim.git
-  colorize "Installing base16... [DONE]" $CLR_LGREEN "y"
+  if [ ! -f "$DIR_VIMRC" ]; then
+    colorize "> The file '$DIR_VIMRC' does not exist. Need to create a symlink for '$DIR_VIMRC' or copy it." $CLR_DRED "y"
+    exit 1
+  fi
 }
 
 
 ########################################################################################################################
-# Install Command-T
-function vim_install_commandt()
+# Multi | Settings | vim: Create vim directories
+function __m_settings_vim_createdirs()
 {
-  colorize "Installing Command-T..." $CLR_LPURPLE "y"
-  colorize "Command-T [1/${STP_VIM_COMMANDT}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "NERD Tree [2/${STP_VIM_COMMANDT}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone git://github.com/wincent/Command-T
-  colorize "Command-T [3/${STP_VIM_COMMANDT}] Going to main folder 'command-t/'" $CLR_LBLUE "y"
-  cd Command-T/ruby/command-t/
-  colorize "Command-T [4/${STP_VIM_COMMANDT}] Executing Ruby script" $CLR_LBLUE "y"
-  ruby extconf.rb
-  colorize "Command-T [5/${STP_VIM_COMMANDT}] Compiling" $CLR_LBLUE "y"
-  make
-  colorize "Installing Command-T... [DONE]" $CLR_LGREEN "y"
+  # Main directory
+  if [ -d "$DIR_VIM_MAIN" ]; then
+    colorize "> [1/${STP_M_SET_VIM_CREATEDIRS}] The directory '$DIR_VIM_MAIN/' already exists." $CLR_DORANGE "y"
+  else
+    colorize "> [1/${STP_M_SET_VIM_CREATEDIRS}] Creating '$DIR_VIM_MAIN/'" $CLR_DPURPLE "y"
+    mkdir "$DIR_VIM_MAIN" 
+  fi
+  # Bundle directory
+  if [ -d "$DIR_VIM_BUNDLE" ]; then
+    colorize "> [2/${STP_M_SET_VIM_CREATEDIRS}] The directory '$DIR_VIM_BUNDLE/' already exists." $CLR_DORANGE "y"
+  else
+    colorize "> [2/${STP_M_SET_VIM_CREATEDIRS}] Creating '$DIR_VIM_BUNDLE/'" $CLR_DPURPLE "y"
+    mkdir "$DIR_VIM_BUNDLE" 
+  fi
+  # Spell directory
+  if [ -d "$DIR_VIM_SPELL" ]; then
+    colorize "> [3/${STP_M_SET_VIM_CREATEDIRS}] The directory '$DIR_VIM_SPELL/' already exists." $CLR_DORANGE "y"
+  else
+    colorize "> [3/${STP_M_SET_VIM_CREATEDIRS}] Creating '$DIR_VIM_SPELL/'" $CLR_DPURPLE "y"
+    mkdir "$DIR_VIM_SPELL" 
+  fi
 }
 
 
 ########################################################################################################################
-# Install delimitMate
-function vim_install_delimitmate()
+# Multi | Settings | vim: Install plugins
+function __m_settings_vim_installplugins()
 {
-  colorize "Installing delimitMate..." $CLR_LPURPLE "y"
-  colorize "delimitMate [1/${STP_VIM_DELIMITMATE}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "delimitMate [2/${STP_VIM_DELIMITMATE}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone git://github.com/Raimondi/delimitMate
-  colorize "Installing delimitMate... [DONE]" $CLR_LGREEN "y"
-}
-
-
-########################################################################################################################
-# Install indentLine
-function vim_install_indentline()
-{
-  colorize "Installing indentLine..." $CLR_LPURPLE "y"
-  colorize "indentLine [1/${STP_VIM_INDENTLINE}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "indentLine [2/${STP_VIM_INDENTLINE}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone git://github.com/Yggdroot/indentLine
-  colorize "Installing indentLine... [DONE]" $CLR_LGREEN "y"
-}
-
-
-########################################################################################################################
-# Install Multiple Cursors
-function vim_install_multiplecursors()
-{
-  colorize "Installing vim-multiple-cursors..." $CLR_LPURPLE "y"
-  colorize "vim-multiple-cursors [1/${STP_VIM_MULTIPLECURSORS}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "vim-multiple-cursors [2/${STP_VIM_MULTIPLECURSORS}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone git://github.com/terryma/vim-multiple-cursors
-  colorize "Installing vim-multiple-cursors... [DONE]" $CLR_LGREEN "y"
-}
-
-
-########################################################################################################################
-# Install NERD Tree
-function vim_install_nerdtree()
-{
-  colorize "Installing NERD Tree..." $CLR_LPURPLE "y"
-  colorize "NERD Tree [1/${STP_VIM_NERDTREE}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "NERD Tree [2/${STP_VIM_NERDTREE}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone git://github.com/scrooloose/nerdtree.git
-  colorize "Installing NERD Tree... [DONE]" $CLR_LGREEN "y"
-}
-
-
-########################################################################################################################
-# Install Pathogen
-function vim_install_pathogen()
-{
-  colorize "Installing Pathogen..." $CLR_LPURPLE "y"
-  colorize "Pathogen [1/${STP_VIM_PATHOGEN}] Creating directories ('autoload/')" $CLR_LBLUE "y"
-  mkdir -p ~/.vim/autoload
-  colorize "Pathogen [2/${STP_VIM_PATHOGEN}] Creating directories ('bundle/')" $CLR_LBLUE "y"
-  mkdir -p ~/.vim/bundle
-  colorize "Pathogen [3/${STP_VIM_PATHOGEN}] Going to 'autoload/'" $CLR_LBLUE "y"
-  cd ~/.vim/autoload
-  colorize "Pathogen [4/${STP_VIM_PATHOGEN}] Copying Pathogen from GitHub to 'pathogen.vim'" $CLR_LBLUE "y"
-  curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > pathogen.vim
-  colorize "Installing Pathogen... [DONE]" $CLR_LGREEN "y"
-}
-
-
-########################################################################################################################
-# Install Surround
-function vim_install_surround()
-{
-  colorize "Installing Surround..." $CLR_LPURPLE "y"
-  colorize "Surround [1/${STP_VIM_SURROUND}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "Surround [2/${STP_VIM_SURROUND}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone git://github.com/tpope/vim-surround
-  colorize "Installing Surround... [DONE]" $CLR_LGREEN "y"
-}
-
-
-########################################################################################################################
-# Install Tag List
-function vim_install_taglist()
-{
-  TAGLIST_FOLDER="taglist.zip"    # Name of the downloaded file
-
-  colorize "Installing Tag List..." $CLR_LPURPLE "y"
-  colorize "Tag List [1/${STP_VIM_TAGLIST}] Going to '.vim/'" $CLR_LBLUE "y"
-  cd ~/.vim/
-  colorize "Tag List [2/${STP_VIM_TAGLIST}] Downloading the repository from SourceForge" $CLR_LBLUE "y"
-  wget -O ${TAGLIST_FOLDER} http://sourceforge.net/projects/vim-taglist/files/latest/download?source=files
-  colorize "Tag List [3/${STP_VIM_TAGLIST}] Extracting main .zip file" $CLR_LBLUE "y"
-  unzip ${TAGLIST_FOLDER}
-  colorize "Tag List [4/${STP_VIM_TAGLIST}] Removing main .zip file" $CLR_LBLUE "y"
-  rm ${TAGLIST_FOLDER}
-  colorize "Installing Tag List... [DONE]" $CLR_LGREEN "y"
-}
-
-
-########################################################################################################################
-# Install YouCompleteMe
-function vim_install_youcompleteme()
-{
-  colorize "Installing YouCompleteMe..." $CLR_LPURPLE "y"
-  colorize "YouCompleteMe [1/${STP_VIM_YOUCOMPLETEME}] Going to 'bundle/'" $CLR_LBLUE "y"
-  cd ~/.vim/bundle
-  colorize "YouCompleteMe [2/${STP_VIM_YOUCOMPLETEME}] Downloading the repository from GitHub" $CLR_LBLUE "y"
-  git clone https://github.com/Valloric/YouCompleteMe.git
-  colorize "YouCompleteMe [3/${STP_VIM_YOUCOMPLETEME}] Going to 'YouCompleteMe/'" $CLR_LBLUE "y"
-  cd YouCompleteMe/
-  colorize "YouCompleteMe [4/${STP_VIM_YOUCOMPLETEME}] Updating modules from GitHub" $CLR_LBLUE "y"
-  git submodule update --init --recursive
-  colorize "YouCompleteMe [5/${STP_VIM_YOUCOMPLETEME}] Launching installation script" $CLR_LBLUE "y"
+  # Vundle
+  colorize "> [1/${STP_M_SET_VIM_PLUGINS}] Installing Vundle" $CLR_DPURPLE "y"
+  if [ -d "$DIR_VIM_BUNDLE/Vundle.vim" ]; then
+    colorize "> The directory '$DIR_VIM_BUNDLE/Vundle.vim/' already exists. No need to complete the installation of Vundle." $CLR_DORANGE "y"
+  else
+    git clone https://github.com/VundleVim/Vundle.vim.git "$DIR_VIM_BUNDLE/Vundle.vim"
+  fi
+  # Plugins
+  colorize "> [2/${STP_M_SET_VIM_PLUGINS}] Installing Plugins from '$DIR_VIMRC'" $CLR_DPURPLE "y"
+  vim +PluginInstall +qall
+  # YouCompleteMe
+  colorize "> [3/${STP_M_SET_VIM_PLUGINS}] Finishing installation of 'YouCompleteMe'" $CLR_DPURPLE "y"
+  cd "$DIR_VIM_BUNDLE/YouCompleteMe"
   python install.py
-  colorize "Installing YouCompleteMe... [DONE]" $CLR_LGREEN "y"
+}
+
+
+########################################################################################################################
+# Multi | Settings | vim: Install vim
+function m_settings_vim()
+{
+  # Check .vimrc
+  colorize "[1/${STP_M_SET_VIM}] Checking if the file '$DIR_VIMRC' exists..." $CLR_LBLUE "y"
+  __m_settings_vim_checkrc
+  colorize "[1/${STP_M_SET_VIM}] Checking if the file '$DIR_VIMRC' exists..." $CLR_LBLUE "n"
+  colorize " [DONE]" $CLR_LGREEN "y"
+  # Create directories
+  colorize "[2/${STP_M_SET_VIM}] Creating directories..." $CLR_LBLUE "y"
+  __m_settings_vim_createdirs
+  colorize "[2/${STP_M_SET_VIM}] Creating directories..." $CLR_LBLUE "n"
+  colorize " [DONE]" $CLR_LGREEN "y"
+  # Install plugins
+  colorize "[3/${STP_M_SET_VIM}] Installing plugins..." $CLR_LBLUE "y"
+  __m_settings_vim_installplugins
+  colorize "[3/${STP_M_SET_VIM}] Installing plugins..." $CLR_LBLUE "n"
+  colorize " [DONE]" $CLR_LGREEN "y"
 }
