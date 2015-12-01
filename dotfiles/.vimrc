@@ -118,6 +118,12 @@ noremap! <C-l> <ESC>:nohlsearch<CR><C-l>i
 " Enable/Disable spell-checking
 nnoremap <C-S-l> :setlocal spelllang=en_us spell! spell?<CR>
 
+" <F11>
+" Set/Unset Paste mode
+nnoremap <F11> :set invpaste paste?<CR>
+set pastetoggle=<F11>
+set showmode
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Applications
@@ -351,4 +357,3 @@ highlight SpellLocal ctermfg=5
 """ Extensions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType markdown setlocal spell                            " Set Spell-Checking for Markdown files
-
