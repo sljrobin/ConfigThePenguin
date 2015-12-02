@@ -10,6 +10,7 @@
 #    openvpn: VPN
 #    rtorrent: BitTorrent client
 #    wicd-curses: wired and wireless network manager
+#    whois: tool for querying Whois database
 function __d_packages_net_main()
 {
   aptitude install \
@@ -20,7 +21,8 @@ function __d_packages_net_main()
     nslookup \
     openvpn \
     rtorrent \
-    wicd-curses
+    wicd-curses \
+    whois
 }
 
 
