@@ -1,0 +1,13 @@
+background no
+out_to_x no
+out_to_console yes
+update_interval 1
+total_run_times 0
+use_spacer none
+
+
+TEXT
+${exec $HOME/.xmonad/data/scripts/internet/connection.sh} | \
+^i($HOME/.xmonad/data/icons/mem.xbm) ${memperc}% | \
+^i($HOME/.xmonad/data/icons/cpu.xbm) ${cpu}% | \
+^i($HOME/.xmonad/data/icons/half.xbm) ${exec $HOME/.xmonad/data/scripts/usage/brightness.sh}

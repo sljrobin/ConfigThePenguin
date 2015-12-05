@@ -4,7 +4,7 @@
 #     Description: 
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-05 15:03:13
-#        Modified: 2015-12-05 18:58:31
+#        Modified: 2015-12-05 22:28:30
 #
 ########################################################################################################################
 # Arguments | Errors | Print an error message when an invalid argument is entered
@@ -71,10 +71,10 @@ function ctp-args_help-show()
   ctp-colorizer "Syntax: <argument 1><argument 2>" $CLR_LPURPLE "y"
   # Help
   __ctp-args_help-lvl1or "-H" "--help" "print this help"
-  # Debian drivers
+  # Debian | Drivers
   __ctp-args_help-lvl1 "-dd" "Debian drivers"
   __ctp-args_help-lvl2 "lenovo-x250" "drivers for Lenovo ThinkPad X250"
-  # Debian packages
+  # Debian | Packages
   __ctp-args_help-lvl1 "-dp" "Debian packages"
   __ctp-args_help-lvl2or "-A" "--all" "all packages"
   __ctp-args_help-lvl2or "-d" "--development" "packages for development"
@@ -82,7 +82,9 @@ function ctp-args_help-show()
   __ctp-args_help-lvl2or "-m" "--media" "packages for media (audio/video)"
   __ctp-args_help-lvl2or "-n" "--network" "packages for network"
   __ctp-args_help-lvl2or "-u" "--utils" "packages for miscellaneous tools"
-  # Multi settings
+  # Multi | Dotfiles
+  __ctp-args_help-lvl1 "-m." "Multi dotfiles"
+  # Multi | Settings
   __ctp-args_help-lvl1 "-ms" "Multi settings"
   __ctp-args_help-lvl2 "firefox" "print details for add-ons"
   __ctp-args_help-lvl2 "rtorrent" "create directories for rTorrent"
@@ -129,6 +131,12 @@ function ctp-args_options-dp()
 
 
 ########################################################################################################################
+# Arguments | Options | Multi - Dotfiles
+function ctp-args_options-mdot()
+{
+  m_dotfiles_link
+}
+
 # Arguments | Options | Multi - Settings
 function ctp-args_options-ms()
 {

@@ -1,0 +1,248 @@
+!=======================================================================================================================
+!
+! Xresources
+!
+!=======================================================================================================================
+!-- Theme
+!-- Terminal
+!-- Windows
+!-- Scrolling
+!-- Fonts
+!-- Keyboard
+!-- Cursor
+!-- Perl Extensions
+!=======================================================================================================================
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Theme
+!-----------------------------------------------------------------------------------------------------------------------
+!  * `base00`  -> Gray 1
+!  * `base01`  -> Gray 2
+!  * `base02`  -> Gray 3
+!  * `base03`  -> Gray 4
+!  * `base04`  -> Gray 5
+!  * `base05`  -> White 1
+!  * `base06`  -> White 2
+!  * `base07`  -> White 3
+!  * `base08`  -> Red
+!  * `base09`  -> Orange
+!  * `base0A`  -> Yellow
+!  * `base0B`  -> Green
+!  * `base0C`  -> Cyan
+!  * `base0D`  -> Blue
+!  * `base0E`  -> Purple
+!  * `base0F`  -> Brown
+!  * `color0`  -> Gray 1
+!  * `color1`  -> Red
+!  * `color2`  -> Green
+!  * `color3`  -> Yellow
+!  * `color4`  -> Blue
+!  * `color5`  -> Purple
+!  * `color6`  -> Cyan
+!  * `color7`  -> White 1
+!  * `color8`  -> Gray 4
+!  * `color9`  -> Orange
+!  * `color10` -> Gray 2
+!  * `color11` -> Gray 3
+!  * `color12` -> Gray 5
+!  * `color13` -> White 2
+!  * `color14` -> Brown
+!  * `color15` -> White 3
+!-----------------------------------------------------------------------------------------------------------------------
+! Defines
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #B8B8B8
+#define base05 #D8D8D8
+#define base06 #E8E8E8
+#define base07 #F8F8F8
+#define base08 #AB4642
+#define base09 #DC9656
+#define base0A #F7CA88
+#define base0B #A1B56C
+#define base0C #86C1B9
+#define base0D #7CAFC2
+#define base0E #BA8BAF
+#define base0F #A16946
+
+! Colors
+*.color0:  base00
+*.color1:  base08
+*.color2:  base0B
+*.color3:  base0A
+*.color4:  base0D
+*.color5:  base0E
+*.color6:  base0C
+*.color7:  base05
+*.color8:  base03
+*.color9:  base09
+*.color10: base01
+*.color11: base02
+*.color12: base04
+*.color13: base06
+*.color14: base0F
+*.color15: base07
+
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Terminal
+!-----------------------------------------------------------------------------------------------------------------------
+!  * `URxvt.geometry`     -> Define the X window geometry based on '$LINES' and '$COLUMNS'
+!  * `URxvt.loginShell`   -> Enable/Disable to start with a Login Shell
+!  * `URxvt.termName`     -> Specify the terminal type name
+!  * `URxvt.urgentOnBell` -> Enable/Disable the use of the 'bell' characters
+!  * `URxvt.visualBell`   -> Enable/Disable the visual bells when recepting a 'bell' character
+!-----------------------------------------------------------------------------------------------------------------------
+URxvt.geometry:     80*20
+URxvt.termName:     xterm-256color
+URxvt.loginShell:   false
+URxvt.visualBell:   false
+URxvt.urgentOnBell: true
+
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Windows
+!-----------------------------------------------------------------------------------------------------------------------
+!  * `URxvt.background`     -> Background color
+!  * `URxvt.borderLess`     -> Enable/Disable borders
+!  * `URxvt.externalBorder` -> Width of external border
+!  * `URxvt.fadeColor`      -> Fade color
+!  * `URxvt.fading`         -> Fading percentage
+!  * `URxvt.foreground`     -> Foreground color
+!  * `URxvt.internalBorder` -> Width of internal border
+!-----------------------------------------------------------------------------------------------------------------------
+! Colors 
+URxvt.background:     base00
+URxvt.foreground:     base05
+URxvt.fadeColor:      #000000
+URxvt.fading:         10
+
+! Borders
+URxvt.borderLess:     false
+URxvt.externalBorder: 0
+URxvt.internalBorder: 0
+
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Scrolling
+!-----------------------------------------------------------------------------------------------------------------------
+!  * `URxvt.saveLines`         -> Quantity of lines to save
+!  * `URxvt.scrollBar`         -> Enable/Disable a scroll bar
+!  * `URxvt.scrollTtyKeypress` -> Enable/Disable the scrolling to bottom when a non-special key is pressed 
+!  * `URxvt.scrollTtyOuput`    -> Enable/Disable the scrolling to bottom when TTY receives output 
+!  * `URxvt.scrollWithBuffer`  -> Enable/Disable the scollback buffer when TTY receives new lines
+!-----------------------------------------------------------------------------------------------------------------------
+URxvt.saveLines:         5000
+URxvt.scrollBar:         false
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOuput:    false
+URxvt.scrollWithBuffer:  true
+
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Fonts
+!-----------------------------------------------------------------------------------------------------------------------
+!  * `URxvt.boldFont`       -> Font Bold
+!  * `URxvt.boldItalicFont` -> Font Bold Italic 
+!  * `URxvt.italicFont`     -> Font Italic
+!  * `URxvt.font`           -> Font
+!  * `URxvt.letterSpace`    -> Space between two characters
+!  * `Xft.antialias`        -> Enable/Disable anti-aliased font
+!  * `Xft.autohint`         -> Enable/Disable automatic font hinting 
+!  * `Xft.dpi`              -> Dots Per Inch 
+!  * `Xft.hinting`          -> Enable/Disable font hinting
+!  * `Xft.hintstyle`        -> Degree of hinting to use 
+!  * `Xft.lcdfilter`        -> Perform filtering
+!  * `Xft.rgba`             -> Type of subpixel anti-aliasing
+!-----------------------------------------------------------------------------------------------------------------------
+! X FreeType settings
+Xft.antialias:        true 
+Xft.autohint:         true
+Xft.dpi:              96
+Xft.hinting:          true
+Xft.hintstyle:        hintslight
+Xft.lcdfilter:        lcddefault
+Xft.rgba:             rgb
+
+! Font settings
+URxvt.font:           xft:Droid Sans Mono:pixelsize=12:Regular
+URxvt.boldFont:       xft:Droid Sans Mono:pixelsize=12:Bold
+URxvt.italicFont:     xft:Droid Sans Mono:pixelsize=12:Italic
+URxvt.boldItalicFont: xft:Droid Sans Mono:pixelsize=12:Bold:Italic
+URxvt.letterSpace:    -1
+
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Keyboard
+!-----------------------------------------------------------------------------------------------------------------------
+!  * `URxvt.iso14755`         -> Enable/Disable ISO14755
+!  * `URxvt.iso14755_52`      -> Enable/Disable ISO14755
+!  * `URxvt.keysym.S-Home`    -> <Shift> + <Home>
+!  * `URxvt.keysym.S-End`     -> <Shift> + <End>
+!  * `URxvt.keysym.S-Up`      -> <Shift> + <Up>
+!  * `URxvt.keysym.S-Down`    -> <Shift> + <Down>
+!  * `URxvt.keysym.S-Left`    -> <Shift> + <Left>
+!  * `URxvt.keysym.S-Right`   -> <Shift> + <Right>
+!  * `URxvt.keysym.C-Up`      -> <Control> + <Up>
+!  * `URxvt.keysym.C-Down`    -> <Control> + <Down>
+!  * `URxvt.keysym.C-Left`    -> <Control> + <Left>
+!  * `URxvt.keysym.C-Right`   -> <Control> + <Right>
+!  * `URxvt.keysym.C-S-Up`    -> <Control> + <Shift> + <Up>
+!  * `URxvt.keysym.C-S-Down`  -> <Control> + <Shift> + <Down>
+!  * `URxvt.keysym.C-S-Left`  -> <Control> + <Shift> + <Left>
+!  * `URxvt.keysym.C-S-Right` -> <Control> + <Shift> + <Right>
+!-----------------------------------------------------------------------------------------------------------------------
+! ISO14755
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
+
+! <Shift> + <*>
+URxvt.keysym.S-Home:    \033[1;2H
+URxvt.keysym.S-End:     \033[1;2F
+URxvt.keysym.S-Up:      \033[1;2A
+URxvt.keysym.S-Down:    \033[1;2B
+URxvt.keysym.S-Left:    \033[1;2D
+URxvt.keysym.S-Right:   \033[1;2C
+
+! <Control> + <*>
+URxvt.keysym.C-Up:      \033[1;5A
+URxvt.keysym.C-Down:    \033[1;5B
+URxvt.keysym.C-Left:    \033[1;5D
+URxvt.keysym.C-Right:   \033[1;5C
+
+! <Control> + <Shift> + <*>
+URxvt.keysym.C-S-Up:    \033[1;6A
+URxvt.keysym.C-S-Down:  \033[1;6B
+URxvt.keysym.C-S-Left:  \033[1;6D
+URxvt.keysym.C-S-Right: \033[1;6C
+
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Cursor
+!-----------------------------------------------------------------------------------------------------------------------
+!  * `URxvt.colorBD`     -> Terminal cursor bold color
+!  * `URxvt.colorIT`     -> Terminal cursor italic color
+!  * `URxvt.cursorBlink` -> Enable/Disable terminal cursor blinking
+!  * `URxvt.cursorColor` -> Terminal cursor main color
+!  * `Xcursor.size`      -> X cursor size
+!  * `Xcursor.theme      -> X cursor theme
+!-----------------------------------------------------------------------------------------------------------------------
+! X Window System cursor settings
+Xcursor.size:      22
+Xcursor.theme:     Vanilla-DMZ-AA
+
+! Terminal cursor settings
+URxvt.colorBD:     base08
+URxvt.colorIT:     base09
+URxvt.cursorBlink: true
+URxvt.cursorColor: base05
+
+
+!-----------------------------------------------------------------------------------------------------------------------
+!-- Perl Extensions
+!-----------------------------------------------------------------------------------------------------------------------
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher:    /usr/bin/firefox
+URxvt.matcher.button:  1
