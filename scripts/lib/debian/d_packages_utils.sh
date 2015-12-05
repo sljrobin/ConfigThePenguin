@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ########################################################################################################################
-# Debian | Packages | Install main Packages for miscellaneous tools
+# Debian | Packages | List Packages for miscellaneous tools
 #    bc: calculator
 #    calibre: ePUB viewer
 #    evince: PDF viewer
@@ -14,31 +14,41 @@
 #    weechat: IRC client
 #    xpdf: PDF viewer
 #    zsh: Z shell
-function __d_packages_utils_main()
+function __d_packages-utils_list()
 {
-  aptitude install \
-    bc \
-    calibre \
-    evince \
-    newsbeuter \
-    p7zip \
-    tmux \
-    tree \
-    unrar \
-    unzip \
-    weechat \
-    xpdf \
-    zsh
+  # List
+  plutils=$(whiptail --title "Debian | Packages | Utils" --checklist \
+    "\nSelect Debian Packages to install for Utils" 20 61 12 \
+    "bc" "Calculator" ON \
+    "calibre" "ePUB viewer" ON \
+    "evince" "PDF viewer" ON \
+    "newsbeuter" "RSS feed reader" ON \
+    "p7zip" "Handle .7zip archives" ON \
+    "tmux" "Terminal multiplexer" ON \
+    "tree" "Recursive directory listing program" ON \
+    "unrar" "Handle .rar archives" ON \
+    "unzip" "Handle .zip archives" ON \
+    "weechat" "IRC client" ON \
+    "xpdf" "PDF viewer" ON \
+    "zsh" "Z shell" ON 3>&1 1>&2 2>&3)
+  # Exit status
+  pl_status=$?
+  # 'OK' option selected
+  if [ $pl_status = 0 ]; then
+    # Clean the package list
+    pl_cleaned=$(ctp-parser_rmdquotes "$plutils")
+    echo $pl_cleaned
+  # 'Cancel' option selected
+  else
+    __ctp-pkgs_d-abort
+    exit 1
+  fi
 }
 
 
 ########################################################################################################################
 # Debian | Packages | Install Packages for miscellaneous tools
-function d_packages_utils()
+function d_packages-utils_install()
 {
-  # Utils | Main packages
-  colorize "[1/${STP_D_PKG_UTILS}] Installing Debian Utils Packages (Main)..." $CLR_LBLUE "y"
-  __d_packages_utils_main
-  colorize "[1/${STP_D_PKG_UTILS}] Installing Debian Utils Packages (Main)..." $CLR_LBLUE "n"
-  colorize " [DONE]" $CLR_LGREEN "y"
+  ctp-pkgs_d-install "Utils" $STP_D_PKG_UTILS __d_packages-utils_list 
 }

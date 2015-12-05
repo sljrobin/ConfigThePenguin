@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ########################################################################################################################
-# Debian | Packages | Install main Packages for Media (music/video)
+# Debian | Packages | List Packages for Media (music/video)
 #    alsa-utils: various ALSA command line tools
 #    alsa-oss: OSS compatibility layer
 #    mpd: music player daemon
@@ -9,26 +9,36 @@
 #    mpv: video player
 #    ncmpcpp: ncurses based mpd client
 #    vlc: media player
-function __d_packages_media_main()
+function __d_packages-media_list()
 {
-  aptitude install \
-    alsa-utils \
-    alsa-oss \
-    mpd \
-    mpc \
-    mpv \
-    ncmpcpp \
-    vlc
+  # List
+  plmedia=$(whiptail --title "Debian | Packages | Media" --checklist \
+    "\nSelect Debian Packages to install for Media" 15 57 7 \
+    "alsa-utils" "Various ALSA command line tools" ON \
+    "alsa-oss" "OSS compatibility layer" ON \
+    "mpd" "Music Player Daemon" ON \
+    "mpc" "Music Player Client" ON \
+    "mpv" "Video player" ON \
+    "ncmpcpp" "ncurses based mpd client" ON \
+    "vlc" "Media player" ON 3>&1 1>&2 2>&3)
+  # Exit status
+  pl_status=$?
+  # 'OK' option selected
+  if [ $pl_status = 0 ]; then
+    # Clean the package list
+    pl_cleaned=$(ctp-parser_rmdquotes "$plmedia")
+    echo $pl_cleaned
+  # 'Cancel' option selected
+  else
+    __ctp-pkgs_d-abort
+    exit 1
+  fi
 }
 
 
 ########################################################################################################################
 # Debian | Packages | Install Packages for Media (music/video)
-function d_packages_media()
+function d_packages-media_install()
 {
-  # Media | Main packages
-  colorize "[1/${STP_D_PKG_MEDIA}] Installing Debian Media Packages (Main)..." $CLR_LBLUE "y"
-  __d_packages_media_main
-  colorize "[1/${STP_D_PKG_MEDIA}] Installing Debian Media Packages (Main)..." $CLR_LBLUE "n"
-  colorize " [DONE]" $CLR_LGREEN "y"
+  ctp-pkgs_d-install "Media" $STP_D_PKG_MEDIA __d_packages-media_list 
 }

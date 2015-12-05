@@ -4,187 +4,48 @@
 #     Description: ConfigThePenguin - Main script 
 #          Author: Simon L. J. Robin - http://sljrobin.com
 #         Created: 2015-10-18 15:20:37
-#        Modified: 2015-11-25 11:09:24
+#        Modified: 2015-12-05 18:57:32
 #
 ########################################################################################################################
 # Load Core
-source ./core/ctp_var.sh
-source ./core/ctp_func.sh
+source ./core/ctp-v_colors.sh
+source ./core/ctp-v_dirs.sh
+source ./core/ctp-v_ffadds.sh
+source ./core/ctp-v_sources.sh
+source ./core/ctp-v_steps.sh
+source ./core/ctp-f_args.sh
+source ./core/ctp-f_colorizer.sh
+source ./core/ctp-f_parser.sh
+source ./core/ctp-f_pkgs.sh
 
-# Load Library: Applications scripts
-source ./lib/apps/firefox.sh
-source ./lib/apps/rtorrent.sh
-source ./lib/apps/vim.sh
-source ./lib/apps/xmonad.sh
-
-# Load Library: OS scripts
-source ./lib/os/debian/customization.sh
-source ./lib/os/debian/initialization.sh
-source ./lib/os/debian/packages.sh
-
-# Load Library: PC scripts 
-source ./lib/pc/lenovo-x250_debian.sh
+# Load Library
+source ./lib/debian/d_drivers_lenovo-x250.sh
+source ./lib/debian/d_packages_all.sh
+source ./lib/debian/d_packages_dev.sh
+source ./lib/debian/d_packages_gui.sh
+source ./lib/debian/d_packages_media.sh
+source ./lib/debian/d_packages_network.sh
+source ./lib/debian/d_packages_utils.sh
+source ./lib/multi/m_settings_firefox.sh
+source ./lib/multi/m_settings_rtorrent.sh
+source ./lib/multi/m_settings_vim.sh
+source ./lib/multi/m_settings_xmonad.sh
+source ./lib/multi/m_settings_zsh.sh
 
 
 ########################################################################################################################
-
-
-
-
 while true; do
   case $1 in
-    # > Apps
-    -a | --apps)
-      shift
-      case $1 in
-        # > Apps > Firefox
-        firefox)
-          shift
-          case $1 in
-            # > Apps > Firefox > Add-ons
-            -a | --addons)
-              m_settings_firefox
-              ;;
-            # > Apps > Firefox > Miscellaneous
-            -*) args_invalid $1 ;;       # Invalid argument
-             *) args_insufficient $1 ;;  # Insufficient number of arguments
-          esac
-          break
-          ;;
-        # > Apps > rTorrent
-        rtorrent)
-          shift
-          case $1 in
-            # > Apps > rTorrent > Installation
-            -i | --install)
-              shift
-              args_apps_rtorrent_install
-              break
-              ;;
-            # > Apps > rTorrent > Miscellaneous
-            -*) args_invalid $1 ;;       # Invalid argument
-             *) args_insufficient $1 ;;  # Insufficient number of arguments
-          esac
-          break
-          ;;
-        # > Apps > vim
-        vim)
-          shift
-          case $1 in
-            # > Apps > vim > Installation
-            -i | --install)
-              shift
-              args_apps_vim_install $1
-              ;;
-            # > Apps > vim > Miscellaneous
-            -*) args_invalid $1 ;;       # Invalid argument
-             *) args_insufficient $1 ;;  # Insufficient number of arguments
-          esac
-          break
-          ;;
-        # > Apps > xmonad
-        xmonad)
-          shift
-          case $1 in
-            # > Apps > xmonad > Installation
-            -i | --install)
-              args_apps_xmonad_install
-              ;;
-            # > Apps > xmonad > Update
-            -u | --update)
-              args_apps_xmonad_update
-              ;;
-            # > Apps > xmonad > Miscellaneous
-            -*) args_invalid $1 ;;       # Invalid argument
-             *) args_insufficient $1 ;;  # Insufficient number of arguments
-          esac
-          break
-          ;;
-        # > Apps > Miscellaneous (Invalid argument)
-        *)
-          args_invalid $1
-          break
-          ;;
-      esac
-      break
-      ;;
-    # > Help
-    -h | --help)
-      args_help
-      break
-      ;;
-    # > OS
-    -o | --os)
-      shift
-      case $1 in
-        # > OS > Debian
-        debian)
-          shift
-          case $1 in
-            # > OS > Debian > Installation
-            -i | --install)
-              shift
-              args_os_debian_install $1
-              ;;
-            # > OS > Debian > Update
-            -u | --update)
-              shift
-              args_os_debian_update $1
-              ;;
-            # > OS > Debian > Miscellaneous
-            -*) args_invalid $1 ;;       # Invalid argument
-             *) args_insufficient $1 ;;  # Insufficient number of arguments
-          esac
-          break
-          ;;
-        # > OS > Miscellaneous (Invalid argument)
-        *)
-          args_invalid $1
-          break
-          ;;
-      esac
-      break
-      ;;
-    # > PC
-    -p | --pc)
-      shift
-      case $1 in
-        # > PC > Lenovo X250
-        lenovox250)
-          shift
-          case $1 in
-            # > PC > Lenovo X250 > Installation
-            -i | --install)
-              shift
-              case $1 in
-                # > PC > Lenovo X250 > Installation > Debian
-                debian)
-                  shift
-                  args_pc_lenovox250_debian_install $1
-                  ;;
-                # > PC > Lenovo X250 > Installation > Miscellaneous
-                *) args_invalid $1 ;;       # Invalid argument
-              esac
-              break
-              ;;
-            # > PC > Lenovo X250 > Miscellaneous
-            -*) args_invalid $1 ;;       # Invalid argument
-             *) args_insufficient $1 ;;  # Insufficient number of arguments
-          esac
-          break
-          ;;
-        # > PC > Miscellaneous (Invalid argument)
-        *)
-          args_invalid $1
-          break
-          ;;
-      esac
-      break
-      ;;
-    # > Miscellaneous (Invalid argument)
-    *)
-      args_invalid $1
-      break
-      ;;
+    # Help
+    -H | --help) shift; ctp-args_help-show; break ;;
+    # Debian | Drivers
+    -dd) shift; ctp-args_options-dd $1; break ;;
+    # Debian | Packages
+    -dp) shift; ctp-args_options-dp $1; break ;;
+    # Multi | Settings
+    -ms) shift; ctp-args_options-ms $1; break ;;
+    # Errors
+    -*) ctp-args_errors-ivld $1; break ;;
+     *) ctp-args_errors-isfc $1; break ;;
   esac
 done

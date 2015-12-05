@@ -1,21 +1,7 @@
 #!/bin/bash
 
 ########################################################################################################################
-# Debian | Packages | Install main Packages for GUI
-#    xmonad: GUI
-#    xorg: X window system
-#    xserver-xorg-core: xserver
-function __d_packages_gui_main()
-{
-  aptitude install \
-    xorg \
-    xserver-xorg-core \
-    xmonad \
-}
-
-
-########################################################################################################################
-# Debian | Packages | Install miscellaneous Packages for GUI
+# Debian | Packages | List Packages for GUI
 #    conky: system monitor
 #    dzen2: notifications for X11
 #    fonts-droid: 'Droid Sans Mono' font
@@ -23,33 +9,44 @@ function __d_packages_gui_main()
 #    rxvt-unicode-256color: terminal emulator with Unicode support
 #    suckless-tools: dmenu
 #    xbacklight: tool to manage brightness
+#    xmonad: GUI
+#    xorg: X window system
 #    xscreensaver: a screensaver
-function __d_packages_gui_misc()
+#    xserver-xorg-core: xserver
+function __d_packages-gui_list()
 {
-  aptitude install \
-    conky \
-    dzen2 \
-    fonts-droid \
-    gmrun \
-    rxvt-unicode-256color \
-    suckless-tools \
-    xbacklight \
-    xscreensaver
+  # List
+  plgui=$(whiptail --title "Debian | Packages | GUI - Main" --checklist \
+    "\nSelect Debian Packages to install for GUI (Main)" 19 75 11 \
+    "xorg" "X window system" ON \
+    "xserver-xorg-core" "xserver" ON \
+    "xmonad" "GUI" ON \
+    "conky" "System monitor" ON \
+    "dzen2" "Notifications for X11" ON \
+    "fonts-droid" "'Droid Sans Mono' font" ON \
+    "gmrun" "Application launcher" ON \
+    "rxvt-unicode-256color" "Terminal emulator with Unicode support" ON \
+    "suckless-tools" "dmenu" ON \
+    "xbacklight" "Tool to manage brightness" ON \
+    "xscreensaver" "A screensaver" ON 3>&1 1>&2 2>&3)
+  # Exit status
+  pl_status=$?
+  # 'OK' option selected
+  if [ $pl_status = 0 ]; then
+    # Clean the package list
+    pl_cleaned=$(ctp-parser_rmdquotes "$plgui")
+    echo $pl_cleaned
+  # 'Cancel' option selected
+  else
+    __ctp-pkgs_d-abort
+    exit 1
+  fi
 }
 
 
 ########################################################################################################################
 # Debian | Packages | Install Packages for GUI
-function d_packages_gui()
+function d_packages-gui_install()
 {
-  # GUI | Main packages
-  colorize "[1/${STP_D_PKG_GUI}] Installing Debian GUI Packages (Main)..." $CLR_LBLUE "y"
-  __d_packages_gui_main
-  colorize "[1/${STP_D_PKG_GUI}] Installing Debian GUI Packages (Main)..." $CLR_LBLUE "n"
-  colorize " [DONE]" $CLR_LGREEN "y"
-  # GUI | Miscellaneous packages
-  colorize "[2/${STP_D_PKG_GUI}] Installing Debian GUI Packages (Misc)..." $CLR_LBLUE "y"
-  __d_packages_gui_misc
-  colorize "[2/${STP_D_PKG_GUI}] Installing Debian GUI Packages (Misc)..." $CLR_LBLUE "n"
-  colorize " [DONE]" $CLR_LGREEN "y"
+  ctp-pkgs_d-install "GUI" $STP_D_PKG_GUI __d_packages-gui_list 
 }
