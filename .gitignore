@@ -4,6 +4,7 @@ dotfiles/mpd/.mpd/db
 dotfiles/mpd/.mpd/log
 dotfiles/mpd/.mpd/pid
 dotfiles/mpd/.mpd/state
+dotfiles/ncmpcpp/.ncmpcpp/error.log
 dotfiles/newsbeuter/.newsbeuter/cache.*
 dotfiles/newsbeuter/.newsbeuter/history.*
 dotfiles/xmonad/.xmonad/xmonad-*

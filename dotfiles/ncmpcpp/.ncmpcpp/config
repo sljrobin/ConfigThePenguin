@@ -1,0 +1,71 @@
+## Core
+enable_window_title                = "yes"                 # Enable custom window title
+external_editor                    = "vim"                 # Use vim as editor
+song_window_title_format           = "MPD: {%t}"           # Window title (`MPD: <title>`)
+system_encoding                    = "utf-8"               # Use UTF-8 as system-encoding
+use_console_editor                 = "yes"                 # Enable console editor using
+
+## MPD Connection
+mpd_connection_timeout             = "5"                   # Connection timeout in seconds
+mpd_crossfade_time                 = "0"                   # Crossfade in seconds
+mpd_host                           = "127.0.0.1"           # Host
+mpd_music_dir                      = "~/Music/"            # Music directory
+mpd_port                           = "6600"                # Port
+
+## Colors
+colors_enabled                     = "yes"                 # Enable colors
+discard_colors_if_item_is_selected = "no"                  # Use colors for selected items
+
+## Display
+browser_display_mode               = "columns"             # Browser
+playlist_display_mode              = "columns"             # Playlist
+playlist_editor_display_mode       = "columns"             # Playlist editor
+search_engine_display_mode         = "columns"             # Search engine
+user_interface                     = "classic"             # Main UI
+
+
+########################################################################################################################
+## Header
+display_volume_level        = "no"                              # Print volume
+header_visibility           = "yes"                             # Show header
+header_window_color         = "black"                           # Font color
+state_flags_color           = "magenta"                         # State flags color
+state_line_color            = "white"                           # State line color
+volume_color                = "blue"                            # Volume color
+
+## Main window
+main_window_color           = "white"                           # Main window font color
+main_window_highlight_color = "white"                           # Main window highlight color
+now_playing_prefix          = "$b"                              # Prefix format of the current playing song
+now_playing_suffix          = "$/b"                             # Suffix format of the current playing song
+
+## Progress Bar
+progressbar_color           = "blue"                            # Font color
+progressbar_look            = "-_."                             # Printed characters
+
+## Status Bar
+display_bitrate             = "no"                              # Show song's bitrate
+display_remaining_time      = "no"                              # Do not show remaining time with a `-`
+song_status_format          = "{$7%a$9} | {$6%t$9} | {$5%b$9}"  # Format (`<artist> | <title> | <album>`)
+statusbar_color             = "default"                         # Font color
+statusbar_visibility        = "yes"                             # Enable the Status bar
+titles_visibility           = "yes"                             # Show titles
+
+
+########################################################################################################################
+color1 = "red"
+song_list_format = "{$7%n$9}"
+
+# Playlist tab
+jump_to_now_playing_song_at_start = "yes"  # Jump to the playing song at start
+#autocenter_mode = "yes"
+#centered_cursor = "yes"
+song_columns_list_format = "(10)[yellow]{a} (23)[white]{t} (23)[magenta]{b} (8)[green]{l} (4)[blue]{n}" 
+
+
+# Visualizer tab
+#audio_output {
+#    type   "fifo"
+#    path   "/tmp/mpd.fifo"
+#    format "44100:16:1"
+#}
