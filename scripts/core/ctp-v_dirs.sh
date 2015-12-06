@@ -21,6 +21,7 @@ DIR_MPDCONF="$HOME/.mpd/mpd.conf"                              # Directory MPD: 
 DIR_MPD_DB="$HOME/.mpd/db"                                     # Directory MPD: db
 DIR_MPD_LOG="$HOME/.mpd/log"                                   # Directory MPD: log
 DIR_MPD_PID="$HOME/.mpd/pid"                                   # Directory MPD: pid
+DIR_MPD_PLAYLISTS="$HOME/Music/playlists"                      # Directory MPD: playlists
 DIR_MPD_STATE="$HOME/.mpd/state"                               # Directory MPD: state
 DIR_NCMPCPP="$HOME/.ncmpcpp"                                   # Directory ncmpcpp: .ncmpcpp
 DIR_NEWSBEUTER="$HOME/.newsbeuter"                             # Directory Newsbeuter: .newsbeuter
