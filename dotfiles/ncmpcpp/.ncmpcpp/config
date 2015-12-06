@@ -62,7 +62,6 @@ jump_to_now_playing_song_at_start = "yes"  # Jump to the playing song at start
 #centered_cursor = "yes"
 song_columns_list_format = "(10)[yellow]{a} (23)[white]{t} (23)[magenta]{b} (8)[green]{l} (4)[blue]{n}" 
 
-
 # Visualizer tab
 #audio_output {
 #    type   "fifo"
