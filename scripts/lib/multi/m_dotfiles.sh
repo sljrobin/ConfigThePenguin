@@ -18,6 +18,22 @@ function __m_dotfiles-git()
   return $?
 }
 
+# Multi | Dotfiles | Create links for MPD
+function __m_dotfiles-mpd()
+{
+  __ctp-dots_checkd "$DIR_MPD"
+  __ctp-dots_symlnk "$DIR_CTP_MPD" "$DIR_MPD"
+  return $?
+}
+
+# Multi | Dotfiles | Create links for ncmpcpp
+function __m_dotfiles-ncmpcpp()
+{
+  __ctp-dots_checkd "$DIR_NCMPCPP"
+  __ctp-dots_symlnk "$DIR_CTP_NCMPCPP" "$DIR_NCMPCPP"
+  return $?
+}
+
 # Multi | Dotfiles | Create links for Newsbeuter
 function __m_dotfiles-newsbeuter()
 {
@@ -97,4 +113,6 @@ function m_dotfiles_link()
   __ctp-dots_step "08" "Linking Conky" __m_dotfiles-conky
   __ctp-dots_step "09" "Linking rTorrent" __m_dotfiles-rtorrent
   __ctp-dots_step "10" "Linking Newsbeuter" __m_dotfiles-newsbeuter
+  __ctp-dots_step "11" "Linking MPD" __m_dotfiles-mpd
+  __ctp-dots_step "12" "Linking ncmpcpp" __m_dotfiles-ncmpcpp
 }

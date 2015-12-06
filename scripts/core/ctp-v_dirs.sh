@@ -2,6 +2,8 @@
 DIR_CTP_DOTFILES=$(cd ../dotfiles && pwd)                      # Directory CTP: dotfiles/
 DIR_CTP_CONKYRC="$DIR_CTP_DOTFILES/conky/.conkyrc"             # Directory CTP: .conkyrc
 DIR_CTP_GITCONFIG="$DIR_CTP_DOTFILES/git/.gitconfig"           # Directory CTP: .gitconfig
+DIR_CTP_MPD="$DIR_CTP_DOTFILES/mpd/.mpd"                       # Directory CTP: .mpd
+DIR_CTP_NCMPCPP="$DIR_CTP_DOTFILES/ncmpcpp/.ncmpcpp"           # Directory CTP: .ncmpcpp
 DIR_CTP_NEWSBEUTER="$DIR_CTP_DOTFILES/newsbeuter/.newsbeuter"  # Directory CTP: .newsbeuter
 DIR_CTP_RTORRENTRC="$DIR_CTP_DOTFILES/rtorrent/.rtorrent.rc"   # Directory CTP: .rtorrent.rc
 DIR_CTP_TMUXCONF="$DIR_CTP_DOTFILES/tmux/.tmux.conf"           # Directory CTP: .tmux.conf
@@ -14,6 +16,13 @@ DIR_CTP_ZSHRC="$DIR_CTP_DOTFILES/zsh/.zshrc"                   # Directory CTP: 
 # Directories - Dotfiles
 DIR_CONKYRC="$HOME/.conkyrc"                                   # Directory Conky: .conkyrc
 DIR_GITCONFIG="$HOME/.gitconfig"                               # Directory Git: .gitconfig
+DIR_MPD="$HOME/.mpd"                                           # Directory MPD: .mpd
+DIR_MPDCONF="$HOME/.mpd/mpd.conf"                              # Directory MPD: mpd.conf
+DIR_MPD_DB="$HOME/.mpd/db"                                     # Directory MPD: db
+DIR_MPD_LOG="$HOME/.mpd/log"                                   # Directory MPD: log
+DIR_MPD_PID="$HOME/.mpd/pid"                                   # Directory MPD: pid
+DIR_MPD_STATE="$HOME/.mpd/state"                               # Directory MPD: state
+DIR_NCMPCPP="$HOME/.ncmpcpp"                                   # Directory ncmpcpp: .ncmpcpp
 DIR_NEWSBEUTER="$HOME/.newsbeuter"                             # Directory Newsbeuter: .newsbeuter
 DIR_RTORRENTRC="$HOME/.rtorrent.rc"                            # Directory rTorrent: .rtorrent.rc
 DIR_RTORRENT_DOWNLOADS="$HOME/.rtorrent/downloads"             # Directory rTorrent: Downloads directory

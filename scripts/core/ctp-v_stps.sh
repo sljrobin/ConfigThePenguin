@@ -15,8 +15,9 @@ STP_D_PKG_UTILS='1'                # Steps: Debian | Packages | Utils
 
 ########################################################################################################################
 # Multi | Settings
-STP_M_DOT='10'                     # Steps: Multi | Settings | Dotfiles
+STP_M_DOT='12'                     # Steps: Multi | Settings | Dotfiles
 STP_M_SET_FIREFOX='1'              # Steps: Multi | Settings | Firefox
+STP_M_SET_MPD_CREATEDIRS='4'       # Steps: Multi | Settings | MPD
 STP_M_SET_RTORRENT='3'             # Steps: Multi | Settings | rTorrent
 STP_M_SET_RTORRENT_CHECKDL='1'     # Steps: Multi | Settings | rTorrent: Check '~/Downloads'
 STP_M_SET_RTORRENT_CREATEDIRS='4'  # Steps: Multi | Settings | rTorrent: Create directories

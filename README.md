@@ -56,48 +56,6 @@ The repository is divided into several directories:
     * `rtorrent`
     * `vim`
     * `zsh`
-* Examples
-
-* `./main.sh`
-    * `-a` | `--apps`
-        * `firefox`
-            * `-a` | `--addons`
-        * `rtorrent`
-            * `-i` | `--install`
-        * `vim`
-            * `-i` | `--install`
-                * `base16`
-                * `commandt`
-                * `delimitmate`
-                * `indentline`
-                * `multiplecursors`
-                * `nerdtree`
-                * `pathogen`
-                * `surround`
-                * `taglist`
-                * `youcompleteme`
-        * `xmonad`
-            * `-i` | `--install`
-            * `-u` | `--update`
-    * `-h` | `--help`
-    * `-o` | `--os`
-        * `debian`
-            * `-i` | `--install`
-                * `colorscheme`
-                * `dev`
-                * `gui`
-                * `media`
-                * `network`
-                * `utils`
-            * `-u` | `--update`
-                * `shell`
-    * `-p` | `--pc`
-        * `lenovox250`
-            * `-i` | `--install`
-                * `debian`
-                    * `audio`
-                    * `wifi`
-                    * `wifiadapter`
             
 #### vim
 * Colorscheme: [base16]

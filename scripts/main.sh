@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin - Main script 
 #          Author: Simon L. J. Robin - http://sljrobin.com
 #         Created: 2015-10-18 15:20:37
-#        Modified: 2015-12-05 22:55:47
+#        Modified: 2015-12-06 00:25:09
 #
 ########################################################################################################################
 # Load Core
@@ -29,6 +29,7 @@ source ./lib/debian/d_packages_network.sh
 source ./lib/debian/d_packages_utils.sh
 source ./lib/multi/m_dotfiles.sh
 source ./lib/multi/m_settings_firefox.sh
+source ./lib/multi/m_settings_mpd.sh
 source ./lib/multi/m_settings_rtorrent.sh
 source ./lib/multi/m_settings_vim.sh
 source ./lib/multi/m_settings_xmonad.sh

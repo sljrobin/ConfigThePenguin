@@ -4,7 +4,7 @@
 #     Description: 
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-05 15:03:13
-#        Modified: 2015-12-05 22:28:30
+#        Modified: 2015-12-06 00:24:46
 #
 ########################################################################################################################
 # Arguments | Errors | Print an error message when an invalid argument is entered
@@ -87,6 +87,7 @@ function ctp-args_help-show()
   # Multi | Settings
   __ctp-args_help-lvl1 "-ms" "Multi settings"
   __ctp-args_help-lvl2 "firefox" "print details for add-ons"
+  __ctp-args_help-lvl2 "mpd" "create directories for MPD"
   __ctp-args_help-lvl2 "rtorrent" "create directories for rTorrent"
   __ctp-args_help-lvl2 "vim" "install plugins"
   __ctp-args_help-lvl2 "xmonad" "compile xmonad with the configuration file"
@@ -143,6 +144,8 @@ function ctp-args_options-ms()
   case $1 in
     # Multi | Settings > Firefox
     firefox) m_settings-firefox_set ;;
+    # Multi | Settings > MPD
+    mpd) m_settings-mpd_set ;;
     # Multi | Settings > rTorrent
     rtorrent) m_settings-rtorrent_set ;;
     # Multi | Settings > vim
