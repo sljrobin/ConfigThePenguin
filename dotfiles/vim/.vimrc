@@ -172,7 +172,12 @@ syntax on                           " Enable syntax highlighting
 "" Theme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let base16colorspace=256            " Access colors present in 256 colorspace
-colorscheme base16-default          " Main colorscheme
+" If 'Base16' colorscheme exists, load it
+if filereadable("~/.vim/bundle/base16-vim/colors/base16-default.vim")
+  colorscheme base16-default
+endif
+" Else load 'delek' colorscheme
+colorscheme delek
 set background=dark                 " Color the background 
 set cursorline                      " Highlight the current line
 set number                          " Enable line numbers
