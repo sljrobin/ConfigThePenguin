@@ -4,7 +4,7 @@
 #     Description: 
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-05 15:03:13
-#        Modified: 2015-12-06 00:24:46
+#        Modified: 2015-12-06 01:35:11
 #
 ########################################################################################################################
 # Arguments | Errors | Print an error message when an invalid argument is entered
@@ -86,6 +86,8 @@ function ctp-args_help-show()
   __ctp-args_help-lvl1 "-m." "Multi dotfiles"
   # Multi | Settings
   __ctp-args_help-lvl1 "-ms" "Multi settings"
+  __ctp-args_help-lvl2or "-A" "--all" "all settings"
+  __ctp-args_help-lvl2 "base16" "clone repository from GitHub"
   __ctp-args_help-lvl2 "firefox" "print details for add-ons"
   __ctp-args_help-lvl2 "mpd" "create directories for MPD"
   __ctp-args_help-lvl2 "rtorrent" "create directories for rTorrent"
@@ -142,6 +144,10 @@ function ctp-args_options-mdot()
 function ctp-args_options-ms()
 {
   case $1 in
+    # Multi | Settings > All
+    -A | --all) m_settings-all_set ;;
+    # Multi | Settings > Base16
+    base16) m_settings-base16_set ;;
     # Multi | Settings > Firefox
     firefox) m_settings-firefox_set ;;
     # Multi | Settings > MPD
