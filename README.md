@@ -1,5 +1,5 @@
 # ConfigThePenguin
-An other personal Linux configuration.
+[ConfigThePenguin](/) is a toolbox for automating the installation process of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
 
 ## Table of contents
 * [Content]
@@ -29,10 +29,42 @@ The repository is divided into several directories:
     * Mail: [Mutt](http://www.mutt.org/)
     * BitTorrent: [rTorrent](https://rakshasa.github.io/rtorrent/)
 
+## Script options
+Only the `main.sh` script needs to be executed. Help can be printed with the `-H` or `--help` arguments.
+* __Syntax__: `./main.sh <argument 1><argument 2> <argument 3>`
+* __Arguments 1__
+    * `-a` _Arch Linux_
+    * `-d` _Debian_
+    * `-m` _Multi_
+* __Arguments 2__
+    * `.` _dotfiles_
+    * `d` _drivers_
+    * `p` _packages_
+    * `s` _settings_
+* __Arguments 3__
+    * `lenovo-x250` _actions only for Lenovo ThinkPad X250_
+    * `base16` _colorscheme_
+    * `firefox` _web browser add-ons_
+    * `mpd` _Music Player Daemon_
+    * `rtorrent` _create directories for rTorrent_
+    * `vim` _automate the plugins installation_
+    * `xmonad` _compile the GUI_
+    * `zsh` _change the current shell to Zsh_
+    * `-A` | `--all` _select all suboptions_
+    * `-d` | `--development` _software/hardware development_
+    * `-g` | `--gui` _graphical user interface_
+    * `-m` | `--media` _audio and video_
+    * `-n` | `--network` _web surfing, WiFi, VPN_
+    * `-u` | `--utils` _archive extractors, clients, readers_
+
 ## Installation
+Examples of classical installations:
 * __Arch__
 * __Debian__
     1. `./main -dp -A`
+    2. `./main -m.`
+    3. `./main -ms -A`
+    4. `./main -dd <PC>`
 
 
 #### [`dotfiles/`]
@@ -67,9 +99,6 @@ The repository is divided into several directories:
 * Syntax: `<Argument 1><Argument 2> <Argument 3>`
 * Arguments
     * Arguments 1
-        * `-a` _Arch Linux_
-        * `-d` _Debian_
-        * `-m` _Multi_
     * Arguments 2
         * `.` _dotfiles_
         * `d` _drivers_
