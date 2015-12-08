@@ -42,20 +42,23 @@ Only the `main.sh` script needs to be executed. Help can be printed with the `-H
     * `p` _packages_
     * `s` _settings_
 * __Arguments 3__
-    * `lenovo-x250` _actions only for Lenovo ThinkPad X250_
-    * `base16` _colorscheme_
-    * `firefox` _web browser add-ons_
-    * `mpd` _Music Player Daemon_
-    * `rtorrent` _create directories for rTorrent_
-    * `vim` _automate the plugins installation_
-    * `xmonad` _compile the GUI_
-    * `zsh` _change the current shell to Zsh_
-    * `-A` | `--all` _select all suboptions_
-    * `-d` | `--development` _software/hardware development_
-    * `-g` | `--gui` _graphical user interface_
-    * `-m` | `--media` _audio and video_
-    * `-n` | `--network` _web surfing, WiFi, VPN_
-    * `-u` | `--utils` _archive extractors, clients, readers_
+    * For Drivers
+        * `lenovo-x250` _drivers for Lenovo ThinkPad X250_
+    * For _Packages_
+        * `-A` | `--all` _select all suboptions_
+        * `-d` | `--development` _software/hardware development_
+        * `-g` | `--gui` _graphical user interface_
+        * `-m` | `--media` _audio and video_
+        * `-n` | `--network` _web surfing, WiFi, VPN_
+        * `-u` | `--utils` _archive extractors, clients, readers_
+    * For Settings
+        * `base16` _colorscheme_
+        * `firefox` _web browser add-ons_
+        * `mpd` _Music Player Daemon_
+        * `rtorrent` _create directories for rTorrent_
+        * `vim` _automate the plugins installation_
+        * `xmonad` _compile the GUI_
+        * `zsh` _change the current shell to Zsh_
 
 ## Installation
 Examples of classical installations:
