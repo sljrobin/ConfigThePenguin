@@ -2,11 +2,11 @@
 [ConfigThePenguin](https://github.com/sljrobin/ConfigThePenguin) is a toolbox for automating the installation process of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
 
 ## Table of contents
-* [Content](/README.md#content)
-* [Configuration](/README.md#configuration)
-* [Script options](/README.md#script-options)
-* [Installation](/README.md#installation)
-* [License](/README.md#license)
+* [Content](https://github.com/sljrobin/ConfigThePenguin#content)
+* [Configuration](https://github.com/sljrobin/ConfigThePenguin#configuration)
+* [Script options](https://github.com/sljrobin/ConfigThePenguin#script-options)
+* [Installation](https://github.com/sljrobin/ConfigThePenguin#installation)
+* [License](https://github.com/sljrobin/ConfigThePenguin#license)
 
 ## Content
 The repository is divided into several directories:
