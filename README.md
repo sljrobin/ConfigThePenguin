@@ -1,5 +1,5 @@
 # ConfigThePenguin
-[ConfigThePenguin](/) is a toolbox for automating the installation process of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
+[ConfigThePenguin](https://github.com/sljrobin/ConfigThePenguin) is a toolbox for automating the installation process of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
 
 ## Table of contents
 * [Content](/README.md#content)
@@ -67,10 +67,10 @@ Only the `main.sh` script needs to be executed. Help can be printed with the `-H
 Examples of classical installations:
 * __Arch__
 * __Debian__
-    1. `./main -dp -A`
-    2. `./main -m.`
-    3. `./main -ms -A`
-    4. `./main -dd <PC>`
+    1. `./main.sh -dp -A`
+    2. `./main.sh -m.`
+    3. `./main.sh -ms -A`
+    4. `./main.sh -dd <PC>`
 
 ## License
 The content of this project is licensed under the GPL license.
