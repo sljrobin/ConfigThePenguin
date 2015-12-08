@@ -11,6 +11,8 @@
 ## Content
 The repository is divided into several directories:
 * [`dotfiles/`](/dotfiles/) _Configuration files for various applications_
+    * [`/`](/dotfiles/)
+    * [`ncmpcpp/`](/dotfiles/ncmpcpp)
 * [`scripts/`](/scripts/) _Installation scripts_
 
 ## Configuration
