@@ -11,9 +11,24 @@
 ## Content
 The repository is divided into several directories:
 * [`dotfiles/`](/dotfiles/) _Configuration files for various applications_
-    * [`/`](/dotfiles/)
+    * [`conky/`](/dotfiles/conky)
+    * [`git/`](/dotfiles/git)
+    * [`mpd/`](/dotfiles/mpd)
     * [`ncmpcpp/`](/dotfiles/ncmpcpp)
+    * [`newsbeuter/`](/dotfiles/newsbeuter)
+    * [`rtorrent/`](/dotfiles/rtorrent)
+    * [`tmux/`](/dotfiles/tmux)
+    * [`vim/`](/dotfiles/vim)
+    * [`xinit/`](/dotfiles/xinit)
+    * [`xmonad/`](/dotfiles/xmonad)
+    * [`xresources/`](/dotfiles/xresources)
+    * [`zsh/`](/dotfiles/zsh)
 * [`scripts/`](/scripts/) _Installation scripts_
+    * [`core/`](/scripts/core)
+    * [`lib/`](/scripts/lib)
+        * [`arch/`](/scripts/lib/arch)
+        * [`debian/`](/scripts/lib/debian)
+        * [`multi/`](/scripts/lib/multi)
 
 ## Configuration
 * __Environment__
