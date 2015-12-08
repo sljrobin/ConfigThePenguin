@@ -7,8 +7,33 @@ An other personal Linux configuration.
 
 ## Content
 The repository is divided into several directories:
-* [`dotfiles/`] _Configuration files for various applications_
-* [`scripts/`] _Installation scripts_
+* [`dotfiles/`](/dotfiles/) _Configuration files for various applications_
+* [`scripts/`](/scripts/) _Installation scripts_
+
+## Configuration
+* __Environment__
+    * Shell: [Zsh](http://www.zsh.org/)
+    * Terminal: [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
+    * Multiplexer: [tmux](https://tmux.github.io/)
+    * Monitor: [Conky](https://github.com/brndnmtthws/conky)
+    * GUI: [X](http://www.x.org/wiki/)/[xmonad](http://xmonad.org/)
+* __Development__
+    * Editor: [vim](http://www.vim.org/)
+    * VCS: [Git](https://git-scm.com/)
+* __Multimedia__
+    * Music: [MPD](http://www.musicpd.org/)/[ncmpcpp](http://rybczak.net/ncmpcpp/)
+    * Video: [mpv](https://mpv.io/)
+* __Clients__
+    * IRC: [WeeChat](https://weechat.org/)
+    * RSS: [Newsbeuter](http://newsbeuter.org/)
+    * Mail: [Mutt](http://www.mutt.org/)
+    * BitTorrent: [rTorrent](https://rakshasa.github.io/rtorrent/)
+
+## Installation
+* __Arch__
+* __Debian__
+    1. `./main -dp -A`
+
 
 #### [`dotfiles/`]
 * __[Conky]__ [`.conkyrc`]
@@ -76,9 +101,9 @@ The content of this project is licensed under the GPL license.
 
 
 [Content]: /README.md#content "Content"
+
 [Information]: /README.md#information "Information"
 [License]: /README.md#license "License"
-[vim]: /README.md#vim "vim"
 
 [`.conkyrc`]: /dotfiles/.conkyrc ".conkyrc"
 [`.gitconfig`]: /dotfiles/.gitconfig ".gitconfig"
@@ -91,7 +116,6 @@ The content of this project is licensed under the GPL license.
 
 [`config`]: /dotfiles/.newsbeuter/config "config"
 [`core/`]: /scripts/core/ "core/"
-[`dotfiles/`]: /dotfiles/ "dotfiles/"
 [`data/`]: /dotfiles/.xmonad/data "data/"
 [`lib/`]: /dotfiles/.xmonad/lib "lib/"
 [`main.sh`]: /scripts/main.sh "main.sh"
@@ -100,14 +124,9 @@ The content of this project is licensed under the GPL license.
 [`xmonad.hs`]: /dotfiles/.xmonad/xmonad.hs "xmonad.hs"
 
 [Conky]: https://github.com/brndnmtthws/conky "Conky"
-[Git]: https://git-scm.com/ "Git"
-[Newsbeuter]: http://newsbeuter.org/ "Newsbeuter"
-[tmux]: https://tmux.github.io/ "tmux"
+[Git]:  "Git"
 [rTorrent]: https://rakshasa.github.io/rtorrent/ "rTorrent"
-[vim]: http://www.vim.org/ "vim"
 [X.Org]: http://www.x.org/ "X.Org"
-[xmonad]: http://xmonad.org/ "xmonad"
-[Zsh]: http://www.zsh.org/ "Zsh"
 
 [base16]: https://github.com/chriskempson/base16-vim "base16"
 [Command-T]: https://github.com/wincent/Command-T "Command-T"
