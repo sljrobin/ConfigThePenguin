@@ -2,33 +2,11 @@
 [ConfigThePenguin](https://github.com/sljrobin/ConfigThePenguin) is a toolbox for automating the installation process of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
 
 ## Table of contents
-* [Content](https://github.com/sljrobin/ConfigThePenguin#content)
 * [Configuration](https://github.com/sljrobin/ConfigThePenguin#configuration)
 * [Script options](https://github.com/sljrobin/ConfigThePenguin#script-options)
 * [Installation](https://github.com/sljrobin/ConfigThePenguin#installation)
+* [Content](https://github.com/sljrobin/ConfigThePenguin#content)
 * [License](https://github.com/sljrobin/ConfigThePenguin#license)
-
-## Content
-The repository is divided into several directories:
-* [`dotfiles/`](/dotfiles/) _Configuration files for various applications_
-    * [`conky/`](/dotfiles/conky)
-    * [`git/`](/dotfiles/git)
-    * [`mpd/`](/dotfiles/mpd)
-    * [`ncmpcpp/`](/dotfiles/ncmpcpp)
-    * [`newsbeuter/`](/dotfiles/newsbeuter)
-    * [`rtorrent/`](/dotfiles/rtorrent)
-    * [`tmux/`](/dotfiles/tmux)
-    * [`vim/`](/dotfiles/vim)
-    * [`xinit/`](/dotfiles/xinit)
-    * [`xmonad/`](/dotfiles/xmonad)
-    * [`xresources/`](/dotfiles/xresources)
-    * [`zsh/`](/dotfiles/zsh)
-* [`scripts/`](/scripts/) _Installation scripts_
-    * [`core/`](/scripts/core)
-    * [`lib/`](/scripts/lib)
-        * [`arch/`](/scripts/lib/arch)
-        * [`debian/`](/scripts/lib/debian)
-        * [`multi/`](/scripts/lib/multi)
 
 ## Configuration
 * __Environment__
@@ -88,6 +66,28 @@ Examples of classical installations:
     2. `./main.sh -m.`
     3. `./main.sh -ms -A`
     4. `./main.sh -dd <PC>`
+
+## Content
+The repository is divided into several directories:
+* [`dotfiles/`](/dotfiles/)
+    * [`conky/`](/dotfiles/conky)
+    * [`git/`](/dotfiles/git)
+    * [`mpd/`](/dotfiles/mpd)
+    * [`ncmpcpp/`](/dotfiles/ncmpcpp)
+    * [`newsbeuter/`](/dotfiles/newsbeuter)
+    * [`rtorrent/`](/dotfiles/rtorrent)
+    * [`tmux/`](/dotfiles/tmux)
+    * [`vim/`](/dotfiles/vim)
+    * [`xinit/`](/dotfiles/xinit)
+    * [`xmonad/`](/dotfiles/xmonad)
+    * [`xresources/`](/dotfiles/xresources)
+    * [`zsh/`](/dotfiles/zsh)
+* [`scripts/`](/scripts/)
+    * [`core/`](/scripts/core)
+    * [`lib/`](/scripts/lib)
+        * [`arch/`](/scripts/lib/arch)
+        * [`debian/`](/scripts/lib/debian)
+        * [`multi/`](/scripts/lib/multi)
 
 ## License
 The content of this project is licensed under the GPL license.
