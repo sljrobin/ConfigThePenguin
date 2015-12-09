@@ -63,6 +63,8 @@ function __m_dotfiles-vim()
 {
   __ctp-dots_checkf "$DIR_VIMRC"
   __ctp-dots_symlnk "$DIR_CTP_VIMRC" "$DIR_VIMRC"
+  __ctp-dots_checkd "$DIR_VIM_MAIN"
+  __ctp-dots_symlnk "$DIR_CTP_VIM_MAIN" "$DIR_VIM_MAIN"
   return $?
 }
 

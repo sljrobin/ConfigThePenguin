@@ -48,7 +48,6 @@ function __d_packages-dev_list()
     echo $pl_cleaned
   # 'Cancel' option selected
   else
-    __ctp-pkgs_d-abort
     exit 1
   fi
 }

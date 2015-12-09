@@ -4,7 +4,7 @@
 # Debian | Packages | Install all Packages
 function d_packages-all_install()
 {
-  ctp-colorizer "[1/$STP_D_PKG_ALL] Installing all Debian Packages..." $CLR_LBLUE "y"
+  ctp-colorizer "[1/$STP_D_PKG_ALL] Installing all Debian Packages..." $CLR_LCYAN "y"
   # Assigning list of packages
   pldev=$(__d_packages-dev_list)
   plgui=$(__d_packages-gui_list)
@@ -23,7 +23,7 @@ function d_packages-all_install()
   __ctp-pkgs_d-manager $plall
   # Checking installation status
   inst_status=$?
-  ctp-colorizer "[1/$STP_D_PKG_ALL] Installing all Debian Packages..." $CLR_LBLUE "n"
+  ctp-colorizer "[1/$STP_D_PKG_ALL] Installing all Debian Packages..." $CLR_LCYAN "n"
   # Printing installation status
   if [ $inst_status = 0 ]; then
     ctp-colorizer " [DONE]" $CLR_LGREEN "y"
