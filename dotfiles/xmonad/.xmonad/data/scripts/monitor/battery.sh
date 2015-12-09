@@ -132,6 +132,9 @@ function bat2()
   # Battery B: Full
   elif [ "$BATB_STATUS" == "$STATUS_FULL" ]; then
     color_fg $COLOR_LORANGE "Full"
+  # Battery A + Battery B: Full
+  elif [ "$BATA_PERCENTAGE" -ge "$BATLVL_FULL" ] && [ "$BATB_PERCENTAGE" -ge "$BATLVL_FULL" ]; then
+    color_fg $COLOR_LORANGE "Full"
   # Case not handled
   else
     gen_error

@@ -48,7 +48,8 @@ myKeys    =
     -- Programs; using
     ----------------------------------------------------------------------------
     [ ("M-S-z"      , spawn "xscreensaver-command --lock")              -- <Mod> + <Shift> + <z>: lock screen
-    , ("M-<F1>"     , spawn "amixer set Master toggle")                 -- <Mod> + <F1>; mute volume
+    , ("M-<F1>"     , spawn "amixer set Master toggle")                 -- <Mod> + <F1>; mute/unmute volume
+    , ("M-S-<F1>"   , spawn "amixer set Master toggle")                 -- <Mod> + <Shift> + <F1>; mute/unmute volume
     , ("M-<F2>"     , spawn "amixer set Master 2-")                     -- <Mod> + <F2>: decrease volume
     , ("M-S-<F2>"   , spawn "amixer set Master 2+")                     -- <Mod> + <Shift> + <F2>: increase volume
     , ("M-b"        , spawn "xbacklight -dec 5")                        -- <Mod> + <b>: decrease to 5% from current value of brightness
