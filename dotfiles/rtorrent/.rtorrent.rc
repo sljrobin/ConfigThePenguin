@@ -34,8 +34,7 @@ upload_rate   = 50
 #                * `tied_directory`: options for tied directory
 #                * `untied_directory`: options for untied directory
 #                * `watch_directory`: watch a directory for new torrents
-#directory = ~/.rtorrent/downloads
-directory = ~/Data
+directory = ~/.rtorrent/downloads
 session   = ~/.rtorrent/session
 schedule  = watch_directory, 5, 5, load_start=~/.rtorrent/torrents/*.torrent
 schedule  = tied_directory, 5, 5, start_tied= 
