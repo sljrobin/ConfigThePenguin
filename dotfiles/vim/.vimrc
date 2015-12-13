@@ -173,11 +173,9 @@ syntax on                           " Enable syntax highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let base16colorspace=256            " Access colors present in 256 colorspace
 " If 'Base16' colorscheme exists, load it
-if filereadable("~/.vim/bundle/base16-vim/colors/base16-default.vim")
+if filereadable(expand("$HOME/.vim/bundle/base16-vim/colors/base16-default.vim"))
   colorscheme base16-default
 endif
-" Else load 'delek' colorscheme
-colorscheme delek
 set background=dark                 " Color the background 
 set cursorline                      " Highlight the current line
 set number                          " Enable line numbers
@@ -224,6 +222,15 @@ set backspace=indent,eol,start      " Enable correct backspacing
 "" Status bar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2                    " Print the last status
+"set ruler                           " Enable ruler
+"set rulerformat=(%c%V%)
+
+" %l line
+" "%c characters
+" %P percentage
+
+"set virtualedit=block
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Command bar
@@ -235,24 +242,24 @@ set cmdheight=1                     " Command bar height
 "" Wild menu
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("wildmenu")                  " Check for compatibility
-    set wildignore+=.DS_Store            " Ignore `.DS_Store` files
-    set wildignore+=.git                 " Ignore `.git` files
-    set wildignore+=.hg                  " Ignore `.hg` files
-    set wildignore+=.svn                 " Ignore `.svn` files
-    set wildignore+=*~                   " Ignore `*~` files
-    set wildignore+=*.a                  " Ignore `*.a` files
-    set wildignore+=*.bak,*.bmp          " Ignore `*.bak`, `*.bmp` files
-    set wildignore+=*.class              " Ignore `*.class` files
-    set wildignore+=*.gif                " Ignore `*.gif` files
-    set wildignore+=*.hi                 " Ignore `*.hi` files
-    set wildignore+=*.ico                " Ignore `*.ico` files
-    set wildignore+=*.jpg,*.jpeg         " Ignore `*.jpg`, `*.jpeg` files
-    set wildignore+=*.o                  " Ignore `*.o` files
-    set wildignore+=*.png,*.pyc          " Ignore `*.png`, `*.pyc` files
-    set wildignore+=*.swp                " Ignore `*.swp` files
-    set wildignore+=*.tmp                " Ignore `*.tmp` files
-    set wildmenu                         " Enhance command line completion
-    set wildmode=longest:full,full       " Complete the longest possible part, then switch
+  set wildignore+=.DS_Store            " Ignore `.DS_Store` files
+  set wildignore+=.git                 " Ignore `.git` files
+  set wildignore+=.hg                  " Ignore `.hg` files
+  set wildignore+=.svn                 " Ignore `.svn` files
+  set wildignore+=*~                   " Ignore `*~` files
+  set wildignore+=*.a                  " Ignore `*.a` files
+  set wildignore+=*.bak,*.bmp          " Ignore `*.bak`, `*.bmp` files
+  set wildignore+=*.class              " Ignore `*.class` files
+  set wildignore+=*.gif                " Ignore `*.gif` files
+  set wildignore+=*.hi                 " Ignore `*.hi` files
+  set wildignore+=*.ico                " Ignore `*.ico` files
+  set wildignore+=*.jpg,*.jpeg         " Ignore `*.jpg`, `*.jpeg` files
+  set wildignore+=*.o                  " Ignore `*.o` files
+  set wildignore+=*.png,*.pyc          " Ignore `*.png`, `*.pyc` files
+  set wildignore+=*.swp                " Ignore `*.swp` files
+  set wildignore+=*.tmp                " Ignore `*.tmp` files
+  set wildmenu                         " Enhance command line completion
+  set wildmode=longest:full,full       " Complete the longest possible part, then switch
 endif
 
 
@@ -261,40 +268,48 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Bash (`*.sh`)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile *.sh so $HOME/.vim/headers/sh
-autocmd BufNewFile *.sh exe "1," . 9 . "g/Filename:.*/s//Filename: " .expand("%")
-autocmd BufNewFile *.sh exe "1," . 9 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
-autocmd Bufwritepre,filewritepre *.sh execute "normal ma" 
-autocmd Bufwritepre,filewritepre *.sh exe "1," . 9 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
-autocmd Bufwritepost,filewritepost *.sh execute "normal `a" 
+if filereadable(expand("$HOME/.vim/headers/sh"))
+  autocmd BufNewFile *.sh so $HOME/.vim/headers/sh
+  autocmd BufNewFile *.sh exe "1," . 9 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.sh exe "1," . 9 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.sh execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.sh exe "1," . 9 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.sh execute "normal `a" 
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" C
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " (`*.c`)
-autocmd BufNewFile *.c so $HOME/.vim/headers/c
-autocmd BufNewFile *.c exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
-autocmd BufNewFile *.c exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
-autocmd Bufwritepre,filewritepre *.c execute "normal ma" 
-autocmd Bufwritepre,filewritepre *.c exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
-autocmd Bufwritepost,filewritepost *.c execute "normal `a" 
+if filereadable(expand("$home/.vim/headers/c"))
+  autocmd BufNewFile *.c so $HOME/.vim/headers/c
+  autocmd BufNewFile *.c exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.c exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.c execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.c exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.c execute "normal `a" 
+endif
 " (`*.h`)
-autocmd BufNewFile *.h so $HOME/.vim/headers/c
-autocmd BufNewFile *.h exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
-autocmd BufNewFile *.h exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
-autocmd Bufwritepre,filewritepre *.h execute "normal ma" 
-autocmd Bufwritepre,filewritepre *.h exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
-autocmd Bufwritepost,filewritepost *.h execute "normal `a" 
+if filereadable(expand("$home/.vim/headers/c"))
+  autocmd BufNewFile *.h so $HOME/.vim/headers/c
+  autocmd BufNewFile *.h exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.h exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.h execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.h exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.h execute "normal `a" 
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Python (`*.py`)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile *.py so $HOME/.vim/headers/py
-autocmd BufNewFile *.py exe "1," . 10 . "g/Filename:.*/s//Filename: " .expand("%")
-autocmd BufNewFile *.py exe "1," . 10 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
-autocmd Bufwritepre,filewritepre *.py execute "normal ma" 
-autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
-autocmd Bufwritepost,filewritepost *.py execute "normal `a" 
+if filereadable(expand("$home/.vim/headers/py"))
+  autocmd BufNewFile *.py so $HOME/.vim/headers/py
+  autocmd BufNewFile *.py exe "1," . 10 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.py exe "1," . 10 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.py execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.py execute "normal `a" 
+endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -307,6 +322,7 @@ autocmd BufNewFile,BufReadPost .bash_history set filetype=sh        " Set `.bash
 autocmd BufNewFile,BufReadPost .bash_logout  set filetype=sh        " Set `.bash_logout` as a Shell file
 autocmd BufNewFile,BufReadPost .bashrc       set filetype=sh        " Set `.bashrc` as a Shell file
 autocmd BufNewFile,BufReadPost .rtorrent.rc  set filetype=sh        " Set `.rtorrent.rc` as a Shell file
+autocmd BufNewFile,BufReadPost .vimrc        set filetype=vim       " Set `.vimrc` as a vim file
 " HTML
 autocmd BufNewFile,BufReadPost .htm          set filetype=html      " Set `*.htm` as a HTML file
 " Markdown
@@ -332,6 +348,7 @@ autocmd FileType html     setlocal shiftwidth=2 tabstop=2           " Define ind
 autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md`   files: 4,4
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.rb`   files: 2,2
 autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh`   files: 2,2
+autocmd FileType vim      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.vim`  files: 2,2
 autocmd FileType yaml     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.yaml` files: 2,2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
