@@ -1,5 +1,5 @@
 # ConfigThePenguin
-[ConfigThePenguin](https://github.com/sljrobin/ConfigThePenguin) is a toolbox for automating the installation process of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
+[ConfigThePenguin](https://github.com/sljrobin/ConfigThePenguin) is a toolbox for automating the installation and configuration processes of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
 
 ## Table of contents
 * [Configuration](https://github.com/sljrobin/ConfigThePenguin#configuration)
@@ -51,6 +51,7 @@ Only the `main.sh` script needs to be executed. Help can be printed with the `-H
         * `-u` | `--utils` _archive extractors, clients, readers_
     * For _Settings_
         * `base16` _clone repository from GitHub_
+        * `bluetooth` _disable permanently Bluetooth_
         * `firefox` _print details add-ons_
         * `mpd` _create directories for MPD_
         * `rtorrent` _create directories for rTorrent_
