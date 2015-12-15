@@ -39,4 +39,9 @@ function m_settings-all_set()
   m_settings-zsh_set
   ctp-colorizer "[7/$STP_M_SET_ALL] Setting all applications on Multi OS (Zsh)..." $CLR_LCYAN "n"
   ctp-colorizer " [DONE]" $CLR_LGREEN "y"
+  # Bluetooth
+  ctp-colorizer "[8/$STP_M_SET_ALL] Setting all applications on Multi OS (Bluetooth)..." $CLR_LCYAN "y"
+  m_settings-bluetooth_set
+  ctp-colorizer "[8/$STP_M_SET_ALL] Setting all applications on Multi OS (Bluetooth)..." $CLR_LCYAN "n"
+  ctp-colorizer " [DONE]" $CLR_LGREEN "y"
 }
