@@ -117,7 +117,7 @@ URxvt.urgentOnBell: true
 URxvt.background:     base00
 URxvt.foreground:     base05
 URxvt.fadeColor:      #000000
-URxvt.fading:         10
+URxvt.fading:         0
 
 ! Borders
 URxvt.borderLess:     false
