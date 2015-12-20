@@ -18,15 +18,16 @@ PROMPT='%n@%m:%~%# '
 alias sx='startx'                        # `sx`: start the X Window Server
 
 ## ls
-#   `-a`: do not ignore entries starting with
+#   `-a`: do not ignore entries starting with `.`
 #   `-d`: list directories
+#   `-F`: append a character to each file indicating the file type
 #   `-G`: do not print group names in a long listing
 #   `-h`: print human readable sizes
 #   `-l`: long listing format
 #   `-s`: print the sizes
-alias ld='ls -Ghdls --color=auto .*/ */' # `ld`: list only directories
-alias ll='ls -Ghlas --color=auto'        # `ll`: list information more verbose
-alias ls='ls -Gh --color=auto'           # `ls`: main list information
+alias ld='ls -ldGh --color=auto --time-style long-iso .*/ */' # `ld`: list only directories
+alias ll='ls -laGFh --color=auto --time-style long-iso'       # `ll`: list information more verbose
+alias ls='ls --color=auto'                                    # `ls`: main list information
 
 ## git
 # Branch
