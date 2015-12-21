@@ -4,7 +4,7 @@
 #     Description: 
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-05 15:03:13
-#        Modified: 2015-12-06 01:35:11
+#        Modified: 2015-12-13 09:21:01
 #
 ########################################################################################################################
 # Arguments | Errors | Print an error message when an invalid argument is entered
@@ -68,7 +68,7 @@ function __ctp-args_help-lvl2or()
 function ctp-args_help-show()
 {
   # Syntax
-  ctp-colorizer "Syntax: <argument 1><argument 2>" $CLR_LPURPLE "y"
+  ctp-colorizer "Syntax: ./main.sh <argument 1><argument 2> <argument 3>" $CLR_LPURPLE "y"
   # Help
   __ctp-args_help-lvl1or "-H" "--help" "print this help"
   # Debian | Drivers
@@ -88,12 +88,13 @@ function ctp-args_help-show()
   __ctp-args_help-lvl1 "-ms" "Multi settings"
   __ctp-args_help-lvl2or "-A" "--all" "all settings"
   __ctp-args_help-lvl2 "base16" "clone repository from GitHub"
+  __ctp-args_help-lvl2 "bluetooth" "disable permanently Bluetooth"
   __ctp-args_help-lvl2 "firefox" "print details for add-ons"
   __ctp-args_help-lvl2 "mpd" "create directories for MPD"
   __ctp-args_help-lvl2 "rtorrent" "create directories for rTorrent"
   __ctp-args_help-lvl2 "vim" "install plugins"
-  __ctp-args_help-lvl2 "xmonad" "compile xmonad with the configuration file"
-  __ctp-args_help-lvl2 "zsh" "change the current shell to zsh"
+  __ctp-args_help-lvl2 "xmonad" "compile xmonad with the main configuration file"
+  __ctp-args_help-lvl2 "zsh" "change the current shell to Zsh"
   echo
 }
 
@@ -148,6 +149,8 @@ function ctp-args_options-ms()
     -A | --all) m_settings-all_set ;;
     # Multi | Settings > Base16
     base16) m_settings-base16_set ;;
+    # Multi | Settings > Bluetooth
+    bluetooth) m_settings-bluetooth_set ;;
     # Multi | Settings > Firefox
     firefox) m_settings-firefox_set ;;
     # Multi | Settings > MPD
