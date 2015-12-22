@@ -4,7 +4,7 @@
 #     Description: 
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-05 15:03:13
-#        Modified: 2015-12-05 22:47:40
+#        Modified: 2015-12-07 11:15:39
 #
 ########################################################################################################################
 # Multi | Dotfiles | Check if a directory exists
@@ -12,8 +12,11 @@
 function __ctp-dots_checkd()
 {
   if [ -d "$1" ]; then
-    ctp-colorizer "> The directory '$1/' already exists. " $CLR_DORANGE "y"
+    ctp-colorizer "> The directory '$1/' already exists." $CLR_DORANGE "y"
     return 1
+  else
+    ctp-colorizer "> Linking '$1/'" $CLR_DPURPLE "y"
+    return 0
   fi
 }
 
@@ -22,8 +25,11 @@ function __ctp-dots_checkd()
 function __ctp-dots_checkf()
 {
   if [ -f "$1" ]; then
-    ctp-colorizer "> The file '$1' already exists. " $CLR_DORANGE "y"
+    ctp-colorizer "> The file '$1' already exists." $CLR_DORANGE "y"
     return 1
+  else
+    ctp-colorizer "> Linking '$1'" $CLR_DPURPLE "y"
+    return 0
   fi
 }
 
