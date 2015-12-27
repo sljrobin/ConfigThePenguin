@@ -9,4 +9,5 @@ use_spacer none
 TEXT
 ${exec $HOME/.xmonad/data/scripts/monitor/usb.sh} | \
 ${exec $HOME/.xmonad/data/scripts/music/volume.sh} | \
-${exec $HOME/.xmonad/data/scripts/music/song.sh}
+${exec $HOME/.xmonad/data/scripts/music/song.sh} | \
+${exec $HOME/.xmonad/data/scripts_bak/tools/monitor/usb.sh}

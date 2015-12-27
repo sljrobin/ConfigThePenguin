@@ -15,7 +15,10 @@ STP_D_PKG_UTILS='1'                # Steps: Debian | Packages | Utils
 
 ########################################################################################################################
 # Multi | Settings
-STP_M_DOT='12'                     # Steps: Multi | Settings | Dotfiles
+STP_M_DOT='12'                     # Steps: Multi | Dotfiles
+STP_M_SET_ALL='8'                  # Steps: Multi | Settings | All
+STP_M_SET_BASE16='2'               # Steps: Multi | Settings | Base16
+STP_M_SET_BLUETOOTH='3'            # Steps: Multi | Settings | Bluetooth
 STP_M_SET_FIREFOX='1'              # Steps: Multi | Settings | Firefox
 STP_M_SET_MPD='3'                  # Steps: Multi | Settings | MPD
 STP_M_SET_MPD_CREATEDIRS='1'       # Steps: Multi | Settings | MPD: Create directories
@@ -23,8 +26,7 @@ STP_M_SET_MPD_CREATEFILES='4'      # Steps: Multi | Settings | MPD: Create files
 STP_M_SET_RTORRENT='3'             # Steps: Multi | Settings | rTorrent
 STP_M_SET_RTORRENT_CHECKDL='1'     # Steps: Multi | Settings | rTorrent: Check '~/Downloads'
 STP_M_SET_RTORRENT_CREATEDIRS='4'  # Steps: Multi | Settings | rTorrent: Create directories
-STP_M_SET_VIM='3'                  # Steps: Multi | Settings | vim
-STP_M_SET_VIM_CREATEDIRS='3'       # Steps: Multi | Settings | vim: Create directories
+STP_M_SET_VIM='2'                  # Steps: Multi | Settings | vim
 STP_M_SET_VIM_PLUGINS='3'          # Steps: Multi | Settings | vim: Install plugins
 STP_M_SET_XMONAD='2'               # Steps: Multi | Settings | xmonad
 STP_M_SET_ZSH='1'                  # Steps: Multi | Settings | Zsh

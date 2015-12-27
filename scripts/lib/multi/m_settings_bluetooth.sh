@@ -50,7 +50,7 @@ function __m_settings-bluetooth_checkroot()
 # Multi | Settings | Bluetooth: Set Bluetooth
 function m_settings-bluetooth_set()
 {
-  local BT_CMDLINE="rfkill bluetooth"  # Setting line to disable permanently Bluetooth
+  local BT_CMDLINE="rfkill block bluetooth"  # Setting line to disable permanently Bluetooth
 
   # Checking if line settings already exist
   ctp-colorizer "[1/$STP_M_SET_BLUETOOTH] Checking if setting lines already exist..." $CLR_LBLUE "y"
