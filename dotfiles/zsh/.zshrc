@@ -90,7 +90,6 @@ setopt CORRECT  # Correct command line
 # Find escape sequences with the read commands
 
 
-
 # https://dustri.org/b/my-zsh-configuration.html
 # https://github.com/fishilico/home-files/blob/master/dotfiles/shell/zshcompletion
 # https://github.com/sorin-ionescu/prezto/blob/master/modules/completion/init.zsh
