@@ -4,6 +4,7 @@
 # Debian | Packages | List Packages for Network
 #    curl: tool to transfer a url
 #    ethtool: utility to get information about Network Interface Controllers
+#    geoip-bin: tool to look up the geographic location of an IP address
 #    iceweasel: web browser
 #    flashplugin-nonfree: Adobe Flash
 #    nginx: HTTP server and reverse proxy
@@ -19,6 +20,7 @@ function __d_packages-net_list()
     "\nSelect Debian Packages to install for Network" 18 97 10 \
     "curl" "Tool to transfer a url" ON \
     "ethtool" "Utility to get information about Network Interface Controllers" ON \
+    "geoip-bin" "Tool to look up the geographic location of an IP address" ON \
     "iceweasel" "Web browser" ON \
     "flashplugin-nonfree" "Adobe Flash" ON \
     "nginx" "HTTP server and reverse proxy" OFF \
