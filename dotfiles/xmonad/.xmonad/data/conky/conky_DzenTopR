@@ -9,6 +9,7 @@ use_spacer none
 TEXT
 ${exec $HOME/.xmonad/data/scripts/tools/connections/internet.sh} |\
 ${exec $HOME/.xmonad/data/scripts/tools/connections/bluetooth.sh} \
-^i($HOME/.xmonad/data/icons/mem.xbm) ${memperc}% | \
+${exec $HOME/.xmonad/data/scripts/tools/monitor/memory.sh} | \
 ${exec $HOME/.xmonad/data/scripts/tools/monitor/cpu.sh} | \
+${exec $HOME/.xmonad/data/scripts/tools/monitor/disk.sh} | \
 ${exec $HOME/.xmonad/data/scripts/tools/usage/brightness.sh}
