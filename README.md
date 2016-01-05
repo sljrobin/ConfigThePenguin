@@ -1,5 +1,5 @@
 # ConfigThePenguin
-[ConfigThePenguin](https://github.com/sljrobin/ConfigThePenguin) is a toolbox for automating the installation and configuration processes of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
+[ConfigThePenguin](https://github.com/sljrobin/ConfigThePenguin) is a toolbox for automating the installation and configuration processes of [Arch Linux](https://www.archlinux.org/) and [Debian](https://www.debian.org/). It also contains my personal dotfiles and a bunch of handy scripts. Find more information on the [project's webpage](https://sljrobin.org/work/configthepenguin).
 
 ## Table of contents
 * [Configuration](https://github.com/sljrobin/ConfigThePenguin#configuration)
