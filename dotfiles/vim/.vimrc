@@ -16,7 +16,6 @@ call vundle#begin()                     " Begin Vundle
 Plugin 'VundleVim/Vundle.vim'           " Plugin: Vundle
 Plugin 'chriskempson/base16-vim'        " Plugin: Base16
 Plugin 'scrooloose/nerdtree'            " Plugin: NERDTree
-Plugin 'ctrlpvim/ctrlp.vim'             " Plugin: CtrlP
 Plugin 'Raimondi/delimitMate'           " Plugin: delimitMate
 Plugin 'terryma/vim-multiple-cursors'   " Plugin: vim-multiple-cursors
 Plugin 'Yggdroot/indentLine'            " Plugin: indentLine
@@ -35,10 +34,6 @@ filetype indent on                      " Enable the indent file for specific fi
 let g:multi_cursor_exit_from_visual_mode=0                " Quit and delete all existing cursors in Visual mode
 let g:multi_cursor_exit_from_insert_mode=0                " Quit and delete all existing cursors in Normal mode
 
-" CtrlP
-let g:ctrlp_map = '<c-[>'                                 " <Ctrl> + <[>: shortkey invoke CtrlP
-let g:ctrlp_cmf = 'CtrlP'                                 " <CtrlP>: command to invoke CtrlP
-
 " indentLine
 let g:indentLine_char = '|'                               " Character to use for delimitation
 let g:indentLine_color_term = 236                         " Color of the character
@@ -53,8 +48,6 @@ let g:UltiSnipsExpandTrigger="<Tab>"                      " <Tab>: expand a snip
 let g:UltiSnipsJumpForwardTrigger="<C-n>"                 " <Ctrl> + <n>: cycle forwards through the snippets list
 let g:UltiSnipsJumpBackwardTrigger="<C-p>"                " <Ctrl> + <p>: cycle backwards through the snippets list
 let g:UltiSnipsEditSplit="vertical"                       " Set a vertical window for editing the snippets
-
-
 
 "" Encoding
 scriptencoding utf8                 " Character Encoding used in the script
