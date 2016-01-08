@@ -22,8 +22,8 @@ myClrWhite          = "#F8F8F8"    -- White
 -- Borders
 myBorderWidth      :: Dimension    -- Border width declaration
 myBorderWidth       = 1            -- Border width
-myClrNormalBorder   = "#B8B8B8"    -- Normal border
-myClrFocusedBorder  = myClrBlue    -- Focused border
+myClrNormalBorder   = myClrDGrey   -- Normal border
+myClrFocusedBorder  = myClrLGrey   -- Focused border
 
 -- Status bar
 myClrBarBg          = "#121212"    -- Main background
