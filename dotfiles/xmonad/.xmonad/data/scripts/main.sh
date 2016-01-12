@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 #        Filename: main.sh
-#     Description: 
+#     Description: Main script
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-22 17:20:32
-#        Modified: 2015-12-30 20:03:10
+#        Modified: 2016-01-11 09:17:23
 #
 ########################################################################################################################
 # Load Variables
