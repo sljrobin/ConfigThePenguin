@@ -4,7 +4,7 @@
 #     Description: Tool for OS
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-30 19:25:57
-#        Modified: 2015-12-31 19:39:02
+#        Modified: 2016-01-12 22:45:59
 #
 ########################################################################################################################
 # Load Library
@@ -39,7 +39,7 @@ function __xmdt_os-getupdtd()
   local updt_debian=$(apt-get upgrade -s | grep -P '^\d+ upgraded' | cut -d" " -f1)  # Get number of updates for Debian
 
   if [ $updt_debian != "0" ]; then
-    xmdl_pntr-txt $color_lorange $updt_debian
+    xmdl_pntr-txt $COLOR_LORANGE $updt_debian
   fi
 }
 
@@ -56,12 +56,12 @@ function __xmdt_os-find()
   local updt_debian=$(__xmdt_os-getupdtd)                  # Updates: Debian
 
   # Arch
-  if [ -n "$os_info_arch" ]; then
+  if [ "$os_info_arch" ]; then
     xmdl_pntr-txt $COLOR_LBLUE "A"
     echo -n " "
     __xmdt_os-getupdta
   # Debian
-  elif [ -n "$os_info_debian" ]; then
+  elif [ "$os_info_debian" ]; then
     xmdl_pntr-txt $COLOR_LMAGENTA "D"
     echo -n " "
     __xmdt_os-getupdtd
