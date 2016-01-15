@@ -17,6 +17,7 @@ import Data.Monoid                      -- Allow to create monoids
 -- Hooks
 import XMonad.Hooks.ManageHelpers       -- Enable FullFloat mode
 import XMonad.Hooks.ManageDocks         -- Enable ToggleStruts
+
 --import XMonad.Layout.MultiToggle
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.Fullscreen
@@ -76,7 +77,10 @@ myKeys    =
     , ("M-k"        , windows W.focusUp)                                -- <Mod> + <k>: move focus to the previous window
     , ("M-m"        , windows W.focusMaster)                            -- <Mod> + <m>: move focus to the master window
     , ("M-t"        , withFocused $ windows . W.sink)                   -- <Mod> + <t>: push window back into tiling
---    , ("M-<Backspace>"        , focusUrgent)                   -- TODO
+    --, ("M-<Backspace>"        , focusUrgent)                   -- TODO
+    , ("M-S-m"      , windows W.swapMaster)                             -- <Mod> + <Shift> + <m>: swap the focused window and the master window
+    , ("M-S-j"      , windows W.swapDown)                               -- <Mod> + <Shift> + <j>: swap the focused window with the next window
+    , ("M-S-k"      , windows W.swapUp)                                 -- <Mod> + <Shift> + <k>: swap the focused window with the previous window
     ]
     ++
 
@@ -94,7 +98,9 @@ myKeys    =
                     sendMessage ToggleStruts)
    -- , ("M-S-m"      , sendMessage RestoreNextMinimizedWin)              -- <Mod> + <Shift> + <f>: restore the focused window in the current layout
 --    , ("M-S-m"      , rectFloatFocused)              -- <Mod> + <Shift> + <f>: restore the focused window in the current layout
-   -- , ("M-n"        , refresh) 
+    , ("M-r"        , refresh)                                          -- <Mod> + <r>: resize viewed windows to the correct size
+    , ("M->"        , sendMessage (IncMasterN 1))                       -- <Mod> + <>>: increment the number of windows in the master area
+    , ("M-<"        , sendMessage (IncMasterN (-1)))                    -- <Mod> + <<>: decrement the number of windows in the master area
     ]
     ++
 
