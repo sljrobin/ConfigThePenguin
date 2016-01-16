@@ -122,7 +122,8 @@ myDzenPP h = defaultPP --dzenPP
     , ppOutput  = hPutStrLn h                                                                                               -- Output
     , ppSep     = ""                                                                                                        -- Spaces between objects
     , ppTitle   = dzenColor ("" ++ myClrBarPPTitleFg   ++ "") ("" ++ myClrBarPPTitleBg   ++ "") . shorten 120 . dzenEscape  -- Title
-    , ppUrgent  = dzenColor ("" ++ myClrBarPPUrgentFg  ++ "") ("" ++ myClrBarPPUrgentBg  ++ "") . wrap " " " "              -- Colors for notifications
+    --, ppUrgent  = dzenColor ("" ++ myClrBarPPUrgentFg  ++ "") ("" ++ myClrBarPPUrgentBg  ++ "") . wrap " " " "              -- Colors for notifications
+    , ppUrgent  = dzenColor ("" ++ myClrBarPPUrgentFg  ++ "") ("" ++ myClrBarPPUrgentBg  ++ "") . pad . dzenStrip           -- Colors for notifications
     , ppWsSep   = ""                                                                                                        -- Separator between workspaces
     }
 
