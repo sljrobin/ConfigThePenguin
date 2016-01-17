@@ -41,7 +41,7 @@ main = do
     myStatusBarBotL <- spawnPipe myXmonadBarBotL  -- Bottom Left status bar
     myStatusBarBotR <- spawnPipe myXmonadBarBotR  -- Bottom Right status bar
 
-    xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig 
+    xmonad $ withUrgencyHook dzenUrgencyHook { args = ["-bg", "#FF0000"] } $ defaultConfig 
         { -- General
           terminal           = myTerminal
         , workspaces         = myWorkspaces
