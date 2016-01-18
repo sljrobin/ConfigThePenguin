@@ -11,6 +11,7 @@
 #    nslookup: tool to manage DNS queries
 #    openvpn: VPN
 #    rtorrent: BitTorrent client
+#    ssh: Secure Shell
 #    wicd-curses: wired and wireless network manager
 #    whois: tool for querying Whois database
 function __d_packages-net_list()
@@ -27,6 +28,7 @@ function __d_packages-net_list()
     "nslookup" "Tool to manage DNS queries" ON \
     "openvpn" "VPN" ON \
     "rtorrent" "BitTorrent client" ON \
+    "ssh" "Secure Shell" ON \
     "wicd-curses" "Wired and wireless network manager" ON \
     "whois" "Tool for querying Whois database" ON 3>&1 1>&2 2>&3)
   # Exit status
