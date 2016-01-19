@@ -275,11 +275,25 @@ if filereadable(expand("$HOME/.vim/headers/sh"))
   autocmd Bufwritepost,filewritepost *.sh execute "normal `a" 
 endif
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Zsh (`*.zsh`)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand("$HOME/.vim/headers/zsh"))
+  autocmd BufNewFile *.zsh so $HOME/.vim/headers/zsh
+  autocmd BufNewFile *.zsh exe "1," . 9 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.zsh exe "1," . 9 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.zsh execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.zsh exe "1," . 9 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.zsh execute "normal `a" 
+endif
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" C
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " (`*.c`)
-if filereadable(expand("$home/.vim/headers/c"))
+if filereadable(expand("$HOME/.vim/headers/c"))
   autocmd BufNewFile *.c so $HOME/.vim/headers/c
   autocmd BufNewFile *.c exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
   autocmd BufNewFile *.c exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
@@ -288,7 +302,7 @@ if filereadable(expand("$home/.vim/headers/c"))
   autocmd Bufwritepost,filewritepost *.c execute "normal `a" 
 endif
 " (`*.h`)
-if filereadable(expand("$home/.vim/headers/c"))
+if filereadable(expand("$HOME/.vim/headers/c"))
   autocmd BufNewFile *.h so $HOME/.vim/headers/c
   autocmd BufNewFile *.h exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
   autocmd BufNewFile *.h exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
@@ -300,7 +314,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Python (`*.py`)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable(expand("$home/.vim/headers/py"))
+if filereadable(expand("$HOME/.vim/headers/py"))
   autocmd BufNewFile *.py so $HOME/.vim/headers/py
   autocmd BufNewFile *.py exe "1," . 10 . "g/Filename:.*/s//Filename: " .expand("%")
   autocmd BufNewFile *.py exe "1," . 10 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
@@ -322,7 +336,7 @@ autocmd BufNewFile,BufReadPost .bashrc       set filetype=sh        " Set `.bash
 autocmd BufNewFile,BufReadPost .rtorrent.rc  set filetype=sh        " Set `.rtorrent.rc` as a Shell file
 autocmd BufNewFile,BufReadPost .vimrc        set filetype=vim       " Set `.vimrc` as a vim file
 " HTML
-autocmd BufNewFile,BufReadPost .htm          set filetype=html      " Set `*.htm` as a HTML file
+autocmd BufNewFile,BufReadPost *.htm         set filetype=html      " Set `*.htm` as a HTML file
 " Markdown
 autocmd BufNewFile,BufReadPost *.md          set filetype=markdown  " Set `*.md` as a Markdown file
 autocmd BufNewFile,BufReadPost *.mkd         set filetype=markdown  " Set `*.mkd` as a Markdown file
@@ -332,7 +346,7 @@ autocmd BufNewFile,BufReadPost *.mdown       set filetype=markdown  " Set `*.mdo
 autocmd BufNewFile,BufReadPost *.sass        set filetype=css       " Set `*.sass` as a CSS file
 autocmd BufNewFile,BufReadPost *.scss        set filetype=css       " Set `*.scss` as a CSS file
 " YAML
-autocmd BufNewFile,BufReadPost .yml          set filetype=yaml      " Set `*.yaml` as a YAML file
+autocmd BufNewFile,BufReadPost *.yml         set filetype=yaml      " Set `*.yml` as a YAML file
 " Gemfile/Rakefile
 autocmd BufNewFile,BufReadPost Gemfile       set filetype=ruby      " Set `Gemfile` as a Ruby file
 autocmd BufNewFile,BufReadPost Rakefile      set filetype=ruby      " Set `Rakefile` as a Ruby file
@@ -348,6 +362,7 @@ autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2           " Define ind
 autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh`   files: 2,2
 autocmd FileType vim      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.vim`  files: 2,2
 autocmd FileType yaml     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.yaml` files: 2,2
+autocmd FileType zsh      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.zsh`   files: 2,2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Spell-Checking
