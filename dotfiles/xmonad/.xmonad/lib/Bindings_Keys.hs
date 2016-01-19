@@ -12,6 +12,7 @@ import qualified XMonad.StackSet as W   -- ManageHook rules
 import XMonad.Actions.CycleWS           -- Cycle through the workspaces
 import XMonad.Actions.GridSelect        -- Enable 2D grid
 import XMonad.Actions.PhysicalScreens   -- Screens manipulation 
+import XMonad.Actions.WindowBringer     -- Navigate through applications with menu bar
 -- Data
 import Data.Monoid                      -- Allow to create monoids
 -- Hooks
@@ -26,6 +27,7 @@ import XMonad.Hooks.ToggleHook
 import Appearance                       -- Load colors, dimensions, and fonts
 import Elements                         -- Load miscellaneous elements as Grid, Workspaces, Terminal, etc.
 import Hook_Log                         -- Load the LogHook
+
 
 
 -- TODO Add ncmpcpp bindings
@@ -81,6 +83,8 @@ myKeys    =
     , ("M-S-m"      , windows W.swapMaster)                             -- <Mod> + <Shift> + <m>: swap the focused window and the master window
     , ("M-S-j"      , windows W.swapDown)                               -- <Mod> + <Shift> + <j>: swap the focused window with the next window
     , ("M-S-k"      , windows W.swapUp)                                 -- <Mod> + <Shift> + <k>: swap the focused window with the previous window
+    , ("M-<Up>"     , gotoMenu)                                         -- <Mod> + <Up>: use menu to list all running applications and switch to one of it
+    , ("M-S-<Up>"   , bringMenu)                                        -- <Mod> + <Shift> + <Up>: use menu to list all running applications, choose one and move it to the current workspace
     ]
     ++
 
