@@ -13,6 +13,7 @@ DIR_CTP_XINITRC="$DIR_CTP_DOTFILES/xinit/.xinitrc"             # Directory CTP: 
 DIR_CTP_XMONAD="$DIR_CTP_DOTFILES/xmonad/.xmonad"              # Directory CTP: .xmonad
 DIR_CTP_XRESOURCES="$DIR_CTP_DOTFILES/xresources/.Xresources"  # Directory CTP: Xresources
 DIR_CTP_ZSHRC="$DIR_CTP_DOTFILES/zsh/.zshrc"                   # Directory CTP: .zshrc
+DIR_CTP_ZSH_MAIN="$DIR_CTP_DOTFILES/zsh/.zsh"                  # Directory CTP: .zsh
 
 # Directories - Dotfiles
 DIR_BASE16_MAIN="$HOME/.config/base16-shell"                   # Directory Base16: Main directory
@@ -46,3 +47,4 @@ DIR_XMONAD="$HOME/.xmonad"                                     # Directory xmona
 DIR_XMONADHS="$HOME/.xmonad/xmonad.hs"                         # Directory xmonad: xmonad.hs 
 DIR_XRESOURCES="$HOME/.Xresources"                             # Directory Xresources: .Xresources
 DIR_ZSHRC="$HOME/.zshrc"                                       # Directory Zsh: .zshrc
+DIR_ZSH_MAIN="$HOME/.zsh"                                      # Directory Zsh: Main directory
