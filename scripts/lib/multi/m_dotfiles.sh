@@ -97,6 +97,8 @@ function __m_dotfiles-zsh()
 {
   __ctp-dots_checkf "$DIR_ZSHRC"
   __ctp-dots_symlnk "$DIR_CTP_ZSHRC" "$DIR_ZSHRC"
+  __ctp-dots_checkd "$DIR_ZSH_MAIN"
+  __ctp-dots_symlnk "$DIR_CTP_ZSH_MAIN" "$DIR_ZSH_MAIN"
   return $?
 }
 
