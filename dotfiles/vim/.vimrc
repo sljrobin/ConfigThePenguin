@@ -354,15 +354,17 @@ autocmd BufNewFile,BufReadPost Rakefile      set filetype=ruby      " Set `Rakef
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType css      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.css`  files: 2,2
-autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.hs`   files: 4,4
-autocmd FileType html     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.html` files: 2,2
-autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md`   files: 4,4
-autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.rb`   files: 2,2
-autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh`   files: 2,2
-autocmd FileType vim      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.vim`  files: 2,2
-autocmd FileType yaml     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.yaml` files: 2,2
-autocmd FileType zsh      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.zsh`   files: 2,2
+autocmd FileType css      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.css`      files: 2,2
+autocmd FileType cls      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.cls`      files: 2,2
+autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.hs`       files: 4,4
+autocmd FileType html     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.html`     files: 2,2
+autocmd FileType markdown setlocal shiftwidth=4 tabstop=4           " Define indentation for `*.md`       files: 4,4
+autocmd FileType plaintex setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.plaintex` files: 2,2
+autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.rb`       files: 2,2
+autocmd FileType sh       setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.sh`       files: 2,2
+autocmd FileType vim      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.vim`      files: 2,2
+autocmd FileType yaml     setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.yaml`     files: 2,2
+autocmd FileType zsh      setlocal shiftwidth=2 tabstop=2           " Define indentation for `*.zsh`      files: 2,2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Spell-Checking
