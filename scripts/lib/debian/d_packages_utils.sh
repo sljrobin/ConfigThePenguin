@@ -2,6 +2,7 @@
 
 ########################################################################################################################
 # Debian | Packages | List Packages for miscellaneous tools
+#    aspell-fr: spell checker
 #    bc: calculator
 #    calibre: ePUB viewer
 #    evince: PDF viewer
@@ -19,6 +20,7 @@ function __d_packages-utils_list()
   # List
   plutils=$(whiptail --title "Debian | Packages | Utils" --checklist \
     "\nSelect Debian Packages to install for Utils" 20 61 12 \
+    "aspell-fr" "Spell checker" ON \
     "bc" "Calculator" ON \
     "calibre" "ePUB viewer" ON \
     "evince" "PDF viewer" ON \
