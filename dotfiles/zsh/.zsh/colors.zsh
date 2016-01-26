@@ -4,7 +4,7 @@
 #     Description: Zsh | Colors
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-01-18 17:13:14
-#        Modified: 2016-01-18 17:27:12
+#        Modified: 2016-01-26 13:16:34
 #
 ########################################################################################################################
 # Colors | Load colorscheme
