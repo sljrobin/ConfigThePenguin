@@ -9,7 +9,7 @@ use_console_editor                 = "yes"                 # Enable console edit
 mpd_connection_timeout             = "5"                   # Connection timeout in seconds
 mpd_crossfade_time                 = "0"                   # Crossfade in seconds
 mpd_host                           = "127.0.0.1"           # Host
-mpd_music_dir                      = "~/Music/"            # Music directory
+mpd_music_dir                      = "/home/sljrobin/Music/"            # Music directory
 mpd_port                           = "6600"                # Port
 
 ## Colors
