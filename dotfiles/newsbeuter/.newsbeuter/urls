@@ -71,6 +71,9 @@ http://baboon.rce.free.fr/index.php?feed/atom "Reverse Engineering"             
 http://blog.security-x.fr/feed/ "Reverse Engineering" "Tutorials"                                     "~Security-X"
 
 ## Penetration Testing
+https://pentestlab.wordpress.com/feed/ "Penetration Testing"                                          "~netbiosX"
+https://digi.ninja/rss.xml "Penetration Testing"                                                      "~digininja"
+https://thepacketgeek.com/feed/ "Penetration Testing"                                                 "~thepacketgeek"
 http://blog.g0tmi1k.com/atom.xml "Penetration Testing"                                                "~g0tm1lk"
 http://blog.stalkr.net/feeds/posts/default "Penetration Testing" "Reverse Engineering" "Write-up"     "~StalkR"
 https://quack1.me/feeds/all.atom.xml "Penetration Testing" "Tutorials"                                "~Quack1"
