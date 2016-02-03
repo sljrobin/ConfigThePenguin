@@ -100,6 +100,7 @@ http://feeds.feedburner.com/ThireusBl0g "Tools" "Tutorials"                     
 
 ## Programming
 http://windowsir.blogspot.com/feeds/posts/default "Write-up"                                          "~Windows Incident Response"
+http://eli.thegreenplace.net/feeds/all.atom.xml "Programming"                                         "~elibendersky"
 http://feeds.feedburner.com/msuicheblog "Forensics" "News" "Programming"                              "~msuiche"
 http://jvns.ca/atom.xml "News" "Programming"                                                          "~b0rk"
 https://feeds.feedburner.com/codinghorror "Programming"                                               "~codinghorror"
