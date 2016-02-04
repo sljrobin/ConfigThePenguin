@@ -4,6 +4,7 @@
 # Debian | Packages | List Packages for Media (music/video)
 #    alsa-utils: various ALSA command line tools
 #    alsa-oss: OSS compatibility layer
+#    id3v2: ID3 tag editor
 #    mpd: music player daemon
 #    mpc: music player client
 #    mpv: video player
@@ -16,6 +17,7 @@ function __d_packages-media_list()
     "\nSelect Debian Packages to install for Media" 15 57 7 \
     "alsa-utils" "Various ALSA command line tools" ON \
     "alsa-oss" "OSS compatibility layer" ON \
+    "id3v2" "ID3 tag editor" ON \
     "mpd" "Music Player Daemon" ON \
     "mpc" "Music Player Client" ON \
     "mpv" "Video player" ON \
