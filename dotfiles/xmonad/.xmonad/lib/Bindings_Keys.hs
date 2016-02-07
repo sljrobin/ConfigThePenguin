@@ -55,6 +55,10 @@ myKeys    =
     , ("M-S-<F1>"   , spawn "amixer set Master toggle")                 -- <Mod> + <Shift> + <F1>; mute/unmute volume
     , ("M-<F2>"     , spawn "amixer set Master 2-")                     -- <Mod> + <F2>: decrease volume
     , ("M-S-<F2>"   , spawn "amixer set Master 2+")                     -- <Mod> + <Shift> + <F2>: increase volume
+    , ("M-<F3>"     , spawn "mpc toggle")                               -- <Mod> + <F3>: toggle MPC
+    , ("M-S-<F3>"   , spawn "mpc stop")                                 -- <Mod> + <Shift> + <F3>: stop MPC
+    , ("M-<F4>"     , spawn "mpc next")                                 -- <Mod> + <F4>: switch to the next song on the playlist
+    , ("M-S-<F4>"   , spawn "mpc prev")                                 -- <Mod> + <Shift> + <F4>: switch to the previous song on the playlist
     , ("M-b"        , spawn "xbacklight -dec 5")                        -- <Mod> + <b>: decrease to 5% from current value of brightness
     , ("M-S-b"      , spawn "xbacklight -inc 5")                        -- <Mod> + <Shift> + <b>: increase to 5% from current value of brightness
     , ("M-s"        , spawn "setxkbmap us")                             -- <Mod> + <s>: change the current keyboard layout to the US layout
