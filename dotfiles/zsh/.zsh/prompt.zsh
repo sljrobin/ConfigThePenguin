@@ -20,8 +20,8 @@ function __zsh_prompt_set()
   # Syntax for color: %F{color} [...] %f
 
   local prompt_cdir="%F{blue}%~%f"     # Prompt | Current directory
-  local prompt_host="%F{magenta}%m%f"  # Prompt | Hostname
-  local prompt_name="%F{green}%n%f"    # Prompt | Name
+  local prompt_host="%F{yellow}%m%f"   # Prompt | Hostname
+  local prompt_name="%F{red}%n%f"      # Prompt | Name
 
   PROMPT="$prompt_name@$prompt_host:$prompt_cdir%# "
 }
