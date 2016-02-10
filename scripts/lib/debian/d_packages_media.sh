@@ -1,7 +1,13 @@
 #!/bin/bash
-
+#
+#        Filename: d_packages_media.sh
+#     Description: ConfigThePenguin | Debian - Packages - Media
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:21:54
+#        Modified: 2016-02-10 21:41:21
+#
 ########################################################################################################################
-# Debian | Packages | List Packages for Media (music/video)
+# Debian | Packages | Install Packages for Media (music/video)
 #    alsa-utils: various ALSA command line tools
 #    alsa-oss: OSS compatibility layer
 #    id3v2: ID3 tag editor
@@ -10,7 +16,7 @@
 #    mpv: video player
 #    ncmpcpp: ncurses based mpd client
 #    vlc: media player
-function __d_packages-media_list()
+function d_packages-media_install()
 {
   # List
   plmedia=$(whiptail --title "Debian | Packages | Media" --checklist \
@@ -27,20 +33,10 @@ function __d_packages-media_list()
   pl_status=$?
   # 'OK' option selected
   if [ $pl_status = 0 ]; then
-    # Clean the package list
-    pl_cleaned=$(ctp-parser_rmdquotes "$plmedia")
-    echo $pl_cleaned
+    ctp-pkgs_d-install "Media" $STP_D_PKG_MEDIA "$plmedia"
   # 'Cancel' option selected
   else
     __ctp-pkgs_d-abort
     exit 1
   fi
-}
-
-
-########################################################################################################################
-# Debian | Packages | Install Packages for Media (music/video)
-function d_packages-media_install()
-{
-  ctp-pkgs_d-install "Media" $STP_D_PKG_MEDIA __d_packages-media_list 
 }

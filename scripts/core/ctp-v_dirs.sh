@@ -1,3 +1,12 @@
+#!/bin/bash
+#
+#        Filename: ctp-v_dirs.sh
+#     Description: ConfigThePenguin | Variables for directories
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:34:32
+#        Modified: 2016-02-10 21:34:56
+#
+########################################################################################################################
 # Directories - CTP Dotfiles
 DIR_CTP_DOTFILES=$(cd ../dotfiles && pwd)                      # Directory CTP: dotfiles/
 DIR_CTP_CONKYRC="$DIR_CTP_DOTFILES/conky/.conkyrc"             # Directory CTP: .conkyrc

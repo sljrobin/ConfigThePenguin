@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-#        Filename: ctp-args.sh
-#     Description: 
+#        Filename: ctp-f_dots.sh
+#     Description: ConfigThePenguin | Functions for dotfiles
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-05 15:03:13
-#        Modified: 2015-12-07 11:15:39
+#        Modified: 2016-02-10 21:32:32
 #
 ########################################################################################################################
 # Multi | Dotfiles | Check if a directory exists

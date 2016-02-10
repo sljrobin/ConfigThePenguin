@@ -1,3 +1,12 @@
+#!/bin/bash
+#
+#        Filename: ctp-v_clrs.sh
+#     Description: ConfigThePenguin | Variables for colors
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:33:08
+#        Modified: 2016-02-10 21:34:10
+#
+########################################################################################################################
 # Colors - Dark
 CLR_DBLACK='\033[0;30m'   # Color: Dark Black
 CLR_DBLUE='\033[0;34m'    # Color: Dark Blue

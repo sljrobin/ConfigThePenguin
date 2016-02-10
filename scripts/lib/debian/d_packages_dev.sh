@@ -1,10 +1,17 @@
 #!/bin/bash
-
+#
+#        Filename: d_packages_dev.sh
+#     Description: ConfigThePenguin | Debian - Packages - Development
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:16:48
+#        Modified: 2016-02-10 21:41:01
+#
 ########################################################################################################################
-# Debian | Packages | List Packages for development
+# Debian | Packages | Install Packages for development
 #    build-essential: all required packages for compiling a Debian package
 #    cmake: cross-platform Makefile generator
 #    exuberant-ctags: generator of tag files for source code
+#    gdb: GNU Debugger
 #    gdebi: tool to install '.deb' files
 #    gedit: graphical editor
 #    git: version control system
@@ -18,7 +25,7 @@
 #    texmaker: LaTeX editor
 #    vim: editor
 #    vim-nox: vim with scripting languages support
-function __d_packages-dev_list()
+function d_packages-dev_install()
 {
   # List
   pldev=$(whiptail --title "Debian | Packages | Development" --checklist \
@@ -26,6 +33,7 @@ function __d_packages-dev_list()
     "build-essential" "All required packages for compiling a Debian package" ON \
     "cmake" "Cross-platform Makefile generator" ON \
     "exuberant-ctags" "Generator of tag files for source code" ON \
+    "gdb: GNU Debugger" ON \
     "gdebi" "Tool to install '.deb' files" ON \
     "gedit" "Graphical editor" ON \
     "git" "Version control system" ON \
@@ -43,19 +51,10 @@ function __d_packages-dev_list()
   pl_status=$?
   # 'OK' option selected
   if [ $pl_status = 0 ]; then
-    # Clean the package list
-    pl_cleaned=$(ctp-parser_rmdquotes "$pldev")
-    echo $pl_cleaned
+    ctp-pkgs_d-install "Development" $STP_D_PKG_DEV "$pldev"
   # 'Cancel' option selected
   else
+    __ctp-pkgs_d-abort
     exit 1
   fi
-}
-
-
-########################################################################################################################
-# Debian | Packages | Install Packages for development
-function d_packages-dev_install()
-{
-  ctp-pkgs_d-install "Development" $STP_D_PKG_DEV __d_packages-dev_list 
 }

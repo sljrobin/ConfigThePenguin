@@ -1,3 +1,12 @@
+#!/bin/bash
+#
+#        Filename: ctp-v_stps.sh
+#     Description: ConfigThePenguin | Variables for steps
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:37:24
+#        Modified: 2016-02-10 21:37:56
+#
+########################################################################################################################
 # Debian | Drivers | Lenovo X250
 STP_D_DRV_X250='3'                 # Steps: Debian | Drivers | Lenovo X250
 STP_D_DRV_X250_AUDIO='1'           # Steps: Debian | Drivers | Lenovo X250: Audio
@@ -5,12 +14,12 @@ STP_D_DRV_X250_WIFI='8'            # Steps: Debian | Drivers | Lenovo X250: WiFi
 STP_D_DRV_X250_WIFIADAPTER='6'     # Steps: Debian | Drivers | Lenovo X250: WiFi Adapter
 
 # Debian | Packages
-STP_D_PKG_ALL='1'                  # Steps: Debian | Packages | All
-STP_D_PKG_DEV='1'                  # Steps: Debian | Packages | Dev
-STP_D_PKG_GUI='1'                  # Steps: Debian | Packages | GUI
-STP_D_PKG_MEDIA='1'                # Steps: Debian | Packages | Media
-STP_D_PKG_NET='1'                  # Steps: Debian | Packages | Net
-STP_D_PKG_UTILS='1'                # Steps: Debian | Packages | Utils
+STP_D_PKG_ALL='2'                  # Steps: Debian | Packages | All
+STP_D_PKG_DEV='2'                  # Steps: Debian | Packages | Dev
+STP_D_PKG_GUI='2'                  # Steps: Debian | Packages | GUI
+STP_D_PKG_MEDIA='2'                # Steps: Debian | Packages | Media
+STP_D_PKG_NET='2'                  # Steps: Debian | Packages | Net
+STP_D_PKG_UTILS='2'                # Steps: Debian | Packages | Utils
 
 
 ########################################################################################################################

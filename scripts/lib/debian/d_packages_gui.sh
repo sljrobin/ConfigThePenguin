@@ -1,7 +1,13 @@
 #!/bin/bash
-
+#
+#        Filename: d_packages_gui.sh
+#     Description: ConfigThePenguin | Debian - Packages - GUI
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:19:59
+#        Modified: 2016-02-10 21:41:11
+#
 ########################################################################################################################
-# Debian | Packages | List Packages for GUI
+# Debian | Packages | Install Packages for GUI
 #    conky: system monitor
 #    dzen2: notifications for X11
 #    fonts-droid: 'Droid Sans Mono' font
@@ -13,7 +19,7 @@
 #    xorg: X window system
 #    xscreensaver: a screensaver
 #    xserver-xorg-core: xserver
-function __d_packages-gui_list()
+function d_packages-gui_install()
 {
   # List
   plgui=$(whiptail --title "Debian | Packages | GUI - Main" --checklist \
@@ -33,20 +39,10 @@ function __d_packages-gui_list()
   pl_status=$?
   # 'OK' option selected
   if [ $pl_status = 0 ]; then
-    # Clean the package list
-    pl_cleaned=$(ctp-parser_rmdquotes "$plgui")
-    echo $pl_cleaned
+    ctp-pkgs_d-install "GUI" $STP_D_PKG_GUI "$plgui"
   # 'Cancel' option selected
   else
     __ctp-pkgs_d-abort
     exit 1
   fi
-}
-
-
-########################################################################################################################
-# Debian | Packages | Install Packages for GUI
-function d_packages-gui_install()
-{
-  ctp-pkgs_d-install "GUI" $STP_D_PKG_GUI __d_packages-gui_list 
 }

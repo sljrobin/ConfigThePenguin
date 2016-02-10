@@ -1,5 +1,11 @@
 #!/bin/bash
-
+#
+#        Filename: d_drivers_lenovo-x250.sh
+#     Description: ConfigThePenguin | Debian - Drivers - Lenovo X250
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:13:33
+#        Modified: 2016-02-10 21:14:58
+#
 ########################################################################################################################
 # Debian | Drivers | Lenovo X250: Install Audio drivers
 function __d_drivers-lenovox250-audio()

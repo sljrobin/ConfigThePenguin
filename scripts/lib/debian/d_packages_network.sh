@@ -1,7 +1,13 @@
 #!/bin/bash
-
+#
+#        Filename: d_packages_network.sh
+#     Description: ConfigThePenguin | Debian - Packages - Network
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:24:54
+#        Modified: 2016-02-10 21:51:52
+#
 ########################################################################################################################
-# Debian | Packages | List Packages for Network
+# Debian | Packages | Install Packages for Network
 #    bitlbee: IRC Gateway
 #    curl: tool to transfer a url
 #    ethtool: utility to get information about Network Interface Controllers
@@ -17,13 +23,14 @@
 #    ssh: Secure Shell
 #    weechat: IRC Client
 #    wicd-curses: wired and wireless network manager
+#    wireshark: network protocol analyzer
 #    whois: tool for querying Whois database
 #    znc: IRC Bouncer
-function __d_packages-net_list()
+function d_packages-net_install()
 {
   # List
   plnet=$(whiptail --title "Debian | Packages | Network" --checklist \
-    "\nSelect Debian Packages to install for Network" 18 97 10 \
+    "\nSelect Debian Packages to install for Network" 26 97 18 \
     "bitlbee" "IRC Gateway" OFF \
     "curl" "Tool to transfer a url" ON \
     "ethtool" "Utility to get information about Network Interface Controllers" ON \
@@ -39,26 +46,17 @@ function __d_packages-net_list()
     "ssh" "Secure Shell" ON \
     "weechat" "IRC Client" ON \
     "wicd-curses" "Wired and wireless network manager" ON \
+    "wireshark" "network protocol analyzer" ON \
     "whois" "Tool for querying Whois database" ON \
     "znc" "IRC Bouncer" OFF 3>&1 1>&2 2>&3)
   # Exit status
   pl_status=$?
   # 'OK' option selected
   if [ $pl_status = 0 ]; then
-    # Clean the package list
-    pl_cleaned=$(ctp-parser_rmdquotes "$plnet")
-    echo $pl_cleaned
+    ctp-pkgs_d-install "Network" $STP_D_PKG_NET "$plnet"
   # 'Cancel' option selected
   else
     __ctp-pkgs_d-abort
     exit 1
   fi
-}
-
-
-########################################################################################################################
-# Debian | Packages | Install Packages for Network
-function d_packages-net_install()
-{
-  ctp-pkgs_d-install "Network" $STP_D_PKG_NET __d_packages-net_list
 }

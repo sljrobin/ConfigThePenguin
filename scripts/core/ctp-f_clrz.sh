@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-#        Filename: ctp-args.sh
-#     Description: 
+#        Filename: ctp-f_clrz.sh
+#     Description: ConfigThePenguin | Functions for colors
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-05 15:03:13
-#        Modified: 2015-12-05 17:01:29
+#        Modified: 2016-02-10 21:31:43
 #
 ########################################################################################################################
 # Output a text with color

@@ -1,3 +1,12 @@
+#!/bin/bash
+#
+#        Filename: ctp-v_ffad.sh
+#     Description: ConfigThePenguin | Variables for Firefox add-ons
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-10 21:35:45
+#        Modified: 2016-02-10 21:36:21
+#
+########################################################################################################################
 # Add-ons Firefox - Appearence
 FFA_BLANKMONITORREADING_NME="Blank Your Monitor + Easy Reading"                                               # Firefox Add-on: 'Blank Your Monitor + Easy Reading' Name
 FFA_BLANKMONITORREADING_URL="https://addons.mozilla.org/en-us/firefox/addon/blank-your-monitor-easy-readin/"  # Firefox Add-on: 'Blank Your Monitor + Easy Reading' URL
