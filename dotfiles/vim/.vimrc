@@ -1,3 +1,9 @@
+" ConfigThePenguin
+" By Simon L. J. Robin | https://sljrobin.org
+"
+" '~/.vimrc'
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/vimrc/vundle.vim   " Load Vundle and plugins
 source ~/.vim/vimrc/plugins.vim  " Load plugins options
 source ~/.vim/vimrc/charenc.vim  " Load character encoding
@@ -11,11 +17,3 @@ source ~/.vim/vimrc/bars.vim     " Load bars
 source ~/.vim/vimrc/headers.vim  " Load headers
 source ~/.vim/vimrc/ftypes.vim   " Load filetypes options
 source ~/.vim/vimrc/spellchk.vim " Load spell-checking options
-
-
-
-
-
-
-
-
