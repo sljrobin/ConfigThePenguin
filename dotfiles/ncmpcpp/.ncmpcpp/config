@@ -38,29 +38,31 @@ main_window_color           = "white"                           # Main window fo
 main_window_highlight_color = "white"                           # Main window highlight color
 now_playing_prefix          = "$b"                              # Prefix format of the current playing song
 now_playing_suffix          = "$/b"                             # Suffix format of the current playing song
+active_column_color         = "blue"                            # Background color for colums
 
 ## Progress Bar
-progressbar_color           = "blue"                            # Font color
-progressbar_look            = "-_."                             # Printed characters
+progressbar_color           = "white"                           # Font color
+progressbar_look            = "─╼╌"                             # Printed characters
 
 ## Status Bar
-display_bitrate             = "no"                              # Show song's bitrate
+display_bitrate             = "yes"                             # Show song's bitrate
 display_remaining_time      = "no"                              # Do not show remaining time with a `-`
-song_status_format          = "{$7%a$9} | {$6%t$9} | {$5%b$9}"  # Format (`<artist> | <title> | <album>`)
-statusbar_color             = "default"                         # Font color
+song_status_format          = "{$8%t$9} | {$2%a$9} | {$5%b$9}"  # Format (`<title> | <artist> | <album>`)
+statusbar_color             = "black"                           # Font color
 statusbar_visibility        = "yes"                             # Enable the Status bar
 titles_visibility           = "yes"                             # Show titles
 
 
 ########################################################################################################################
-color1 = "red"
+color1 = "black"
+color2 = "white"
 song_list_format = "{$7%n$9}"
 
 # Playlist tab
 jump_to_now_playing_song_at_start = "yes"  # Jump to the playing song at start
 #autocenter_mode = "yes"
 #centered_cursor = "yes"
-song_columns_list_format = "(10)[yellow]{a} (23)[white]{t} (23)[magenta]{b} (8)[green]{l} (4)[blue]{n}" 
+song_columns_list_format = "(10)[red]{a} (23)[white]{t} (23)[blue]{b} (8)[cyan]{l} (4)[green]{n}" 
 
 # Visualizer tab
 #audio_output {
