@@ -8,7 +8,7 @@ dotfiles/ncmpcpp/.ncmpcpp/error.log
 dotfiles/newsbeuter/.newsbeuter/cache.*
 dotfiles/newsbeuter/.newsbeuter/history.*
 dotfiles/vim/.vim/bundle/*
-dotfiles/vim/.vim/spell/*.spl
+dotfiles/vim/.vim/spell/en.utf-8.add.spl
 dotfiles/xmonad/.xmonad/xmonad-*
 dotfiles/xmonad/.xmonad/xmonad.errors
 dotfiles/xmonad/.xmonad/xmonad.hi
