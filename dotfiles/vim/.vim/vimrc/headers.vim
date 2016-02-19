@@ -55,3 +55,16 @@ if filereadable(expand("$HOME/.vim/headers/py"))
   autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
   autocmd Bufwritepost,filewritepost *.py execute "normal `a" 
 endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Zsh (`*.zsh`)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand("$HOME/.vim/headers/zsh"))
+  autocmd BufNewFile *.zsh so $HOME/.vim/headers/zsh
+  autocmd BufNewFile *.zsh exe "1," . 9 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.zsh exe "1," . 9 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.zsh execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.zsh exe "1," . 9 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.zsh execute "normal `a" 
+endif
