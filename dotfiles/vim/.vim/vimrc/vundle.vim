@@ -24,6 +24,7 @@ Plugin 'chriskempson/base16-vim'       " Plugin: Base16
 Plugin 'scrooloose/nerdtree'           " Plugin: NERDTree
 Plugin 'Raimondi/delimitMate'          " Plugin: delimitMate
 Plugin 'terryma/vim-multiple-cursors'  " Plugin: vim-multiple-cursors
+Plugin 'easymotion/vim-easymotion'     " Plugin: EasyMotion
 Plugin 'Yggdroot/indentLine'           " Plugin: indentLine
 Plugin 'Valloric/YouCompleteMe'        " Plugin: YouCompleteMe
 Plugin 'majutsushi/tagbar'             " Plugin: Tagbar
