@@ -18,7 +18,7 @@ import Appearance                        -- Load colors, dimensions, and fonts
 
 myLayoutHook = gaps [(U, 20), (D, 20)] $ myLayouts                                                                                       -- Use Gaps (up and down) for all the layouts
     where
-        myLayouts     = smartBorders (lay_grid ||| lay_tiled ||| lay_tabbed ||| lay_threecol ||| lay_spiral ||| lay_full ||| lay_float)  -- Use smartBorders for all the layouts
+        myLayouts     = smartBorders (lay_tiled ||| lay_grid ||| lay_tabbed ||| lay_threecol ||| lay_spiral ||| lay_full ||| lay_float)  -- Use smartBorders for all the layouts
         -- Layouts
         lay_float     = simplestFloat                                                                                                    -- Layout: SimplestFloat
         lay_full      = Full                                                                                                             -- Layout: Full
