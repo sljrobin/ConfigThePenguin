@@ -58,6 +58,19 @@ endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TeX (`*.tex`)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand("$HOME/.vim/headers/tex"))
+  autocmd BufNewFile *.tex so $HOME/.vim/headers/tex
+  autocmd BufNewFile *.tex exe "1," . 6 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.tex exe "1," . 6 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.tex execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.tex exe "1," . 6 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.tex execute "normal `a" 
+endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Zsh (`*.zsh`)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable(expand("$HOME/.vim/headers/zsh"))
