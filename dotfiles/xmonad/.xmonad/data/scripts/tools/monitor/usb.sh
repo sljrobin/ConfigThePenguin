@@ -1,22 +1,45 @@
 #!/bin/bash
+#
+#        Filename: usb.sh
+#     Description: Tool for USB
+#          Author: Simon L. J. Robin | https://sljrobin.org
+#         Created: 2016-02-07 14:14:49
+#        Modified: 2016-02-07 14:21:33
+#
+########################################################################################################################
+# Load Library
+source $HOME/.xmonad/data/scripts/main.sh
 
-source ../../main.sh
 
-## VARIABLES
-USB_STATUS=$(lsusb -v | grep Storage | wc -l)
-
-## FUNCTIONS
-# Get the total number of plugged USB devices
-function get_number()
+########################################################################################################################
+# USB | Get total of USB devices which are plugged
+function __xmdt_usb-getnum()
 {
-  xmdl_icns-show $ICON_USB
-  echo $USB_STATUS
+  local usbtot=$(lsusb -v | grep Storage | wc -l)  # Get USB total
+
+  echo $usbtot
 }
 
 
-function main()
+################################################################################
+# USB | Get total of USB devices which are plugged
+function __xmdt_usb-shownum()
 {
-  get_number
-} 
-# MAIN
-main
+  local usbtot=$(__xmdt_usb-getnum)  # Get USB total
+
+  xmdl_icns-show $ICON_USB
+  xmdl_pntr-txt $COLOR_LWHITE "$usbtot"
+}
+
+
+
+################################################################################
+# USB | Main
+function xmdt_usb()
+{
+  __xmdt_usb-shownum
+}
+
+
+########################################################################################################################
+xmdt_usb
