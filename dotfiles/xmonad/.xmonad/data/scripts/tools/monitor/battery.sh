@@ -4,7 +4,7 @@
 #     Description: Tool for battery
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-30 15:07:17
-#        Modified: 2016-01-04 13:10:56
+#        Modified: 2016-02-19 22:07:44
 #
 ########################################################################################################################
 # Load Library
@@ -116,8 +116,6 @@ function __xmdt_battery-showinftot1()
   local bat_a_status=$(acpi -b | awk '{gsub(/,/,""); print $3}')            # Battery status
   local bat_a_time=$(acpi -b | awk '{gsub(/,/,""); print $5}' | cut -c -5)  # Battery remaining time
 
-
-  echo -n "DEBUG TOT1"
   __xmdt_battery-handlestatus $bat_a_status $bat_a_percentage $bat_a_time
 }
 
