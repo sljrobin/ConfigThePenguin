@@ -45,6 +45,20 @@ endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" C++
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" (`*.cpp`)
+if filereadable(expand("$HOME/.vim/headers/cpp"))
+  autocmd BufNewFile *.cpp so $HOME/.vim/headers/cpp
+  autocmd BufNewFile *.cpp exe "1," . 12 . "g/Filename:.*/s//Filename: " .expand("%")
+  autocmd BufNewFile *.cpp exe "1," . 12 . "g/Created:.*/s//Created: " .strftime("%Y-%m-%d %H:%M:%S")
+  autocmd Bufwritepre,filewritepre *.cpp execute "normal ma" 
+  autocmd Bufwritepre,filewritepre *.cpp exe "1," . 12 . "g/Modified:.*/s/Modified:.*/Modified: " .strftime("%Y-%m-%d %H:%M:%S") 
+  autocmd Bufwritepost,filewritepost *.cpp execute "normal `a" 
+endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python (`*.py`)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable(expand("$HOME/.vim/headers/py"))
