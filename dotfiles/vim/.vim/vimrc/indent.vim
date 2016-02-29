@@ -22,6 +22,8 @@ set backspace=indent,eol,start  " Enable correct backspacing
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetypes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType c        setlocal shiftwidth=4 tabstop=4  " Define indentation for `*.c`        files: 4,4
+autocmd FileType cpp      setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.cpp`      files: 2,2
 autocmd FileType css      setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.css`      files: 2,2
 autocmd FileType cls      setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.cls`      files: 2,2
 autocmd FileType haskell  setlocal shiftwidth=4 tabstop=4  " Define indentation for `*.hs`       files: 4,4
