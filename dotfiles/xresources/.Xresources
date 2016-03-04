@@ -158,7 +158,7 @@ URxvt.scrollWithBuffer:  true
 !  * `Xft.rgba`             -> Type of subpixel anti-aliasing
 !-----------------------------------------------------------------------------------------------------------------------
 ! X FreeType settings
-Xft.antialias:        true 
+Xft.antialias:        true
 Xft.autohint:         true
 Xft.dpi:              96
 Xft.hinting:          true
