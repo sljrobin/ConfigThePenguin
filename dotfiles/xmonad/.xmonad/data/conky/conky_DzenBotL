@@ -7,6 +7,7 @@ use_spacer none
 
 
 TEXT
+${exec $HOME/.xmonad/data/scripts/tools/monitor/sd.sh} \
 ${exec $HOME/.xmonad/data/scripts/tools/monitor/usb.sh} | \
 ${exec $HOME/.xmonad/data/scripts/tools/media/volume.sh} | \
 ${exec $HOME/.xmonad/data/scripts/tools/media/song.sh}
