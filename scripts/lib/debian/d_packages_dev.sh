@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin | Debian - Packages - Development
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-02-10 21:16:48
-#        Modified: 2016-02-10 21:41:01
+#        Modified: 2016-02-27 14:44:15
 #
 ########################################################################################################################
 # Debian | Packages | Install Packages for development
@@ -17,6 +17,7 @@
 #    git: version control system
 #    linux-headers: header files used to compile the kernel
 #    make: tool to use Makefiles
+#    nasm: Netwide Assembler
 #    python: Python
 #    python-dev: Python development
 #    ruby: Ruby
@@ -39,6 +40,7 @@ function d_packages-dev_install()
     "git" "Version control system" ON \
     "linux-headers-$(uname -r)" "Header files used to compile the kernel" ON \
     "make" "Tool to use Makefiles" ON \
+    "nasm" "Netwide Assembler" OFF \
     "python" "Python" ON \
     "python-dev" "Python development" ON \
     "ruby" "Ruby" ON \
