@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin | Debian - Packages - Network
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-02-10 21:24:54
-#        Modified: 2016-02-10 21:51:52
+#        Modified: 2016-03-10 09:01:04
 #
 ########################################################################################################################
 # Debian | Packages | Install Packages for Network
@@ -12,6 +12,7 @@
 #    curl: tool to transfer a url
 #    ethtool: utility to get information about Network Interface Controllers
 #    geoip-bin: tool to look up the geographic location of an IP address
+#    gnupg: GnuPG
 #    iceweasel: web browser
 #    fail2ban: IPS
 #    flashplugin-nonfree: Adobe Flash
@@ -35,6 +36,7 @@ function d_packages-net_install()
     "curl" "Tool to transfer a url" ON \
     "ethtool" "Utility to get information about Network Interface Controllers" ON \
     "geoip-bin" "Tool to look up the geographic location of an IP address" ON \
+    "gnupg"  "GnuPG" ON \
     "iceweasel" "Web browser" ON \
     "fail2ban" "IPS" OFF \
     "flashplugin-nonfree" "Adobe Flash" ON \
