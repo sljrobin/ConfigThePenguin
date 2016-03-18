@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin | Debian - Packages - Utils
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-02-10 21:26:29
-#        Modified: 2016-02-10 21:44:02
+#        Modified: 2016-03-10 20:57:34
 #
 ########################################################################################################################
 # Debian | Packages | Install Packages for miscellaneous tools
@@ -14,6 +14,7 @@
 #    evince: PDF viewer
 #    newsbeuter: RSS feed reader
 #    p7zip: handle .7zip archives
+#    scrot: tool to take screenshots
 #    tmux: terminal multiplexer
 #    tree: recursive directory listing program
 #    unrar: handle .rar archives
@@ -31,6 +32,7 @@ function d_packages-utils_install()
     "evince" "PDF viewer" ON \
     "newsbeuter" "RSS feed reader" ON \
     "p7zip" "Handle .7zip archives" ON \
+    "scrot" "tool to take screenshots" ON \
     "tmux" "Terminal multiplexer" ON \
     "tree" "Recursive directory listing program" ON \
     "unrar" "Handle .rar archives" ON \
