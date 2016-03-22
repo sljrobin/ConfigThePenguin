@@ -12,6 +12,7 @@ source ~/.vim/vimrc/cmds.vim     " Load personal commands
 source ~/.vim/vimrc/theme.vim    " Load main theme and colors
 source ~/.vim/vimrc/search.vim   " Load search options
 source ~/.vim/vimrc/term.vim     " Load terminal options
+source ~/.vim/vimrc/tmux.vim     " Load tmux options
 source ~/.vim/vimrc/indent.vim   " Load indentation options
 source ~/.vim/vimrc/bars.vim     " Load bars
 source ~/.vim/vimrc/headers.vim  " Load headers
