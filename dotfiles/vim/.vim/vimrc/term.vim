@@ -12,5 +12,6 @@ set scrolloff=20                " Number of lines above and below the cursor
 set title                       " Change the terminal's title
 set titleold=                   " Do not show Thanks message when leaving vim
 set ttyfast                     " Fast terminal
+set ttymouse=sgr                " Select beyond 222 columns with the mouse in xterm
 set visualbell                  " No error sounds
 autocmd VimResized * :wincmd =  " Automatically resize the windows inside vim
