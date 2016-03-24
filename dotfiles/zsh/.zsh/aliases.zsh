@@ -4,7 +4,7 @@
 #     Description: Zsh | Aliases
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-01-18 16:32:56
-#        Modified: 2016-01-23 12:12:19
+#        Modified: 2016-03-21 02:11:11
 #
 ########################################################################################################################
 # Aliases | Set aliases for Git
@@ -43,6 +43,14 @@ function __zsh_aliases_list()
 
 
 ################################################################################
+# Aliases | Set aliases for vi
+function __zsh_aliases_vi()
+{
+  alias vimn='vim -u NONE'  # `vimn`: start vim without `.vimrc`
+}
+
+
+################################################################################
 # Aliases | Set aliases for X
 function __zsh_aliases_x()
 {
@@ -57,6 +65,7 @@ function zsh_aliases()
 {
   __zsh_aliases_git
   __zsh_aliases_list
+  __zsh_aliases_vi
   __zsh_aliases_x
 }
 
