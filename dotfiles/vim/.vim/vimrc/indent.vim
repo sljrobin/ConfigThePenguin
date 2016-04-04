@@ -32,6 +32,7 @@ autocmd FileType markdown setlocal shiftwidth=4 tabstop=4  " Define indentation 
 autocmd FileType plaintex setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.plaintex` files: 2,2
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.rb`       files: 2,2
 autocmd FileType sh       setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.sh`       files: 2,2
+autocmd FileType tex      setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.tex`      files: 2,2
 autocmd FileType vim      setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.vim`      files: 2,2
 autocmd FileType yaml     setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.yaml`     files: 2,2
 autocmd FileType zsh      setlocal shiftwidth=2 tabstop=2  " Define indentation for `*.zsh`      files: 2,2
