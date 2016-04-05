@@ -4,7 +4,7 @@
 #     Description: ConfigThePenguin | Debian - Packages - Development
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-02-10 21:16:48
-#        Modified: 2016-02-27 14:44:15
+#        Modified: 2016-03-27 04:27:37
 #
 ########################################################################################################################
 # Debian | Packages | Install Packages for development
@@ -20,6 +20,7 @@
 #    nasm: Netwide Assembler
 #    python: Python
 #    python-dev: Python development
+#    ipython: interactive Python environment
 #    ruby: Ruby
 #    ruby-dev: Ruby development
 #    texlive-full: LaTeX
@@ -43,6 +44,7 @@ function d_packages-dev_install()
     "nasm" "Netwide Assembler" OFF \
     "python" "Python" ON \
     "python-dev" "Python development" ON \
+    "ipython: interactive Python environment" ON \
     "ruby" "Ruby" ON \
     "ruby-dev" "Ruby development" ON \
     "texlive-full" "LaTeX" ON \
