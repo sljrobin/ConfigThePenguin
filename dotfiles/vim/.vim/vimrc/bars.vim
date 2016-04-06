@@ -12,7 +12,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showmode      " Show the current mode
 set laststatus=2  " Print the last status
-"set ruler                           " Enable ruler
+set ruler                           " Enable ruler
 "set rulerformat=(%c%V%)
 
 " %l line
@@ -20,6 +20,8 @@ set laststatus=2  " Print the last status
 " %P percentage
 
 "set virtualedit=block
+"set statusline+=%y        " Filetype of the file
+set rulerformat=%l,%v
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
