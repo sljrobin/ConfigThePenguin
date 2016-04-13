@@ -1,0 +1,60 @@
+!-------------------------------------------------------------------------------
+!-- Terminal
+!-------------------------------------------------------------------------------
+!  * `URxvt.geometry`     -> Define the X window geometry based on '$LINES'
+!                            and '$COLUMNS'
+!  * `URxvt.loginShell`   -> Enable/Disable to start with a Login Shell
+!  * `URxvt.termName`     -> Specify the terminal type name
+!  * `URxvt.urgentOnBell` -> Enable/Disable the use of the 'bell' characters
+!  * `URxvt.visualBell`   -> Enable/Disable the visual bells when recepting a
+!                            'bell' character
+!-------------------------------------------------------------------------------
+URxvt.geometry:     80*20
+URxvt.termName:     xterm-256color
+URxvt.loginShell:   false
+URxvt.visualBell:   false
+URxvt.urgentOnBell: true
+
+
+!-------------------------------------------------------------------------------
+!-- Windows
+!-------------------------------------------------------------------------------
+!  * `URxvt.background`     -> Background color
+!  * `URxvt.borderLess`     -> Enable/Disable borders
+!  * `URxvt.externalBorder` -> Width of external border
+!  * `URxvt.fadeColor`      -> Fade color
+!  * `URxvt.fading`         -> Fading percentage
+!  * `URxvt.foreground`     -> Foreground color
+!  * `URxvt.intensityStyles -> Enable/Disable high intensity colors
+!  * `URxvt.internalBorder` -> Width of internal border
+!-------------------------------------------------------------------------------
+! Colors 
+URxvt.background:      base00
+URxvt.foreground:      base05
+URxvt.fadeColor:       #000000
+URxvt.fading:          0
+URxvt.intensityStyles: true
+
+! Borders
+URxvt.borderLess:      false
+URxvt.externalBorder:  0
+URxvt.internalBorder:  0
+
+
+!-------------------------------------------------------------------------------
+!-- Scrolling
+!-------------------------------------------------------------------------------
+!  * `URxvt.saveLines`         -> Quantity of lines to save
+!  * `URxvt.scrollBar`         -> Enable/Disable a scroll bar
+!  * `URxvt.scrollTtyKeypress` -> Enable/Disable the scrolling to bottom when a
+!                                 non-special key is pressed 
+!  * `URxvt.scrollTtyOuput`    -> Enable/Disable the scrolling to bottom when
+!                                 TTY receives output 
+!  * `URxvt.scrollWithBuffer`  -> Enable/Disable the scollback buffer when TTY
+!                                 receives new lines
+!-------------------------------------------------------------------------------
+URxvt.saveLines:         5000
+URxvt.scrollBar:         false
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOuput:    false
+URxvt.scrollWithBuffer:  true
