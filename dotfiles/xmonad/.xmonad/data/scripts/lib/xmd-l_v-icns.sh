@@ -4,7 +4,7 @@
 #     Description: Variables to store icons
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-22 17:32:47
-#        Modified: 2016-03-12 00:18:00
+#        Modified: 2016-04-12 14:04:51
 #
 ########################################################################################################################
 ICON_AC="ac_01"
@@ -25,10 +25,12 @@ ICON_MUSIC_PAUSE="pause"
 ICON_MUSIC_PLAY="play"
 ICON_MUSIC_STOP="stop"
 ICON_SD="usb"
+ICON_UPTIME="ac"
 ICON_USB="usb_02"
 ICON_VOLLVL_HIGH="spkr_03"
 ICON_VOLLVL_MEDIUM="spkr_01"
 ICON_VOLLVL_NORMAL="spkr_02"
+ICON_WIFI="wifi_02"
 ICON_WIFI_LVL1="wireless1"
 ICON_WIFI_LVL2="wireless2"
 ICON_WIFI_LVL3="wireless3"
