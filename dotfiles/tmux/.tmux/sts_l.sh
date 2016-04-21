@@ -4,7 +4,7 @@
 #     Description: tmux | Status Bar | Left
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-04-15 22:52:23
-#        Modified: 2016-04-15 23:07:33
+#        Modified: 2016-04-15 23:41:34
 #
 ################################################################################
 # Session
