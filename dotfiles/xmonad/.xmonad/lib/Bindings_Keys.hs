@@ -18,6 +18,8 @@ import Data.Monoid                      -- Allow to create monoids
 -- Hooks
 import XMonad.Hooks.ManageHelpers       -- Enable FullFloat mode
 import XMonad.Hooks.ManageDocks         -- Enable ToggleStruts
+-- Layout
+import XMonad.Layout.ResizableTile       -- Allow to change a width/height of window
 
 --import XMonad.Layout.MultiToggle
 import XMonad.Layout.ToggleLayouts
@@ -79,15 +81,15 @@ myKeys    =
     -- GUI; focus
     ----------------------------------------------------------------------------
     [ ("M-<Tab>"     , windows W.focusDown)                              -- <Mod> + <Tab>: move focus to the next window
-    , ("M-j"         , windows W.focusDown)                              -- <Mod> + <j>: move focus to the next window
     , ("M-S-<Tab>"   , windows W.focusUp)                                -- <Mod> + <Shift> + <Tab>: move focus to the previous window
+    , ("M-j"         , windows W.focusDown)                              -- <Mod> + <j>: move focus to the next window
     , ("M-k"         , windows W.focusUp)                                -- <Mod> + <k>: move focus to the previous window
     , ("M-m"         , windows W.focusMaster)                            -- <Mod> + <m>: move focus to the master window
     , ("M-t"         , withFocused $ windows . W.sink)                   -- <Mod> + <t>: push window back into tiling
     --, ("M-<Backspace>"        , focusUrgent)                   -- TODO
     , ("M-S-m"       , windows W.swapMaster)                             -- <Mod> + <Shift> + <m>: swap the focused window and the master window
-    , ("M-S-j"       , windows W.swapDown)                               -- <Mod> + <Shift> + <j>: swap the focused window with the next window
-    , ("M-S-k"       , windows W.swapUp)                                 -- <Mod> + <Shift> + <k>: swap the focused window with the previous window
+    , ("M-."         , windows W.swapDown)                               -- <Mod> + <.>: swap the focused window with the next window
+    , ("M-,"         , windows W.swapUp)                                 -- <Mod> + <,>: swap the focused window with the previous window
     , ("M-<Up>"      , gotoMenu)                                         -- <Mod> + <Up>: use menu to list all running applications and switch to one of it
     , ("M-S-<Up>"    , bringMenu)                                        -- <Mod> + <Shift> + <Up>: use menu to list all running applications, choose one and move it to the current workspace
     ]
@@ -98,8 +100,10 @@ myKeys    =
     ----------------------------------------------------------------------------
     [ ("M-<Space>"   , sendMessage NextLayout)                           -- <Mod> + <Space>: rotate through the available layout algorithms
     , ("M-S-<Space>" , asks (XMonad.layoutHook . config) >>= setLayout)  -- <Mod> + <Shift> + <Space>: reset the layouts on the current workspace
-    , ("M-h"         , sendMessage Shrink)                               -- <Mod> + <h>: shrink the master area
-    , ("M-l"         , sendMessage Expand)                               -- <Mod> + <l>: expand the master area
+    , ("M-S-h"       , sendMessage Shrink)                               -- <Mod> + <Shift> + <h>: shrink the master area horizontally 
+    , ("M-S-j"       , sendMessage MirrorShrink)                         -- <Mod> + <Shift> + <j>: shrink the master area vertically
+    , ("M-S-k"       , sendMessage MirrorExpand)                         -- <Mod> + <Shift> + <k>: expand the master area vertically
+    , ("M-S-l"       , sendMessage Expand)                               -- <Mod> + <Shift> + <l>: expand the master area horizontally
 --    , ("M-f"        , fullFloatFocused)                                 -- <Mod> + <f>: put the focused window in the FullFloatFocused mode
     , ("M-f", sendMessage (Toggle "Full"))
     , (("M-S-f"), do --
@@ -108,8 +112,8 @@ myKeys    =
    -- , ("M-S-m"      , sendMessage RestoreNextMinimizedWin)              -- <Mod> + <Shift> + <f>: restore the focused window in the current layout
 --    , ("M-S-m"      , rectFloatFocused)              -- <Mod> + <Shift> + <f>: restore the focused window in the current layout
     , ("M-r"         , refresh)                                          -- <Mod> + <r>: resize viewed windows to the correct size
-    , ("M->"         , sendMessage (IncMasterN 1))                       -- <Mod> + <>>: increment the number of windows in the master area
-    , ("M-<"         , sendMessage (IncMasterN (-1)))                    -- <Mod> + <<>: decrement the number of windows in the master area
+    , ("M-S-n"       , sendMessage (IncMasterN 1))                       -- <Mod> + <Shift> + <n>: increment the number of windows in the master area
+    , ("M-n"         , sendMessage (IncMasterN (-1)))                    -- <Mod> + <n>: decrement the number of windows in the master area
     ]
     ++
 
