@@ -1,1 +1,14 @@
-dmenu.font: inconsolata-11
+!-------------------------------------------------------------------------------
+!-- dmenu
+!-------------------------------------------------------------------------------
+!  * `dmenu.background`    -> Background color
+!  * `dmenu.font`          -> Font
+!  * `dmenu.foreground`    -> Foreground color
+!  * `dmenu.selbackground` -> Background color for selected area
+!  * `dmenu.selforeground` -> Foreground color for selected area
+!-------------------------------------------------------------------------------
+dmenu.font:          DejaVu Sans Mono 9
+dmenu.foreground:    base05
+dmenu.background:    base00
+dmenu.selforeground: base05
+dmenu.selbackground: base09
