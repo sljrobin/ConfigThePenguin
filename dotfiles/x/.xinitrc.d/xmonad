@@ -13,7 +13,7 @@ if [ -f ~/.Xresources ]; then
 fi
 
 xset b on                         # Terminal Bell
-xset m 4 0                        # Mouse acceleration (<acceleration> <threshold>)
+xset m 3 0                        # Mouse acceleration (<acceleration> <threshold>)
 xsetroot -black                   # Use a black background
 xsetroot -cursor_name left_ptr    # Use a left pointer for the cursor
 setxkbmap -layout us &            # Load the US key map
