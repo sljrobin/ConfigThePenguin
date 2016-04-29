@@ -1,4 +1,4 @@
--- Xmonad: Personal module: Binding Keys
+-- xmonad: Personal module: Binding Keys
 -- Author: Simon L. J. Robin | https://sljrobin.org
 --------------------------------------------------------------------------------
 module Bindings_Keys where
