@@ -43,12 +43,15 @@ import XMonad.Layout.ToggleLayouts
 import Appearance
 import Elements
 import Hook_Log
+
+
 --------------------------------------------------------------------------------
+-- <Mod> key
+--------------------------------------------------------------------------------
+myModMask = mod4Mask  -- Use <Windows> key instead of <Alt> key for <Mod>
 
 
--- Use <Windows> key instead of <Alt> key for <Mod>
-myModMask = mod4Mask
-
+--------------------------------------------------------------------------------
 -- Binding keys
 --------------------------------------------------------------------------------
 -- * `C`   -> <Control>
