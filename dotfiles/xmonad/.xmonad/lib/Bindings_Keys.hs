@@ -8,7 +8,6 @@ module Bindings_Keys where
 -- * `Data.Map`                       -> Mouse bindings
 -- * `Data.Monoid`                    -> Allows to create monoids
 -- * `Elements`                       -> Loads miscellaneous elements
--- * `Hook_Log`                       -> Loads the LogHook
 -- * `System.Exit`                    -> Exits the program
 -- * `System.IO`                      -> Standard IO library
 -- * `XMonad.Actions.CycleWS`         -> Cycles through the workspaces
@@ -42,7 +41,6 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.ToggleLayouts
 import Appearance
 import Elements
-import Hook_Log
 
 
 --------------------------------------------------------------------------------
