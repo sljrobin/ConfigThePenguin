@@ -76,18 +76,18 @@ myAsus1015DzenBotLPosY     = "600"                   -- Asus 1015: Dzen Bottom L
 ----------------------------------------------------------------------------
 -- Fonts
 ----------------------------------------------------------------------------
-myLenovoX250FntDmenu  = "Droid Sans Mono-13"                        -- Lenovo X250: Font for dmenu
-myLenovoX250FntDzen   = "Droid Sans Mono:pixelsize=13:Regular"      -- Lenovo X250: Font for status bar
-myLenovoX250FntGrid   = "xft:Droid Sans Mono:pixelsize=13:Regular"  -- Lenovo X250: Font for grid
-myLenovoX250FntLayTab = "xft:Droid Sans Mono:pixelsize=13"          -- Lenovo X250: Font for the Tabbed layout
-myAsus1015FntDmenu    = "Droid Sans Mono-10"                        -- Asus 1015: Font for dmenu
-myAsus1015FntDzen     = "Droid Sans Mono:pixelsize=10:Regular"      -- Asus 1015: Font for status bar
-myAsus1015FntGrid     = "xft:Droid Sans Mono:pixelsize=10:Regular"  -- Asus 1015: Font for grid
-myAsus1015FntLayTab   = "xft:Droid Sans Mono:pixelsize=10"          -- Asus 1015: Font for the Tabbed layout
-myFntDmenu            = myLenovoX250FntDmenu                        -- Font for dmenu
-myFntDzen             = myLenovoX250FntDzen                         -- Font for status bar
-myFntGrid             = myLenovoX250FntGrid                         -- Font for grid
-myFntLayTab           = myLenovoX250FntLayTab                       -- Font for the Tabbed layout
+myLenovoX250FntDmenu  = "DejaVu Sans Mono-12"                        -- Lenovo X250: Font for dmenu
+myLenovoX250FntDzen   = "DejaVu Sans Mono:pixelsize=12:Book"         -- Lenovo X250: Font for status bar
+myLenovoX250FntGrid   = "xft:DejaVu Sans Mono:pixelsize=12:Book"     -- Lenovo X250: Font for grid
+myLenovoX250FntLayTab = "xft:DejaVu Sans Mono:pixelsize=12:Book"     -- Lenovo X250: Font for the Tabbed layout
+myAsus1015FntDmenu    = "DejaVu Sans Mono-10"                        -- Asus 1015: Font for dmenu
+myAsus1015FntDzen     = "DejaVu Sans Mono:pixelsize=10:Book"         -- Asus 1015: Font for status bar
+myAsus1015FntGrid     = "xft:DejaVu Sans Mono:pixelsize=10:Book"     -- Asus 1015: Font for grid
+myAsus1015FntLayTab   = "xft:DejaVu Sans Mono:pixelsize=10:Book"     -- Asus 1015: Font for the Tabbed layout
+myFntDmenu            = myLenovoX250FntDmenu                         -- Font for dmenu
+myFntDzen             = myLenovoX250FntDzen                          -- Font for status bar
+myFntGrid             = myLenovoX250FntGrid                          -- Font for grid
+myFntLayTab           = myLenovoX250FntLayTab                        -- Font for the Tabbed layout
 
 
 ----------------------------------------------------------------------------
