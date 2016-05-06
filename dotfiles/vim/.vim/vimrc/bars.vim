@@ -21,6 +21,8 @@ set ruler                           " Enable ruler
 
 "set virtualedit=block
 "set statusline+=%y        " Filetype of the file
+
+
 set rulerformat=%l,%v
 
 
