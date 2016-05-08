@@ -4,7 +4,7 @@
 #     Description: Zsh | Prompt
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-01-18 16:15:50
-#        Modified: 2016-01-18 17:27:14
+#        Modified: 2016-04-15 17:45:18
 #
 ########################################################################################################################
 # Prompt | Set parameters
