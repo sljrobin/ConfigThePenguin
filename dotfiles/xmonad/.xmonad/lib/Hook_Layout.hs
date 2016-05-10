@@ -1,29 +1,68 @@
+-- xmonad: Personal module: Hook Layout
+-- Author: Simon L. J. Robin | https://sljrobin.org
+--------------------------------------------------------------------------------
 module Hook_Layout where
 
--- Core
-import XMonad hiding ((|||))             -- Enable multiple layouts
--- Layouts
-import XMonad.Layout.Gaps                -- Manually-sized gaps
-import XMonad.Layout.Grid                -- Layout: Grid
-import XMonad.Layout.LayoutCombinators   -- Combine multiple layouts into one composite layout
-import XMonad.Layout.Minimize            -- Layout: minimize
-import XMonad.Layout.ThreeColumns        -- Layout: ThreeColumns
-import XMonad.Layout.NoBorders           -- Smart borders
-import XMonad.Layout.ResizableTile       -- Allow to change a width/height of window
-import XMonad.Layout.SimplestFloat       -- Layout: simplest float
-import XMonad.Layout.Spiral              -- Layout: spiral layout
-import XMonad.Layout.Tabbed              -- Layout: Tabbed
--- Personal Modules
-import Appearance                        -- Load colors, dimensions, and fonts
+--------------------------------------------------------------------------------
+-- * `Appearance`                      -> Loads colors, dimensions and fonts
+-- * `XMonad.Layout.Gaps`              -> Enables manually-sized gaps
+-- * `XMonad.Layout.Grid`              -> Puts windows in a grid
+-- * `XMonad.Layout.LayoutCombinators` -> Combines multiple layouts
+-- * `XMonad.Layout.Minimize`          -> Allows to minimize a window
+-- * `XMonad.Layout.NoBorders`         -> Detects smart borders
+-- * `XMonad.Layout.ResizableTile`     -> Allows to change window dimensions
+-- * `XMonad.Layout.SimplestFloat`     -> Allows window to be simplest float
+-- * `XMonad.Layout.Spiral`            -> Puts windows in a spiral
+-- * `XMonad.Layout.Tabbed`            -> Puts windows in several tabs
+-- * `XMonad.Layout.ThreeColumns`      -> Puts windows in three columns
+-- * `XMonad`                          -> Main library
+--------------------------------------------------------------------------------
+import XMonad hiding ((|||))
+import XMonad.Layout.Gaps
+import XMonad.Layout.Grid
+import XMonad.Layout.LayoutCombinators
+import XMonad.Layout.Minimize
+import XMonad.Layout.NoBorders
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.SimplestFloat
+import XMonad.Layout.Spiral
+import XMonad.Layout.Tabbed
+import XMonad.Layout.ThreeColumns
+import Appearance
 
-myLayoutHook = gaps [(U, 20), (D, 20)] $ myLayouts                                                                                       -- Use Gaps (up and down) for all the layouts
+
+--------------------------------------------------------------------------------
+-- Hook Layout
+--------------------------------------------------------------------------------
+-- * `lay_float`    -> SimplestFloat
+-- * `lay_full`     -> Full
+-- * `lay_grid`     -> Grid
+-- * `lay_min`      -> Minimize
+-- * `lay_restall`  -> ResizableTall
+-- * `lay_spiral`   -> Spiral
+-- * `lay_tabbed`   -> Tabbed
+-- * `lay_threecol` -> Three Columns
+-- * `lay_tiled`    -> Tiled
+--------------------------------------------------------------------------------
+myLayoutHook = gaps [(U, 20), (D, 20)] $ myLayouts  -- Use Gaps (up/down)
     where
-        myLayouts     = smartBorders (lay_tiled ||| lay_grid ||| lay_tabbed ||| lay_threecol ||| lay_spiral ||| lay_full ||| lay_float)  -- Use smartBorders for all the layouts
+        myLayouts = smartBorders  -- Use smart borders
+            (   lay_tiled
+            ||| lay_grid
+            ||| lay_tabbed
+            ||| lay_threecol
+            ||| lay_spiral
+            ||| lay_full
+            ||| lay_min
+            ||| lay_float)
+
         -- Layouts
-        lay_float     = simplestFloat                                                                                                    -- Layout: SimplestFloat
-        lay_full      = Full                                                                                                             -- Layout: Full
-        lay_grid      = Grid                                                                                                             -- Layout: Grid
-        lay_spiral    = spiral (toRational (2/(1+sqrt(5)::Double)))                                                                      -- Layout: Spiral
-        lay_tabbed    = minimize $ tabbed shrinkText myThemeLayoutTabbed                                                                 -- Layout: Tabbed
-        lay_threecol  = ThreeColMid 1 (3/100) (1/2)                                                                                      -- Layout: Three Columns
-        lay_tiled     = ResizableTall 1 (2/100) (1/2) []                                                                                 -- Layout: Tiled
+        lay_float    = simplestFloat
+        lay_full     = Full
+        lay_grid     = Grid
+        lay_min      = minimize (Tall 1 (3/100) (1/2))
+        lay_restall  = ResizableTall 1 (3/100) (1/2) []
+        lay_spiral   = spiral (toRational (2/(1+sqrt(5)::Double)))
+        lay_tabbed   = minimize $ tabbed shrinkText myThemeLayoutTabbed
+        lay_threecol = ThreeColMid 1 (3/100) (1/2)
+        lay_tiled    = ResizableTall 1 (2/100) (1/2) []
