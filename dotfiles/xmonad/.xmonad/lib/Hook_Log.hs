@@ -128,18 +128,6 @@ myDzenPP h = defaultPP --dzenPP
     }
 
 ----------------------------------------------------------------------------
--- dmenu
-----------------------------------------------------------------------------
-myDmenu="dmenu_run" ++
-        " -nb '"    ++ myClrDmenuNBg ++ "'" ++  -- dmenu: normal background
-        " -nf '"    ++ myClrDmenuNFg ++ "'" ++  -- dmenu: normal foreground
-        " -sb '"    ++ myClrDmenuSBg ++ "'" ++  -- dmenu: selected background
-        " -sf '"    ++ myClrDmenuSFg ++ "'" ++  -- dmenu: selected foreground
-        " -fn '"    ++ myFntDmenu    ++ "'" ++  -- dmenu: font
-        " -p  '>'"  ++                          -- dmenu: prompt
-        " -i "                                  -- dmenu: no case sensitive
-
-----------------------------------------------------------------------------
 -- Pointer
 ----------------------------------------------------------------------------
 myPointerUpdated = updatePointer (Relative 0.075 0.075)
