@@ -4,7 +4,7 @@
 #     Description: Zsh | Aliases
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-01-18 16:32:56
-#        Modified: 2016-03-21 02:11:11
+#        Modified: 2016-04-10 03:28:30
 #
 ########################################################################################################################
 # Aliases | Set aliases for Git
@@ -43,6 +43,14 @@ function __zsh_aliases_list()
 
 
 ################################################################################
+# Aliases | Set aliases for tmux
+function __zsh_aliases_tmux()
+{
+  alias tmux='tmux -2'  # `tmux`: force tmux with 256 colors support
+}
+
+
+################################################################################
 # Aliases | Set aliases for vi
 function __zsh_aliases_vi()
 {
@@ -54,8 +62,10 @@ function __zsh_aliases_vi()
 # Aliases | Set aliases for X
 function __zsh_aliases_x()
 {
+  alias kx='pkill -15 Xorg'                                                                            # `kx`: kill the X Window Server
   alias screens='xrandr --output eDP1 --mode 1920x1080 --output DP2 --mode 1920x1080 --right-of eDP1'  # `screens`: define a second monitor
   alias sx='startx'                                                                                    # `sx`: start the X Window Server
+  alias xi='xinit'                                                                                     # `xi`: start the default X display server
 }
 
 
