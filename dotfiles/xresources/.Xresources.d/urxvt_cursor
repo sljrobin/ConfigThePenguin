@@ -1,5 +1,5 @@
 !-------------------------------------------------------------------------------
-!-- Cursor
+!-- rxvt-unicode Cursor
 !-------------------------------------------------------------------------------
 !  * `URxvt.colorBD`     -> Terminal cursor bold color
 !  * `URxvt.colorIT`     -> Terminal cursor italic color
