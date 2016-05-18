@@ -4,16 +4,16 @@
 #     Description: ConfigThePenguin | Debian - Packages - GUI
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2016-02-10 21:19:59
-#        Modified: 2016-02-10 21:41:11
+#        Modified: 2016-04-08 19:47:46
 #
 ########################################################################################################################
 # Debian | Packages | Install Packages for GUI
 #    conky: system monitor
 #    dzen2: notifications for X11
-#    fonts-droid: 'Droid Sans Mono' font
 #    gmrun: application launcher
 #    rxvt-unicode-256color: terminal emulator with Unicode support
 #    suckless-tools: dmenu
+#    ttf-dejavu: 'DejaVu' font
 #    xbacklight: tool to manage brightness
 #    xmonad: GUI
 #    xorg: X window system
@@ -29,10 +29,10 @@ function d_packages-gui_install()
     "xmonad" "GUI" ON \
     "conky" "System monitor" ON \
     "dzen2" "Notifications for X11" ON \
-    "fonts-droid" "'Droid Sans Mono' font" ON \
     "gmrun" "Application launcher" ON \
     "rxvt-unicode-256color" "Terminal emulator with Unicode support" ON \
     "suckless-tools" "dmenu" ON \
+    "ttf-dejavu" "'DejaVu' font" ON \
     "xbacklight" "Tool to manage brightness" ON \
     "xscreensaver" "A screensaver" ON 3>&1 1>&2 2>&3)
   # Exit status
