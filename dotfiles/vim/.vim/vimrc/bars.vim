@@ -1,15 +1,13 @@
-" ConfigThePenguin
+" bars.vim: options for status bar, command bar, wild menu
 " By Simon L. J. Robin | https://sljrobin.org
 "
-" 'bars.vim': options for status bar, command bar, wild menu
 " This file is a part for '~/.vimrc'
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status bar
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showmode      " Show the current mode
 set laststatus=2  " Print the last status
 set ruler                           " Enable ruler
@@ -26,16 +24,16 @@ set ruler                           " Enable ruler
 set rulerformat=%l,%v
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command bar
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showcmd      " Show command in bottom bar
 set cmdheight=1  " Command bar height
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Wild menu
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("wildmenu")                " Check for compatibility
   set wildignore+=.DS_Store       " Ignore `.DS_Store` files
   set wildignore+=.git            " Ignore `.git` files
@@ -54,5 +52,5 @@ if has("wildmenu")                " Check for compatibility
   set wildignore+=*.swp           " Ignore `*.swp` files
   set wildignore+=*.tmp           " Ignore `*.tmp` files
   set wildmenu                    " Enhance command line completion
-  set wildmode=longest:full,full  " Complete the longest possible part, then switch
+  set wildmode=longest:full,full  " Complete the longest part, then switch
 endif
