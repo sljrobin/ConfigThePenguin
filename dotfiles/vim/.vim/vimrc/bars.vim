@@ -35,11 +35,6 @@ set cmdheight=1  " Command bar height
 " Wild menu
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("wildmenu")                " Check for compatibility
-  set wildignore+=.DS_Store       " Ignore `.DS_Store` files
-  set wildignore+=.git            " Ignore `.git` files
-  set wildignore+=.hg             " Ignore `.hg` files
-  set wildignore+=.svn            " Ignore `.svn` files
-  set wildignore+=*~              " Ignore `*~` files
   set wildignore+=*.a             " Ignore `*.a` files
   set wildignore+=*.bak,*.bmp     " Ignore `*.bak`, `*.bmp` files
   set wildignore+=*.class         " Ignore `*.class` files
@@ -51,6 +46,11 @@ if has("wildmenu")                " Check for compatibility
   set wildignore+=*.png,*.pyc     " Ignore `*.png`, `*.pyc` files
   set wildignore+=*.swp           " Ignore `*.swp` files
   set wildignore+=*.tmp           " Ignore `*.tmp` files
+  set wildignore+=*~              " Ignore `*~` files
+  set wildignore+=.DS_Store       " Ignore `.DS_Store` files
+  set wildignore+=.git            " Ignore `.git` files
+  set wildignore+=.hg             " Ignore `.hg` files
+  set wildignore+=.svn            " Ignore `.svn` files
   set wildmenu                    " Enhance command line completion
   set wildmode=longest:full,full  " Complete the longest part, then switch
 endif
