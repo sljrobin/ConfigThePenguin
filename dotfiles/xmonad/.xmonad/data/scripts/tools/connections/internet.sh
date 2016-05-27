@@ -4,7 +4,7 @@
 #     Description: Tool for Internet
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-29 20:02:45
-#        Modified: 2016-01-04 17:49:17
+#        Modified: 2016-04-23 22:47:20
 #
 ########################################################################################################################
 # Load Library
@@ -145,17 +145,30 @@ function __xmdt_internet-wifishowlvlic()
 # Internet | Get Wifi status
 function __xmdt_internet-wifigetstatus()
 {
-  local wifi_essid=$(/sbin/iwgetid -r)  # Get ESSID
+  local wifi_essid=$(/sbin/iwgetid -r)                                # Get ESSID
+  local wifi_status=$(ip link | grep "$DEVICE_WIFI" | cut -d' ' -f9)  # Get Wifi status
+  local wifi_status_off="DOWN"                                        # Wifi status: OFF
+  local wifi_status_on="UP"                                           # Wifi status: OFF
 
-  # If no ESSID, check if none secured networks available
-  if [ -z "$wifi_essid" ]; then
-    __xmdt_internet-wifinosecnets
-  # ESSID found, print information
-  elif [ -n "$wifi_essid" ]; then
-    __xmdt_internet-wifishowlvlic
-    __xmdt_internet-showlnkqlty
-    echo -n "/"
-    __xmdt_internet-showsgnllvl
+  # Wifi ON
+  if [ "$wifi_status" == "$wifi_status_on" ]; then
+    # If no ESSID, check if none secured networks available
+    if [ -z "$wifi_essid" ]; then
+      __xmdt_internet-wifinosecnets
+      echo -n " "
+    # ESSID found, print information
+    elif [ -n "$wifi_essid" ]; then
+      __xmdt_internet-wifishowlvlic
+      __xmdt_internet-showlnkqlty
+      echo -n "/"
+      __xmdt_internet-showsgnllvl
+    # Case not handled
+    else
+      xmdl_pntr-err
+    fi
+  # Wifi OFF
+  elif [ "$wifi_status" == "$wifi_status_off" ]; then
+    xmdl_icns-show $ICON_WIFI
   # Case not handled
   else
     xmdl_pntr-err
@@ -167,27 +180,17 @@ function __xmdt_internet-wifigetstatus()
 # Internet | Get Ethernet status
 function __xmdt_internet-ethgetstatus()
 {
-  local eth_status_1=$(ip link | grep "$DEVICE_ETHERNET" | cut -d' ' -f9)             # Get Ethernet status 1
-  local eth_status_2=$(/sbin/ethtool "$DEVICE_ETHERNET" | grep Link | cut -d' ' -f3)  # Get Ethernet status 2
-  local eth_status_off_1="DOWN"                                                       # Ethernet status: OFF 1
-  local eth_status_off_2="no"                                                         # Ethernet status: OFF 2
-  local eth_status_on="yes"                                                           # Ethernet status: ON
-  local wifi_status=$(ip link | grep "$DEVICE_WIFI" | cut -d' ' -f9)                  # Get Wifi status
-  local wifi_status_off="DOWN"                                                        # Wifi status: OFF
+  local eth_status=$(ip link | grep "$DEVICE_ETHERNET" | cut -d' ' -f9)  # Get Ethernet status
+  local eth_status_on="UP"                                               # Ethernet status: ON
+  local eth_status_off="DOWN"                                            # Ethernet status: OFF
 
-  # Ethernet OFF, check for Wifi
-  if [ "$eth_status_2" == "$eth_status_off_2" ]; then
-    __xmdt_internet-wifigetstatus
-  # Ethernet OFF (Device)
-  elif [ "$eth_status_1" == "$eth_status_off_1" ]; then
-    xmdl_pntr-txt $COLOR_LORANGE "E"
-    # Wifi device is down 
-    if [ "$wifi_status" == "$wifi_status_off" ]; then
-      xmdl_pntr-txt $COLOR_LORANGE "W"
-    fi
   # Ethernet ON
-  elif [ "$eth_status_2" == "$eth_status_on" ]; then
+  if [ "$eth_status" == "$eth_status_on" ]; then
+    echo -n " "
     xmdl_icns-show $ICON_ETHERNET | sed 's/.$//'
+  # Ethernet OFF
+  elif [ "$eth_status" == "$eth_status_off" ]; then
+    :
   # Case not handled
   else
     xmdl_pntr-err
@@ -199,6 +202,7 @@ function __xmdt_internet-ethgetstatus()
 # Internet | Main
 function xmdt_internet()
 {
+  __xmdt_internet-wifigetstatus
   __xmdt_internet-ethgetstatus
 }
 
