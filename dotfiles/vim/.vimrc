@@ -1,9 +1,6 @@
-" ConfigThePenguin
-" By Simon L. J. Robin | https://sljrobin.org
-"
 " '~/.vimrc'
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" By Simon L. J. Robin | https://sljrobin.org
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/vimrc/vundle.vim   " Load Vundle and plugins
 source ~/.vim/vimrc/plugins.vim  " Load plugins options
 source ~/.vim/vimrc/charenc.vim  " Load character encoding
