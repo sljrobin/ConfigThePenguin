@@ -1,44 +1,63 @@
-" ConfigThePenguin
+" plugins.vim: settings for plugins
 " By Simon L. J. Robin | https://sljrobin.org
 "
-" 'plugins.vim': settings for plugins
 " This file is a part for '~/.vimrc'
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indentLine
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_char = '|'        " Character to use for delimitation
-let g:indentLine_color_term = 236  " Color of the character
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * `indentLine_char`       -> Character to use for delimitation
+" * `indentLine_color_term` -> Color of the character
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_char = '|'
+let g:indentLine_color_term = 236
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeShowHidden=1  " Always show hidden files
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * `NERDTreeShowHidden` -> Show/Hide hidden files
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeShowHidden=1
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<Tab>"        " <Tab>: expand a snippet
-let g:UltiSnipsJumpForwardTrigger="<C-n>"   " <Ctrl> + <n>: cycle forwards through the snippets list
-let g:UltiSnipsJumpBackwardTrigger="<C-p>"  " <Ctrl> + <p>: cycle backwards through the snippets list
-let g:UltiSnipsEditSplit="vertical"         " Set a vertical window for editing the snippets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * `UltiSnipsEditSplit`           -> Window mode for editing snippets
+" * `UltiSnipsExpandTrigger`       -> Character to expand a snippet
+" * `UltiSnipsJumpBackwardTrigger` -> Character to cycle backwards snippets
+" * `UltiSnipsJumpForwardTrigger`  -> Character to cycle forwards snippets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<C-p>"
+let g:UltiSnipsJumpForwardTrigger="<C-n>"
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-multiple-cursors
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_exit_from_visual_mode=0  " Quit and delete all existing cursors in Visual mode
-let g:multi_cursor_exit_from_insert_mode=0  " Quit and delete all existing cursors in Normal mode
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * `multi_cursor_exit_from_insert_mode` -> Delete cursors in Insert mode
+" * `multi_cursor_exit_from_visual_mode` -> Delete cursors in Visual mode
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:multi_cursor_exit_from_insert_mode=0
+let g:multi_cursor_exit_from_visual_mode=0
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']  " '<Ctrl> + <n>' | '<Down>': cycle forwards through the completion list
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']  " '<Ctrl> + <p>' | '<Up': cycle backwards through the completion list
-let g:ycm_min_num_of_chars_for_completion=2               " Number of characters needed to be typed before completion suggestions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * `ycm_key_list_previous_completion`    -> Character to cycle backwards
+"                                            through the completion list
+" * `ycm_key_list_select_completion`      -> Character to cycle fowards through
+"                                            the completion list
+" * `ycm_min_num_of_chars_for_completion` -> Number of characters needed to be
+"                                            typed before completion
+"                                            suggestions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+let g:ycm_min_num_of_chars_for_completion=2
