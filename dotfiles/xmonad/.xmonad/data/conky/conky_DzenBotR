@@ -8,6 +8,7 @@ use_spacer none
 
 TEXT
 ${exec $HOME/.xmonad/data/scripts/tools/monitor/battery.sh} | \
+${exec $HOME/.xmonad/data/scripts/tools/monitor/uptime.sh} | \
 ${exec $HOME/.xmonad/data/scripts/tools/monitor/time.sh} | \
 ${exec $HOME/.xmonad/data/scripts/tools/usage/keyboard.sh} | \
 ${exec $HOME/.xmonad/data/scripts/tools/usage/os.sh}
