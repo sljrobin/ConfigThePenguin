@@ -1,10 +1,19 @@
+-- xmonad: Personal module: Hook Manage
+-- Author: Simon L. J. Robin | https://sljrobin.org
+--------------------------------------------------------------------------------
 module Hook_Manage where
 
--- Core
-import XMonad                           -- Main lib
--- Hooks
-import XMonad.Hooks.ManageHelpers       -- Enable FullFloat mode
+--------------------------------------------------------------------------------
+-- * `XMonad.Hooks.ManageHelpers` -> Enables `FullFloat` mode
+-- * `XMonad`                     -> Main library
+--------------------------------------------------------------------------------
+import XMonad
+import XMonad.Hooks.ManageHelpers
 
+
+--------------------------------------------------------------------------------
+-- Hook Manage
+--------------------------------------------------------------------------------
 myManageHook = composeAll
     [ className =? "Gimp" --> doFloat
     , className =? "vlc"  --> doFullFloat
