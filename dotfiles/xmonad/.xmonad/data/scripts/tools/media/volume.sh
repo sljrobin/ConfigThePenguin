@@ -4,7 +4,7 @@
 #     Description: Tool for volume
 #          Author: Simon L. J. Robin | https://sljrobin.org
 #         Created: 2015-12-30 21:09:48
-#        Modified: 2016-04-25 00:27:49
+#        Modified: 2016-06-17 21:31:50
 #
 ########################################################################################################################
 # Load Library
@@ -15,8 +15,15 @@ source $HOME/.xmonad/data/scripts/main.sh
 # Volume | Get current volume
 function __xmdt_volume-get()
 {
-  local vol=$(amixer sget Master | awk -F"[][]" '/dB/ {print $2}' | tr -d %)  # Get Volume
+  local vol_l=$(amixer get Master |\
+                grep Left | grep '%' |\
+                awk '{print $5}' | tr -d '[]%')  # Get Volume Left
+  local vol_r=$(amixer get Master |\
+                grep Right | grep '%' |\
+                awk '{print $5}' | tr -d '[]%')  # Get Volume Right
 
+  local total=$(echo "$vol_l" + "$vol_r" | bc)
+  local vol=$(echo "$total" / 2 | bc)
   echo $vol
 }
 
@@ -94,15 +101,17 @@ function __xmdt_volume-showlvlspkrsm()
 # Volume | Handle headphones
 function __xmdt_volume-handlehdphs()
 {
-  local mute_status=$(amixer sget Master | awk -F"[][]" '/dB/ {print $6}')  # Get Mute status
+  #local mute_status=$(amixer sget Master | awk -F"[][]" '/dB/ {print $6}')  # Get Mute status
+  local mute_status_l=$(amixer get Master | grep Left | grep '%' | awk '{print $6}' | tr -d '[]%')
+  local mute_status_r=$(amixer get Master | grep Right | grep '%' | awk '{print $6}' | tr -d '[]%')
   local mute_status_off="on"                                                # Mute status: OFF
   local mute_status_on="off"                                                # Mute status: ON
 
   # Mute ON
-  if [ "$mute_status" == "$mute_status_on" ]; then
+  if [ "$mute_status_l" == "$mute_status_on" ] && [ "$mute_status_r" == "$mute_status_on" ]; then
     __xmdt_volume-showlvlhdphsm
   # Mute OFF
-  elif [ "$mute_status" == "$mute_status_off" ]; then
+  elif [ "$mute_status_l" == "$mute_status_off" ] && [ "$mute_status_r" == "$mute_status_off" ]; then
     __xmdt_volume-showlvlhdphs
   # Case not handled
   else
@@ -115,15 +124,17 @@ function __xmdt_volume-handlehdphs()
 # Volume | Handle speakers
 function __xmdt_volume-handlespkrs()
 {
-  local mute_status=$(amixer sget Master | awk -F"[][]" '/dB/ {print $6}')  # Get Mute status
+  #local mute_status=$(amixer sget Master | awk -F"[][]" '/dB/ {print $6}')  # Get Mute status
+  local mute_status_l=$(amixer get Master | grep Left | grep '%' | awk '{print $6}' | tr -d '[]%')
+  local mute_status_r=$(amixer get Master | grep Right | grep '%' | awk '{print $6}' | tr -d '[]%')
   local mute_status_off="on"                                                # Mute status: OFF
   local mute_status_on="off"                                                # Mute status: ON
 
   # Mute ON
-  if [ "$mute_status" == "$mute_status_on" ]; then
+  if [ "$mute_status_l" == "$mute_status_on" ] && [ "$mute_status_r" == "$mute_status_on" ]; then
     __xmdt_volume-showlvlspkrsm
   # Mute OFF
-  elif [ "$mute_status" == "$mute_status_off" ]; then
+  elif [ "$mute_status_l" == "$mute_status_off" ] && [ "$mute_status_r" == "$mute_status_off" ]; then
     __xmdt_volume-showlvlspkrs
   # Case not handled
   else
