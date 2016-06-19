@@ -1,10 +1,16 @@
+-- xmonad: Personal module: Hook Startup
+-- Author: Simon L. J. Robin | https://sljrobin.org
+--------------------------------------------------------------------------------
 module Hook_Startup where
 
--- Util
-import XMonad.Hooks.SetWMName           -- Sets the WM name
-import XMonad.Util.SpawnOnce            -- Add 'spawnOnce'
+--------------------------------------------------------------------------------
+-- * `XMonad.Hooks.SetWMName` -> Sets the WM name
+--------------------------------------------------------------------------------
+import XMonad.Hooks.SetWMName
 
+
+--------------------------------------------------------------------------------
+-- Hook Startup
+--------------------------------------------------------------------------------
 myStartupHook = do
-    setWMName "LG3D"                             -- Detect `_NET_SUPPORTING_WM_CHECK` protocol
-    spawnOnce "xsetroot -cursor_name left_ptr &" -- Cursor
-    spawnOnce "xrdb -merge ~/.Xresources &"      -- Merge xrdb
+    setWMName "LG3D"  -- Detect `_NET_SUPPORTING_WM_CHECK` protocol
