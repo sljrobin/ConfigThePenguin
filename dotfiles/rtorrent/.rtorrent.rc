@@ -45,6 +45,7 @@ upload_rate   = 50
 #      * `watch_directory`  -> Watch a directory for new torrents
 #  * `session`   -> Directory for rTorrent session
 ################################################################################
+#directory = ~/vol-data/DL
 directory = ~/.rtorrent/downloads
 session   = ~/.rtorrent/session
 schedule  = watch_directory, 5, 5, load_start=~/.rtorrent/torrents/*.torrent
