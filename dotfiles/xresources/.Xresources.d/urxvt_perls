@@ -1,5 +1,5 @@
 !-------------------------------------------------------------------------------
-!-- Perl Extensions
+!-- rxvt-unicode Perl Extensions
 !-------------------------------------------------------------------------------
 URxvt.perl-ext-common: default,matcher,font-size
 URxvt.url-launcher:    /usr/bin/firefox
