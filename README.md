@@ -91,5 +91,7 @@ The repository is divided into several directories:
         * [`debian/`](/scripts/lib/debian)
         * [`multi/`](/scripts/lib/multi)
 
+## Dependencies
+
 ## License
 The content of this project is licensed under the GPL license.
