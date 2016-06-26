@@ -92,6 +92,7 @@ The repository is divided into several directories:
         * [`multi/`](/scripts/lib/multi)
 
 ## Dependencies
+* xmonad xmonad-contrib
 
 ## License
 The content of this project is licensed under the GPL license.
