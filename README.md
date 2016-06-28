@@ -93,6 +93,7 @@ The repository is divided into several directories:
 
 ## Dependencies
 * xmonad xmonad-contrib
+* rofi
 
 ## License
 The content of this project is licensed under the GPL license.
